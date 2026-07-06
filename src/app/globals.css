@@ -1,26 +1,296 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Core brand */
+  --color-brand-pink: #ed4e8d;
+  --color-brand-pink-dark: #e03a7c;
+  --color-brand-pink-hover: #de3a7c;
+  --color-brand-pink-light: #fbd3e1;
+  --color-brand-cyan: #23bfd8;
+  --color-brand-cyan-dark: #19a6cc;
+  --color-brand-cyan-light: #cff1f7;
+  --color-brand-cyan-accent: #5dd6ea;
+  --color-brand-gold: #f2a91c;
+  --color-brand-gold-dark: #c98a0e;
+  --color-brand-gold-light: #fce6b8;
+
+  /* Surfaces */
+  --color-brand-bg: #fff7ec;
+  --color-brand-cream: #fdf1e4;
+  --color-brand-warm-cream: #fdf1e4;
+  --color-brand-blush: #fde7ef;
+  --color-brand-peach: #ffe2c9;
+  --color-brand-hero-peach: #fff1db;
+
+  /* Text */
+  --color-brand-dark: #34242f;
+  --color-brand-heading: #4a3a44;
+  --color-brand-body: #6a5963;
+  --color-brand-muted: #6a5963;
+  --color-brand-subtle: #8a7984;
+  --color-brand-nav: #5a4a54;
+  --color-brand-quote: #4a3a44;
+
+  /* Soda band */
+  --color-brand-soda-eyebrow: #d7f6fb;
+  --color-brand-soda-body: #eafbfe;
+
+  /* Borders */
+  --color-brand-card-border: #f4e4d6;
+  --color-brand-border: #f4e4d6;
+  --color-brand-catering-border: #f8d2c0;
+  --color-brand-divider: #f1d3de;
+  --color-brand-catering-eyebrow: #f2901c;
+
+  /* Footer — warm espresso brown, harmonized with cream/gold palette */
+  --color-brand-footer: #32271e;
+  --color-brand-footer-deep: #261e17;
+  --color-brand-footer-elevated: #3a2f24;
+  --color-brand-footer-heading: #f2a91c;
+  --color-brand-footer-text: #f5efe8;
+  --color-brand-footer-muted: #b5a79a;
+  --color-brand-footer-link: #ddd4c9;
+  --color-brand-footer-copyright: #9a8d82;
+
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-brand-bg);
+  color: var(--color-brand-dark);
+  font-family: var(--font-sans);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a.bg-brand-pink,
+a.bg-brand-pink-hover,
+a[class*="bg-[rgb(237,78,141)]"] {
+  color: rgb(255, 255, 255);
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(-3deg);
+  }
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translateY(-160px);
+    opacity: 0;
+  }
+}
+
+@keyframes rise-slow {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-220px);
+    opacity: 0;
+  }
+}
+
+@keyframes float-bubble {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-floaty {
+  animation: floaty 5s ease-in-out infinite;
+}
+
+.animate-rise {
+  animation: rise 3.2s ease-in infinite;
+}
+
+.animate-rise-slow {
+  animation: rise-slow 4.1s ease-in infinite;
+}
+
+.animate-float-bubble {
+  animation: float-bubble 5s ease-in-out infinite;
+}
+
+@keyframes gallery-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-gallery-fade-up {
+  animation: gallery-fade-up 0.45s ease-out forwards;
+}
+
+@keyframes lightbox-overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lightbox-overlay-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes lightbox-image-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-lightbox-overlay-in {
+  animation: lightbox-overlay-in 0.28s ease-out forwards;
+}
+
+.animate-lightbox-overlay-out {
+  animation: lightbox-overlay-out 0.22s ease-in forwards;
+}
+
+.animate-lightbox-image-in {
+  animation: lightbox-image-in 0.32s ease-out forwards;
+}
+
+@keyframes menu-intro-rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes menu-intro-scroll-hint {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}
+
+.animate-menu-intro-rise {
+  animation: menu-intro-rise 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-menu-intro-scroll-hint {
+  animation: menu-intro-scroll-hint 2s ease-in-out infinite;
+}
+
+@keyframes menu-gallery-fade {
+  from {
+    opacity: 0;
+    transform: scale(1.03);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-menu-gallery-fade {
+  animation: menu-gallery-fade 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.home-hero-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.home-hero-title {
+  font-family: var(--font-sans);
+  font-size: clamp(2.35rem, 5.2vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--color-brand-dark);
+}
+
+.home-hero-title em {
+  font-style: normal;
+  font-weight: 800;
+  color: var(--color-brand-pink);
+}
+
+.home-hero-lead {
+  font-family: var(--font-sans);
+  font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.68;
+  letter-spacing: 0.01em;
+  color: var(--color-brand-body);
+}
+
+.home-hero-stat-value {
+  font-family: var(--font-sans);
+  font-size: 1.625rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.home-hero-stat-label {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-brand-subtle);
 }
