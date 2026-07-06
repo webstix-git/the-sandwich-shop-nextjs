@@ -12,7 +12,7 @@ import {
 
 function FooterHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h3 className="mb-5 text-[13px] font-bold uppercase tracking-[1.6px] text-brand-gold">
+    <h3 className="mb-5 text-[13px] font-extrabold uppercase tracking-[1.6px] text-white">
       {children}
     </h3>
   );

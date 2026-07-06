@@ -8,9 +8,9 @@ import {
 
 const ACCENT = {
   gold: {
-    tag: "text-brand-gold-dark",
-    line: "bg-brand-gold/80",
-    ring: "hover:ring-brand-gold/15",
+    tag: "text-brand-pink-dark",
+    line: "bg-brand-pink/80",
+    ring: "hover:ring-brand-pink/15",
   },
   pink: {
     tag: "text-brand-pink-dark",
@@ -76,16 +76,16 @@ export function CategoryHighlightsSection({
           className={`${centered ? "mx-auto max-w-[680px] text-center" : "max-w-[640px]"} ${CATEGORY_PAGE_LAYOUT.header}`}
         >
           <p
-            className={`inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-gold-dark sm:text-[11px] ${centered ? "justify-center" : ""}`}
+            className={`inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px] ${centered ? "justify-center" : ""}`}
           >
-            <span className="h-px w-8 bg-brand-gold/80" aria-hidden />
+            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
             Highlights
           </p>
           <h2
             className={`mt-4 text-[clamp(1.85rem,3.5vw,2.5rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark text-balance ${centered ? "mx-auto" : ""}`}
           >
             What makes this{" "}
-            <span className="text-brand-gold-dark">category special.</span>
+            <span className="text-brand-cyan-dark">category special.</span>
           </h2>
           {description ? (
             <p

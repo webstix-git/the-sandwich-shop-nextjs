@@ -17,7 +17,7 @@ export default function SitemapPage() {
   return (
     <MinimalPageLayout title={copy.title} description={copy.description}>
       <section>
-        <h2 className="mb-4 text-[13px] font-bold uppercase tracking-[0.14em] text-brand-gold-dark">
+        <h2 className="mb-4 text-[13px] font-bold uppercase tracking-[0.14em] text-brand-pink-dark">
           Pages
         </h2>
         <ul className="divide-y divide-brand-border/60 border-y border-brand-border/60">

@@ -30,7 +30,7 @@ function StoryChapterSection({
           </p>
           <h2 className="mt-3 text-[clamp(1.75rem,3.2vw,2.35rem)] font-extrabold leading-[1.08] tracking-[-0.04em] text-brand-dark text-balance">
             {chapter.title}{" "}
-            <span className="text-brand-gold-dark">{chapter.highlight}</span>
+            <span className={index % 2 === 1 ? "text-brand-cyan-dark" : "text-brand-pink-dark"}>{chapter.highlight}</span>
           </h2>
           <p className="mt-5 text-[16px] leading-[1.76] text-brand-body md:text-[17px]">
             {chapter.body}
@@ -64,13 +64,13 @@ function StoryGallerySection() {
     <section className={`border-t border-brand-border/60 bg-brand-warm-cream ${CATEGORY_PAGE_LAYOUT.section}`}>
       <div className="mx-auto max-w-[1180px]">
         <header className="mb-10 max-w-[640px] md:mb-12">
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-gold-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-gold/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
+            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
             {gallery.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.5rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark text-balance">
             {gallery.title}{" "}
-            <span className="text-brand-gold-dark">{gallery.highlight}</span>
+            <span className="text-brand-pink-dark">{gallery.highlight}</span>
           </h2>
         </header>
 
@@ -131,13 +131,13 @@ function StoryTodaySection() {
         </div>
 
         <div>
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-gold-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-gold/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
+            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
             {today.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.5rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark text-balance">
             {today.title}{" "}
-            <span className="text-brand-gold-dark">{today.highlight}</span>
+            <span className="text-brand-pink-dark">{today.highlight}</span>
           </h2>
           {today.paragraphs.map((paragraph) => (
             <p
@@ -158,7 +158,7 @@ function StoryCtaSection() {
 
   return (
     <section className={`border-t border-brand-border/60 bg-brand-warm-cream ${CATEGORY_PAGE_LAYOUT.section}`}>
-      <div className="relative mx-auto max-w-[1180px] overflow-hidden rounded-[28px] border border-brand-gold/35 bg-brand-footer pb-[70px] shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
+      <div className="relative mx-auto max-w-[1180px] overflow-hidden rounded-[28px] border border-brand-pink/35 bg-brand-footer pb-[70px] shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
         <Image
           src={cta.backgroundImage}
           alt=""
@@ -179,13 +179,13 @@ function StoryCtaSection() {
 
         <div className="relative z-[2] grid items-center gap-10 px-7 pt-8 md:grid-cols-[1.05fr_0.95fr] md:gap-12 md:px-10 md:pt-10 lg:px-12 lg:pt-12">
           <div>
-            <span className="inline-flex items-center rounded-full border border-brand-gold/50 bg-black/25 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-[#fce6b8]">
+            <span className="inline-flex items-center rounded-full border border-brand-pink/50 bg-black/25 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-pink-light">
               {cta.badge}
             </span>
 
             <h2 className="mt-5 text-[clamp(1.75rem,3.5vw,2.35rem)] font-extrabold leading-[1.12] tracking-[-0.03em] text-white text-balance [text-shadow:0_2px_20px_rgba(0,0,0,0.45)]">
               {cta.title}{" "}
-              <span className="text-[#fcd98a]">{cta.titleAccent}</span>
+              <span className="text-brand-cyan-accent">{cta.titleAccent}</span>
             </h2>
 
             <p className="mt-4 max-w-[560px] text-[16px] leading-[1.75] text-[#ece4dc] md:text-[17px]">
@@ -195,7 +195,7 @@ function StoryCtaSection() {
             <div className="mt-8 flex flex-wrap gap-3.5">
               <Link
                 href={cta.primaryHref}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-gold px-7 py-3.5 text-[16px] font-extrabold !text-[#261e17] shadow-[0_10px_28px_rgba(0,0,0,0.28)] transition-all hover:-translate-y-0.5 hover:bg-[#f5b82e] md:text-[17px]"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-pink px-7 py-3.5 text-[16px] font-extrabold !text-white shadow-[0_10px_28px_rgba(237,78,141,0.35)] transition-all hover:-translate-y-0.5 hover:bg-brand-pink-hover md:text-[17px]"
               >
                 {cta.primaryLabel}
               </Link>

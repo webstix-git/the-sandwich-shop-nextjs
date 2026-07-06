@@ -67,7 +67,7 @@ export const SERVICES_OFFERINGS: readonly ServiceOffering[] = [
     href: "/services/catering-services",
     image: "/images/services-catering.jpg",
     imageAlt: "Catering spread with sandwiches, burgers, and dirty sodas",
-    accent: "gold",
+    accent: "pink",
   },
   {
     title: "Sandwich Trays",
@@ -77,7 +77,7 @@ export const SERVICES_OFFERINGS: readonly ServiceOffering[] = [
     href: "/services/catering-services",
     image: "/images/services-sandwich-tray.jpg",
     imageAlt: "Assorted sub sandwich catering tray",
-    accent: "gold",
+    accent: "cyan",
   },
   {
     title: "Burger Spreads",
@@ -123,25 +123,25 @@ export const SERVICES_EXPERIENCE = {
     "However you order — the same standards apply behind the counter and at your event.",
   items: [
     {
-      number: "01",
+      icon: "store" as const,
       title: "Made to order",
       description:
         "Sandwiches stacked, burgers smashed, sodas poured — fresh when you order, never sitting under a heat lamp.",
       accent: "pink" as const,
     },
     {
-      number: "02",
+      icon: "heart" as const,
       title: "Generous portions",
       description:
         "We believe you should leave full and happy. Our trays are stacked and our sodas are loaded.",
-      accent: "gold" as const,
+      accent: "cyan" as const,
     },
     {
-      number: "03",
+      icon: "map-pin" as const,
       title: "Neighborly service",
       description:
         "Locally owned and invested in La Crosse — whether you're a regular or planning your first catering order.",
-      accent: "cyan" as const,
+      accent: "pink" as const,
     },
   ],
 } as const;

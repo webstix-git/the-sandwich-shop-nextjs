@@ -191,7 +191,7 @@ export const SERVICE_INDEX_ITEMS: readonly ServiceIndexItem[] = [
       "Sandwich trays, burger spreads, and dirty soda bar experiences for offices, parties, and family gatherings.",
     href: "/services/catering-services",
     tag: "Events & groups",
-    accent: "gold",
+    accent: "pink",
   },
   {
     title: "Sandwich Trays",
@@ -199,7 +199,7 @@ export const SERVICE_INDEX_ITEMS: readonly ServiceIndexItem[] = [
       "Assorted subs cut and ready to serve — perfect for meetings and celebrations. Serves 10–15 guests.",
     href: "/services/catering-services",
     tag: "Catering package",
-    accent: "gold",
+    accent: "cyan",
   },
   {
     title: "Burger Spreads",

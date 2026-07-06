@@ -9,8 +9,10 @@ export function CateringPageIntro() {
       intro={CATERING_INTRO}
       breadcrumbLabel="Catering Services"
       description={CATERING_INTRO.description}
+      breadcrumbParent={{ label: "Services", href: "/services" }}
       imageLayout="cover"
-      solidOverlay
+      heroOverlay="premium"
+      imagePosition="center 35%"
     />
   );
 }

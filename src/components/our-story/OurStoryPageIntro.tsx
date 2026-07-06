@@ -27,13 +27,13 @@ function StoryFeatureSection() {
         </div>
 
         <div className="order-1 lg:order-2">
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-gold-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-gold/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
+            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
             {feature.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.5rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark">
             {feature.title}{" "}
-            <span className="text-brand-gold-dark">{feature.highlight}</span>
+            <span className="text-brand-pink-dark">{feature.highlight}</span>
           </h2>
           {feature.paragraphs.map((paragraph) => (
             <p

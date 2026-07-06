@@ -28,6 +28,11 @@ const DECOR_BUBBLES = [
   { top: "55%", left: "5%", size: 12, delay: "1.9s", duration: "4.8s" },
 ] as const;
 
+const SECTION_PADDING = {
+  default: "py-24 md:py-28 lg:py-32",
+  standard: "pt-[80px] pb-[80px]",
+} as const;
+
 export type SodaBarSectionProps = {
   id?: string;
   eyebrow: string;
@@ -37,6 +42,7 @@ export type SodaBarSectionProps = {
   ctaHref: string;
   image?: string;
   imageAlt?: string;
+  sectionPadding?: keyof typeof SECTION_PADDING;
 };
 
 export function SodaBarSection({
@@ -48,11 +54,12 @@ export function SodaBarSection({
   ctaHref,
   image = "/images/dirty-soda-green.jpg",
   imageAlt = "Signature green dirty soda with candy rim",
+  sectionPadding = "default",
 }: SodaBarSectionProps) {
   return (
     <section
       id={id}
-      className="relative overflow-hidden border-t border-brand-border/60 bg-gradient-to-br from-brand-cyan to-brand-cyan-dark px-7 py-24 md:py-28 lg:py-32"
+      className={`relative overflow-hidden border-t border-brand-border/60 bg-gradient-to-br from-brand-cyan to-brand-cyan-dark px-7 ${SECTION_PADDING[sectionPadding]}`}
     >
       {BUBBLES.map((bubble, index) => (
         <div

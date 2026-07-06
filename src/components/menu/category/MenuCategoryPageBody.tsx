@@ -36,8 +36,8 @@ function highlightsSectionTone(page: MenuCategoryPageData): CategorySectionTone 
 
 function SectionEyebrow({ children }: { children: string }) {
   return (
-    <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-gold-dark sm:text-[11px]">
-      <span className="h-px w-8 bg-brand-gold/80" aria-hidden />
+    <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
+      <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
       {children}
     </p>
   );
@@ -59,7 +59,7 @@ function SectionTitle({
       }`}
     >
       {title}{" "}
-      <span className="text-brand-gold-dark">{highlight}</span>
+      <span className="text-brand-pink-dark">{highlight}</span>
     </h2>
   );
 }
@@ -168,7 +168,7 @@ function EditorialBlock({
 function CategoryCtaSection({ cta }: { cta: MenuCategoryPageData["cta"] }) {
   return (
     <section className={LAYOUT.ctaSection}>
-      <div className="relative mx-auto max-w-[1180px] overflow-hidden rounded-[28px] border border-brand-gold/35 bg-brand-footer pb-[70px] shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
+      <div className="relative mx-auto max-w-[1180px] overflow-hidden rounded-[28px] border border-brand-pink/35 bg-brand-footer pb-[70px] shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
         <Image
           src={cta.backgroundImage}
           alt=""
@@ -188,13 +188,13 @@ function CategoryCtaSection({ cta }: { cta: MenuCategoryPageData["cta"] }) {
 
         <div className="relative z-[2] grid items-center gap-10 px-7 pt-8 md:grid-cols-[1.05fr_0.95fr] md:gap-12 md:px-10 md:pt-10 lg:px-12 lg:pt-12">
           <div>
-            <span className="inline-flex items-center rounded-full border border-brand-gold/50 bg-black/25 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-[#fce6b8]">
+            <span className="inline-flex items-center rounded-full border border-brand-pink/50 bg-black/25 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-pink-light">
               {cta.eyebrow}
             </span>
 
             <h2 className="mt-5 text-[clamp(1.75rem,3.5vw,2.35rem)] font-extrabold leading-[1.12] tracking-[-0.03em] text-white text-balance [text-shadow:0_2px_20px_rgba(0,0,0,0.45)]">
               {cta.title}{" "}
-              <span className="text-[#fcd98a]">{cta.highlight}</span>
+              <span className="text-brand-cyan-accent">{cta.highlight}</span>
             </h2>
 
             <p className="mt-4 max-w-[560px] text-[16px] leading-[1.75] text-[#ece4dc] md:text-[17px]">
@@ -204,10 +204,10 @@ function CategoryCtaSection({ cta }: { cta: MenuCategoryPageData["cta"] }) {
             <div className="mt-8 flex flex-wrap gap-3.5">
               <Link
                 href={cta.primaryHref}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-gold px-7 py-3.5 text-[16px] font-extrabold !text-[#261e17] shadow-[0_10px_28px_rgba(0,0,0,0.28)] transition-all hover:-translate-y-0.5 hover:bg-[#f5b82e] md:text-[17px]"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-pink px-7 py-3.5 text-[16px] font-extrabold !text-white shadow-[0_10px_28px_rgba(237,78,141,0.35)] transition-all hover:-translate-y-0.5 hover:bg-brand-pink-hover md:text-[17px]"
               >
                 {cta.primaryLabel}
-                <ChevronRightIcon size={17} className="text-[#261e17]" />
+                <ChevronRightIcon size={17} className="text-white" />
               </Link>
               {cta.secondaryLabel && cta.secondaryHref ? (
                 <Link
@@ -278,9 +278,9 @@ export function MenuCategoryPageBody({ page }: { page: MenuCategoryPageData }) {
         <section className={categorySectionClass("cream")}>
           <div className={LAYOUT.inner}>
             <MenuColdSandwichesSection scrollMarginTop={88} />
-            <p className="mx-auto mt-12 max-w-[760px] rounded-2xl border border-brand-gold/35 bg-brand-gold-light/50 px-6 py-4 text-center text-[17px] font-semibold leading-relaxed text-brand-dark shadow-[0_4px_18px_rgba(242,169,28,0.12)] md:px-8 md:py-5 md:text-[20px]">
+            <p className="mx-auto mt-12 max-w-[760px] rounded-2xl border border-brand-pink/35 bg-brand-pink-light/50 px-6 py-4 text-center text-[17px] font-semibold leading-relaxed text-brand-dark shadow-[0_4px_18px_rgba(237,78,141,0.12)] md:px-8 md:py-5 md:text-[20px]">
               {MENU_HASH_BROWNS_NOTE.replace("$1.50", "")}
-              <span className="font-extrabold text-brand-gold-dark">$1.50</span>
+              <span className="font-extrabold text-brand-pink-dark">$1.50</span>
             </p>
           </div>
         </section>

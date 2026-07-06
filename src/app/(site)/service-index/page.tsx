@@ -5,6 +5,12 @@ import { ChevronRightIcon } from "@/components/icons";
 import { SERVICE_INDEX_ITEMS } from "@/lib/info-pages";
 import { MINIMAL_PAGE_COPY } from "@/lib/minimal-page-copy";
 
+const TAG_ACCENT = {
+  pink: "text-brand-pink-dark",
+  cyan: "text-brand-cyan-dark",
+  gold: "text-brand-pink-dark",
+} as const;
+
 export const metadata: Metadata = {
   title: "Service Index | The Sandwich Shop & Dirty Soda Bar",
   description:
@@ -29,7 +35,9 @@ export default function ServiceIndexPage() {
               className="group flex items-start justify-between gap-4 py-4 transition-colors hover:text-brand-pink-dark"
             >
               <span>
-                <span className="block text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-gold-dark">
+                <span
+                  className={`block text-[11px] font-semibold uppercase tracking-[0.14em] ${TAG_ACCENT[service.accent]}`}
+                >
                   {service.tag}
                 </span>
                 <span className="mt-1 block text-[17px] font-semibold text-brand-dark group-hover:text-brand-pink-dark">

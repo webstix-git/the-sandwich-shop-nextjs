@@ -156,19 +156,19 @@ export const CATERING_PROCESS_SECTION = {
 
 export const CATERING_PROCESS = [
   {
-    step: "01",
+    step: "1",
     title: "Tell us about your event",
     description:
       "Headcount, date, and what you're craving — we'll help you build the perfect menu.",
   },
   {
-    step: "02",
+    step: "2",
     title: "We prepare everything fresh",
     description:
       "Sandwiches stacked, burgers smashed, sodas prepped — all made the morning of your event.",
   },
   {
-    step: "03",
+    step: "3",
     title: "Enjoy the feast",
     description:
       "Pick up downtown or ask about delivery. Your guests will be talking about it for weeks.",

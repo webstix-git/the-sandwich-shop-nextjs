@@ -12,7 +12,7 @@ export function MenuCateringCta() {
       aria-label="Catering services"
       className="relative px-7 pb-12 pt-4 md:pb-16 md:pt-6"
     >
-      <div className="relative mx-auto max-w-[1180px] overflow-hidden rounded-[28px] border border-brand-gold/35 bg-brand-footer shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
+      <div className="relative mx-auto max-w-[1180px] overflow-hidden rounded-[28px] border border-brand-pink/35 bg-brand-footer shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
         <Image
           src={cta.backgroundImage}
           alt=""
@@ -36,14 +36,14 @@ export function MenuCateringCta() {
 
         <div className="relative z-[1] px-7 py-12 md:px-12 md:py-14 lg:px-14 lg:py-16">
           <div className="max-w-[640px]">
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/50 bg-black/25 px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-[#fce6b8]">
-              <StarIcon size={11} className="text-[#fce6b8]" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand-pink/50 bg-black/25 px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-brand-pink-light">
+              <StarIcon size={11} className="text-brand-pink-light" />
               {cta.badge}
             </span>
 
             <h2 className="mt-5 text-[clamp(1.85rem,4.2vw,2.75rem)] font-extrabold leading-[1.1] tracking-[-0.03em] text-white text-balance [text-shadow:0_2px_18px_rgba(0,0,0,0.5)]">
               {cta.title}{" "}
-              <span className="text-[#fcd98a]">{cta.titleAccent}</span>
+              <span className="text-brand-cyan-accent">{cta.titleAccent}</span>
             </h2>
 
             <p className="mt-4 max-w-[520px] text-[16px] leading-[1.75] text-[#ece4dc] md:text-[17px]">
@@ -51,12 +51,18 @@ export function MenuCateringCta() {
             </p>
 
             <ul className="mt-6 space-y-3">
-              {cta.highlights.map((item) => (
+              {cta.highlights.map((item, index) => (
                 <li
                   key={item}
                   className="flex items-start gap-3 text-[15px] font-medium leading-[1.55] text-white md:text-[16px]"
                 >
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-gold/30 text-[#fce6b8]">
+                  <span
+                    className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${
+                      index % 2 === 1
+                        ? "bg-brand-cyan/30 text-brand-cyan-accent"
+                        : "bg-brand-pink/30 text-brand-pink-light"
+                    }`}
+                  >
                     <CheckIcon size={11} />
                   </span>
                   {item}
@@ -67,7 +73,7 @@ export function MenuCateringCta() {
             <div className="mt-8 flex flex-wrap gap-3.5">
               <Link
                 href={cta.primaryHref}
-                className="inline-block rounded-full bg-brand-gold px-7 py-3.5 text-[17px] font-extrabold !text-[#261e17] shadow-[0_10px_28px_rgba(0,0,0,0.28)] transition-all hover:-translate-y-0.5 hover:bg-[#f5b82e] hover:!text-[#1a1410]"
+                className="inline-block rounded-full bg-brand-pink px-7 py-3.5 text-[17px] font-extrabold !text-white shadow-[0_10px_28px_rgba(237,78,141,0.35)] transition-all hover:-translate-y-0.5 hover:bg-brand-pink-hover"
               >
                 {cta.primaryLabel}
               </Link>

@@ -7,8 +7,8 @@ const ACCENT = {
     tag: "text-brand-pink-dark",
   },
   gold: {
-    line: "bg-brand-gold/80",
-    tag: "text-brand-gold-dark",
+    line: "bg-brand-pink/80",
+    tag: "text-brand-pink-dark",
   },
   cyan: {
     line: "bg-brand-cyan/80",
@@ -18,7 +18,7 @@ const ACCENT = {
 
 type ShowcaseAccent = keyof typeof ACCENT;
 
-const DEFAULT_ACCENTS: ShowcaseAccent[] = ["pink", "gold", "pink", "gold"];
+const DEFAULT_ACCENTS: ShowcaseAccent[] = ["pink", "cyan", "pink", "cyan"];
 
 function ShowcaseTile({
   item,

@@ -14,7 +14,7 @@ export function Hero() {
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute -left-24 -top-24 h-[min(520px,90vw)] w-[min(520px,90vw)] rounded-full bg-[radial-gradient(circle,rgba(242,169,28,0.14),transparent_68%)]"
+        className="pointer-events-none absolute -left-24 -top-24 h-[min(520px,90vw)] w-[min(520px,90vw)] rounded-full bg-[radial-gradient(circle,rgba(237,78,141,0.12),transparent_68%)]"
         aria-hidden
       />
       <div
@@ -26,7 +26,7 @@ export function Hero() {
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-gold/30 to-transparent"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-pink/25 to-transparent"
         aria-hidden
       />
       <div
@@ -75,7 +75,7 @@ export function Hero() {
             </div>
             <div className="w-px bg-brand-divider/80" />
             <div>
-              <div className="home-hero-stat-value font-extrabold text-brand-gold-dark">Generous</div>
+              <div className="home-hero-stat-value font-extrabold text-brand-pink-dark">Generous</div>
               <div className="home-hero-stat-label mt-1.5">portions, every time</div>
             </div>
           </div>
@@ -103,7 +103,7 @@ export function Hero() {
             />
           </div>
 
-          <div className="absolute -right-3.5 -top-[18px] rotate-[5deg] rounded-2xl border border-white/30 bg-brand-gold px-[18px] py-3 text-[15px] font-extrabold tracking-[0.02em] text-white shadow-[0_12px_32px_rgba(242,169,28,0.38)]">
+          <div className="absolute -right-3.5 -top-[18px] rotate-[5deg] rounded-2xl border border-white/30 bg-brand-pink px-[18px] py-3 text-[15px] font-extrabold tracking-[0.02em] !text-white shadow-[0_12px_32px_rgba(237,78,141,0.38)]">
             Dirty Soda Bar
             <br />
             <span className="text-xs font-medium tracking-[0.06em] text-white/90">

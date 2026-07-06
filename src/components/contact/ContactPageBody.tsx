@@ -28,10 +28,10 @@ const METHOD_ICONS = {
 
 const METHOD_ACCENT = {
   gold: {
-    icon: "bg-brand-gold-light text-brand-gold-dark",
-    headline: "text-brand-gold-dark",
-    cta: "text-brand-gold-dark hover:text-brand-gold",
-    ring: "hover:ring-brand-gold/20",
+    icon: "bg-brand-pink-light text-brand-pink-dark",
+    headline: "text-brand-pink-dark",
+    cta: "text-brand-pink-dark hover:text-brand-pink",
+    ring: "hover:ring-brand-pink/20",
   },
   cyan: {
     icon: "bg-brand-cyan-light text-brand-cyan-dark",
@@ -54,13 +54,13 @@ function ContactMethodsSection() {
     <section className="border-t border-brand-border/60 bg-white px-7 py-20 md:py-24">
       <div className="mx-auto max-w-[1180px]">
         <header className="mb-12 max-w-[640px] md:mb-14">
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-gold-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-gold/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
+            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
             {section.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.5rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark text-balance">
             {section.title}{" "}
-            <span className="text-brand-gold-dark">{section.highlight}</span>
+            <span className="text-brand-pink-dark">{section.highlight}</span>
           </h2>
           <p className="mt-5 max-w-[52ch] text-[16px] leading-[1.72] text-brand-body md:text-[17px]">
             {section.description}
@@ -130,13 +130,13 @@ function ContactHoursAndFormSection() {
     <section className="border-t border-brand-border/60 bg-[linear-gradient(180deg,#fdf8f3_0%,#fff_50%,#fdf8f3_100%)] px-7 py-20 md:py-24">
       <div className="mx-auto grid max-w-[1180px] gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div>
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-gold-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-gold/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
+            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
             {form.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.35rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark">
             {form.title}{" "}
-            <span className="text-brand-gold-dark">{form.highlight}</span>
+            <span className="text-brand-pink-dark">{form.highlight}</span>
           </h2>
           <p className="mt-4 text-[16px] leading-[1.72] text-brand-body md:text-[17px]">
             {form.description}
@@ -217,13 +217,13 @@ function ContactHoursAndFormSection() {
         </div>
 
         <div>
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-gold-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-gold/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
+            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
             {hours.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.35rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark">
             {hours.title}{" "}
-            <span className="text-brand-gold-dark">{hours.highlight}</span>
+            <span className="text-brand-pink-dark">{hours.highlight}</span>
           </h2>
           <p className="mt-4 text-[16px] leading-[1.72] text-brand-body md:text-[17px]">
             {hours.note}
@@ -231,7 +231,7 @@ function ContactHoursAndFormSection() {
 
           <div className="mt-8 overflow-hidden rounded-[24px] border border-brand-card-border bg-white shadow-[0_12px_36px_rgba(52,36,47,0.06)]">
             <div className="flex items-center gap-3 border-b border-brand-border/60 bg-brand-bg px-6 py-4">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold-light text-brand-gold-dark">
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-cyan-light text-brand-cyan-dark">
                 <ClockIcon size={20} />
               </span>
               <p className="text-[16px] font-semibold text-brand-dark">
@@ -259,7 +259,7 @@ function ContactHoursAndFormSection() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 transition-opacity hover:opacity-80"
               >
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold-light text-brand-gold-dark">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-pink-light text-brand-pink-dark">
                   <MapPinIcon size={20} />
                 </span>
                 <div>
@@ -285,7 +285,7 @@ function ContactHoursAndFormSection() {
                 href={SITE.mapsHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 text-[16px] font-semibold text-brand-gold-dark transition-colors hover:text-brand-gold"
+                className="group inline-flex items-center gap-2 text-[16px] font-semibold text-brand-pink-dark transition-colors hover:text-brand-pink"
               >
                 Get directions
                 <ChevronRightIcon
@@ -306,7 +306,7 @@ function ContactMapCtaSection() {
 
   return (
     <section className="px-7 pb-16 pt-4 md:pb-20 md:pt-6">
-      <div className="relative mx-auto max-w-[1180px] overflow-hidden rounded-[28px] border border-brand-gold/35 bg-brand-footer pb-[70px] shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
+      <div className="relative mx-auto max-w-[1180px] overflow-hidden rounded-[28px] border border-brand-pink/35 bg-brand-footer pb-[70px] shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
         <Image
           src={cta.backgroundImage}
           alt=""
@@ -327,13 +327,13 @@ function ContactMapCtaSection() {
 
         <div className="relative z-[2] grid items-center gap-10 px-7 pt-8 md:grid-cols-[1.05fr_0.95fr] md:gap-12 md:px-10 md:pt-10 lg:px-12 lg:pt-12">
           <div>
-            <span className="inline-flex items-center rounded-full border border-brand-gold/50 bg-black/25 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-[#fce6b8]">
+            <span className="inline-flex items-center rounded-full border border-brand-pink/50 bg-black/25 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-pink-light">
               {cta.badge}
             </span>
 
             <h2 className="mt-5 text-[clamp(1.75rem,3.5vw,2.35rem)] font-extrabold leading-[1.12] tracking-[-0.03em] text-white text-balance [text-shadow:0_2px_20px_rgba(0,0,0,0.45)]">
               {cta.title}{" "}
-              <span className="text-[#fcd98a]">{cta.titleAccent}</span>
+              <span className="text-brand-pink-light">{cta.titleAccent}</span>
             </h2>
 
             <p className="mt-4 max-w-[520px] text-[16px] leading-[1.75] text-[#ece4dc] md:text-[17px]">
@@ -342,8 +342,8 @@ function ContactMapCtaSection() {
 
             <div className="mt-7 space-y-3">
               <p className="flex items-start gap-3 text-[16px] text-[#ece4dc] md:text-[17px]">
-                <MapPinIcon size={18} className="mt-0.5 shrink-0 text-[#fcd98a]" />
-                <AddressLink variant="on-dark" />
+                <MapPinIcon size={18} className="mt-0.5 shrink-0 text-brand-cyan-accent" />
+                <AddressLink variant="on-dark" className="hover:!text-brand-pink-light" />
               </p>
             </div>
 
@@ -352,7 +352,7 @@ function ContactMapCtaSection() {
                 href={cta.directionsHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-gold px-7 py-3.5 text-[16px] font-extrabold !text-[#261e17] shadow-[0_10px_28px_rgba(0,0,0,0.28)] transition-all hover:-translate-y-0.5 hover:bg-[#f5b82e] md:text-[17px]"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-pink px-7 py-3.5 text-[16px] font-extrabold !text-white shadow-[0_10px_28px_rgba(237,78,141,0.35)] transition-all hover:-translate-y-0.5 hover:bg-brand-pink-hover md:text-[17px]"
               >
                 {cta.directionsLabel}
               </Link>

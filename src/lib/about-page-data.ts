@@ -29,19 +29,19 @@ export const ABOUT_VALUES = {
     "Everything on our menu — and everything behind the counter — comes back to how we want this place to feel when you walk through the door.",
   items: [
     {
-      number: "01",
+      number: "1",
       title: "Made fresh, every day",
       description:
         "No heat lamps, no shortcuts. Sandwiches stacked, burgers smashed, and sodas poured the moment you order.",
     },
     {
-      number: "02",
+      number: "2",
       title: "Locally owned & independent",
       description:
         "Family-run on 3rd Street — invested in Downtown La Crosse, our neighbors, and the people who keep coming back.",
     },
     {
-      number: "03",
+      number: "3",
       title: "Welcoming to everyone",
       description:
         "Lunch regulars, families after school, first-time visitors — there's a seat, a sandwich, and a soda for all of you.",

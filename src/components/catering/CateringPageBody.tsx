@@ -18,7 +18,7 @@ import {
 import { SITE } from "@/lib/constants";
 
 const CATERING_LAYOUT = {
-  section: "px-7 py-24 md:py-28 lg:py-32",
+  section: "px-7 pt-[80px] pb-[80px]",
   divider: "border-t border-brand-border/60",
   inner: "mx-auto max-w-[1180px]",
   header: "mb-12 md:mb-16",
@@ -45,9 +45,9 @@ function cateringSectionClass(tone: CateringTone, { first = false } = {}) {
 
 const OCCASION_ACCENT = {
   gold: {
-    tag: "text-brand-gold-dark",
-    line: "bg-brand-gold/80",
-    ring: "hover:ring-brand-gold/15",
+    tag: "text-brand-pink-dark",
+    line: "bg-brand-pink/80",
+    ring: "hover:ring-brand-pink/15",
   },
   pink: {
     tag: "text-brand-pink-dark",
@@ -107,13 +107,13 @@ function CateringOccasionsSection() {
     <section className={cateringSectionClass("cream")}>
       <div className={CATERING_LAYOUT.inner}>
         <header className={`max-w-[640px] ${CATERING_LAYOUT.header}`}>
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-gold-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-gold/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
+            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
             {section.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.5rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark text-balance">
             {section.title}{" "}
-            <span className="text-brand-gold-dark">{section.highlight}</span>
+            <span className="text-brand-pink-dark">{section.highlight}</span>
           </h2>
           <p className="mt-4 max-w-[52ch] text-[16px] leading-[1.72] text-brand-body md:text-[17px]">
             {section.description}
@@ -132,9 +132,9 @@ function CateringOccasionsSection() {
 
 const PACKAGE_ACCENT = {
   gold: {
-    tag: "text-brand-gold-dark",
-    check: "bg-brand-gold-light text-brand-gold-dark",
-    ring: "hover:ring-brand-gold/20",
+    tag: "text-brand-pink-dark",
+    check: "bg-brand-pink-light text-brand-pink-dark",
+    ring: "hover:ring-brand-pink/20",
   },
   pink: {
     tag: "text-brand-pink-dark",
@@ -150,10 +150,10 @@ const PACKAGE_ACCENT = {
 
 const SIGNATURE_ACCENT = {
   gold: {
-    eyebrow: "text-[#fcd98a]",
-    line: "bg-[#fcd98a]/85",
-    headline: "text-brand-gold-dark",
-    ring: "group-hover:ring-brand-gold/25",
+    eyebrow: "text-brand-pink-light",
+    line: "bg-brand-pink/85",
+    headline: "text-brand-pink-dark",
+    ring: "group-hover:ring-brand-pink/25",
   },
   pink: {
     eyebrow: "text-brand-pink-light",
@@ -197,13 +197,13 @@ function CateringOpeningSection() {
         </div>
 
         <div className="order-1 lg:order-2">
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-gold-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-gold/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
+            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
             {opening.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.65rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark">
             {opening.title}{" "}
-            <span className="text-brand-gold-dark">{opening.highlight}</span>
+            <span className="text-brand-pink-dark">{opening.highlight}</span>
           </h2>
           {opening.paragraphs.map((paragraph) => (
             <p
@@ -236,13 +236,13 @@ function CateringPackagesSection() {
     <section className={cateringSectionClass("peach")}>
       <div className={CATERING_LAYOUT.inner}>
         <header className={`max-w-[640px] ${CATERING_LAYOUT.header}`}>
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-gold-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-gold/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
+            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
             {section.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.5rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark">
             {section.title}{" "}
-            <span className="text-brand-gold-dark">{section.highlight}</span>
+            <span className="text-brand-pink-dark">{section.highlight}</span>
           </h2>
           <p className="mt-5 max-w-[52ch] text-[16px] leading-[1.72] text-brand-body md:text-[17px]">
             {section.description}
@@ -344,14 +344,14 @@ function CateringSignatureSection() {
     <section className={cateringSectionClass("white")}>
       <div className={CATERING_LAYOUT.inner}>
         <header className={CATERING_LAYOUT.headerCentered}>
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-gold-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-gold/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
+            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
             {section.eyebrow}
-            <span className="h-px w-8 bg-brand-gold/80" aria-hidden />
+            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.65rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark text-balance">
             {section.title}{" "}
-            <span className="text-brand-gold-dark">{section.highlight}</span>
+            <span className="text-brand-pink-dark">{section.highlight}</span>
           </h2>
           <p className="mx-auto mt-5 max-w-[52ch] text-[16px] leading-[1.72] text-brand-body md:text-[17px]">
             {section.description}
@@ -378,24 +378,30 @@ function CateringProcessSection() {
     <section className={cateringSectionClass("peach")}>
       <div className={CATERING_LAYOUT.inner}>
         <header className={`mx-auto max-w-[640px] text-center ${CATERING_LAYOUT.header}`}>
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-gold-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-gold/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
+            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
             {section.eyebrow}
-            <span className="h-px w-8 bg-brand-gold/80" aria-hidden />
+            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.5rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark">
             {section.title}{" "}
-            <span className="text-brand-gold-dark">{section.highlight}</span>
+            <span className="text-brand-pink-dark">{section.highlight}</span>
           </h2>
         </header>
 
         <div className="grid gap-5 md:grid-cols-3 md:gap-6">
-          {CATERING_PROCESS.map((step) => (
+          {CATERING_PROCESS.map((step, index) => {
+            const stepBadgeClass =
+              index === 1
+                ? "bg-brand-cyan-light text-brand-cyan-dark group-hover:bg-brand-cyan group-hover:text-white"
+                : "bg-brand-pink-light text-brand-pink-dark group-hover:bg-brand-pink group-hover:text-white";
+
+            return (
             <article
               key={step.step}
               className="group flex flex-col rounded-[24px] border border-brand-card-border bg-white px-7 py-8 shadow-[0_12px_36px_rgba(52,36,47,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_44px_rgba(52,36,47,0.1)] md:px-8 md:py-9"
             >
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-gold-light text-[18px] font-extrabold text-brand-gold-dark transition-colors duration-300 group-hover:bg-brand-gold group-hover:text-[#261e17]">
+              <span className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl text-[18px] font-extrabold transition-colors duration-300 ${stepBadgeClass}`}>
                 {step.step}
               </span>
               <h3 className="mt-5 text-[1.25rem] font-extrabold leading-tight tracking-[-0.02em] text-brand-dark">
@@ -405,7 +411,8 @@ function CateringProcessSection() {
                 {step.description}
               </p>
             </article>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
@@ -424,6 +431,7 @@ function CateringSodaFeatureSection() {
       ctaHref={SITE.cateringEmail}
       image={feature.image}
       imageAlt={feature.imageAlt}
+      sectionPadding="standard"
     />
   );
 }
@@ -433,7 +441,7 @@ function CateringCtaSection() {
 
   return (
     <section className={`${CATERING_LAYOUT.divider} ${CATERING_TONES.peach} ${CATERING_LAYOUT.section}`}>
-      <div className={`${CATERING_LAYOUT.inner} relative overflow-hidden rounded-[28px] border border-brand-gold/35 bg-brand-footer pb-[70px] shadow-[0_24px_64px_rgba(50,39,30,0.22)]`}>
+      <div className={`${CATERING_LAYOUT.inner} relative overflow-hidden rounded-[28px] border border-brand-pink/35 bg-brand-footer pb-[70px] shadow-[0_24px_64px_rgba(50,39,30,0.22)]`}>
         <Image
           src={cta.backgroundImage}
           alt=""
@@ -443,19 +451,23 @@ function CateringCtaSection() {
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute inset-0 bg-black/55"
+          className="pointer-events-none absolute inset-0 bg-black/48"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/88 via-black/62 to-black/28"
           aria-hidden
         />
 
         <div className="relative z-[2] grid items-center gap-10 px-7 pt-8 md:grid-cols-[1.05fr_0.95fr] md:gap-12 md:px-10 md:pt-10 lg:px-12 lg:pt-12">
           <div>
-            <span className="inline-flex items-center rounded-full border border-brand-gold/50 bg-black/25 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-[#fce6b8]">
+            <span className="inline-flex items-center rounded-full border border-brand-pink/50 bg-black/25 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-pink-light">
               {cta.badge}
             </span>
 
             <h2 className="mt-5 text-[clamp(1.75rem,3.5vw,2.35rem)] font-extrabold leading-[1.12] tracking-[-0.03em] text-white text-balance [text-shadow:0_2px_20px_rgba(0,0,0,0.45)]">
               {cta.title}{" "}
-              <span className="text-[#fcd98a]">{cta.titleAccent}</span>
+              <span className="text-brand-cyan-accent">{cta.titleAccent}</span>
             </h2>
 
             <p className="mt-4 max-w-[560px] text-[16px] leading-[1.75] text-[#ece4dc] md:text-[17px]">
@@ -465,10 +477,10 @@ function CateringCtaSection() {
             <div className="mt-8 flex flex-wrap gap-3.5">
               <Link
                 href={cta.primaryHref}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-gold px-7 py-3.5 text-[16px] font-extrabold !text-[#261e17] shadow-[0_10px_28px_rgba(0,0,0,0.28)] transition-all hover:-translate-y-0.5 hover:bg-[#f5b82e] md:text-[17px]"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-pink px-7 py-3.5 text-[16px] font-extrabold !text-white shadow-[0_10px_28px_rgba(237,78,141,0.35)] transition-all hover:-translate-y-0.5 hover:bg-brand-pink-hover md:text-[17px]"
               >
                 {cta.primaryLabel}
-                <ChevronRightIcon size={17} className="text-[#261e17]" />
+                <ChevronRightIcon size={17} className="text-white" />
               </Link>
               <Link
                 href={cta.secondaryHref}

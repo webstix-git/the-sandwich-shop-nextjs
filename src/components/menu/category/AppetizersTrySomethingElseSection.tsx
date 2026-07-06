@@ -9,11 +9,11 @@ import {
 
 const ACCENT = {
   gold: {
-    tag: "text-brand-gold-dark",
-    line: "bg-brand-gold/80",
-    ring: "group-hover:ring-brand-gold/20",
-    arrow: "bg-brand-gold-light text-brand-gold-dark group-hover:bg-brand-gold group-hover:text-[#261e17]",
-    bar: "bg-brand-gold",
+    tag: "text-brand-pink-dark",
+    line: "bg-brand-pink/80",
+    ring: "group-hover:ring-brand-pink/20",
+    arrow: "bg-brand-pink-light text-brand-pink-dark group-hover:bg-brand-pink group-hover:text-white",
+    bar: "bg-brand-pink",
   },
   pink: {
     tag: "text-brand-pink-dark",

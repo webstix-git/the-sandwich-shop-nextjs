@@ -126,9 +126,15 @@ function MenuColumnHeader({
 
 function SignatureCard({
   item,
+  index,
 }: {
   item: (typeof MENU_SIGNATURE_FAVORITES)[number];
+  index: number;
 }) {
+  const accentText = index % 2 === 1 ? "text-brand-cyan-accent" : "text-brand-pink-light";
+  const accentLine = index % 2 === 1 ? "bg-brand-cyan-accent/85" : "bg-brand-pink-light/85";
+  const accentBorder = index % 2 === 1 ? "border-brand-cyan-accent/35" : "border-brand-pink-light/35";
+
   return (
     <Link href={item.href} className="group block">
       <article className="relative aspect-[16/10] overflow-hidden rounded-[20px] sm:aspect-[5/3]">
@@ -147,19 +153,19 @@ function SignatureCard({
         </div>
 
         <div className="absolute inset-x-0 bottom-0 z-[1] p-6 md:p-8">
-          <p className="flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#fcd98a]">
-            <span className="h-px w-7 bg-[#fcd98a]/85" aria-hidden />
+          <p className={`flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] ${accentText}`}>
+            <span className={`h-px w-7 ${accentLine}`} aria-hidden />
             {item.eyebrow}
           </p>
 
           <h3 className="mt-3 text-[clamp(1.55rem,3vw,2.05rem)] font-extrabold leading-[1.02] tracking-[-0.045em] text-white [text-shadow:0_2px_20px_rgba(0,0,0,0.55)]">
             {item.headline}
             {item.headlineAccent ? (
-              <span className="text-[#fcd98a]"> {item.headlineAccent}</span>
+              <span className={accentText}> {item.headlineAccent}</span>
             ) : null}
           </h3>
 
-          <p className="mt-3.5 max-w-[44ch] border-l-2 border-[#fcd98a]/35 pl-3.5 text-[13px] font-light leading-[1.78] tracking-[0.02em] text-white/76 md:mt-4 md:pl-4 md:text-[15px] md:leading-[1.72]">
+          <p className={`mt-3.5 max-w-[44ch] border-l-2 ${accentBorder} pl-3.5 text-[13px] font-light leading-[1.78] tracking-[0.02em] text-white/76 md:mt-4 md:pl-4 md:text-[15px] md:leading-[1.72]`}>
             {item.description}
           </p>
         </div>
@@ -179,8 +185,8 @@ export function MenuPageBody() {
         style={{ scrollMarginTop: menuSectionScrollMt }}
       >
         <header className="mb-8 md:mb-10">
-          <p className="inline-flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-gold-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-gold/80" aria-hidden />
+          <p className="inline-flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
+            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
             {MENU_SIGNATURE_SECTION.eyebrow}
           </p>
           <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
@@ -194,8 +200,8 @@ export function MenuPageBody() {
         </header>
 
         <div className="grid gap-5 md:grid-cols-2 md:gap-6">
-          {MENU_SIGNATURE_FAVORITES.map((item) => (
-            <SignatureCard key={item.name} item={item} />
+          {MENU_SIGNATURE_FAVORITES.map((item, index) => (
+            <SignatureCard key={item.name} item={item} index={index} />
           ))}
         </div>
       </section>
@@ -261,9 +267,9 @@ export function MenuPageBody() {
           ))}
         </div>
 
-        <p className="mx-auto mb-10 max-w-[760px] rounded-2xl border border-brand-gold/35 bg-brand-gold-light/50 px-6 py-4 text-center text-[17px] font-semibold leading-relaxed text-brand-dark shadow-[0_4px_18px_rgba(242,169,28,0.12)] md:mb-12 md:px-8 md:py-5 md:text-[20px]">
+        <p className="mx-auto mb-10 max-w-[760px] rounded-2xl border border-brand-pink/35 bg-brand-pink-light/50 px-6 py-4 text-center text-[17px] font-semibold leading-relaxed text-brand-dark shadow-[0_4px_18px_rgba(237,78,141,0.12)] md:mb-12 md:px-8 md:py-5 md:text-[20px]">
           {MENU_HASH_BROWNS_NOTE.replace("$1.50", "")}
-          <span className="font-extrabold text-brand-gold-dark">$1.50</span>
+          <span className="font-extrabold text-brand-pink-dark">$1.50</span>
         </p>
 
         <MenuGalleryCarousel />

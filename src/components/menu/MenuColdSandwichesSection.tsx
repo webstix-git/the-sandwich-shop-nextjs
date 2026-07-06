@@ -76,7 +76,7 @@ function ColdSandwichRow({ item }: { item: ColdSandwichItem }) {
   return (
     <li className="px-4 py-5 md:px-6 md:py-5">
       <p className="text-[18px] font-bold leading-snug text-brand-dark md:text-[19px]">
-        <span className="mr-1.5 tabular-nums text-brand-gold-dark">{item.number}.</span>
+        <span className={`mr-1.5 tabular-nums ${item.number % 2 === 0 ? "text-brand-pink-dark" : "text-brand-cyan-dark"}`}>{item.number}.</span>
         {item.name}
       </p>
       {item.description ? (
@@ -113,7 +113,7 @@ function ColdSandwichExtraRow({
     <li className="px-4 py-5 md:px-6 md:py-5">
       <div className="flex items-baseline gap-2.5">
         <span className="text-[18px] font-bold leading-snug text-brand-dark md:text-[19px]">
-          <span className="mr-1.5 tabular-nums text-brand-gold-dark">{number}.</span>
+          <span className={`mr-1.5 tabular-nums ${number % 2 === 0 ? "text-brand-pink-dark" : "text-brand-cyan-dark"}`}>{number}.</span>
           {name}
         </span>
         <MenuDottedRule />
@@ -267,14 +267,14 @@ export function MenuColdSandwichesSection({
 
       <div className="overflow-hidden rounded-2xl border border-[#E5D4C4] bg-white/55 shadow-[0_6px_24px_rgba(52,36,47,0.04)]">
         <div className="hidden border-b border-[#E5D4C4] bg-brand-cream/25 px-6 py-4 sm:block md:px-8">
-          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-brand-gold-dark">
+          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-brand-pink-dark">
             Bread sizes
           </p>
           <BreadSizeLegend />
         </div>
 
         <div className="border-b border-[#E5D4C4] px-4 py-4 sm:hidden">
-          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-brand-gold-dark">
+          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-brand-pink-dark">
             Bread sizes
           </p>
           <BreadSizeLegend compact />
@@ -287,7 +287,7 @@ export function MenuColdSandwichesSection({
         </ul>
 
         <div className="border-t border-[#E5D4C4] bg-brand-cream/20">
-          <p className="border-b border-[#E5D4C4] px-4 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-brand-gold-dark md:px-6">
+          <p className="border-b border-[#E5D4C4] px-4 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-brand-pink-dark md:px-6">
             Also available
           </p>
           <ul className="divide-y divide-[#E5D4C4]">

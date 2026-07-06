@@ -36,12 +36,12 @@ export function Header() {
           <Image
             src="/images/logo.png"
             alt="The Sandwich Shop & Dirty Soda Bar logo"
-            width={135}
-            height={135}
+            width={160}
+            height={160}
             className={`rounded-full object-cover transition-all duration-300 ease-out ${
               isPinned
-                ? "h-[75px] w-[75px] border-0 shadow-[0_4px_14px_rgba(237,78,141,0.22)]"
-                : "h-[88px] w-[88px] border-0 shadow-[0_6px_18px_rgba(237,78,141,0.28)] md:h-[135px] md:w-[135px]"
+                ? "h-[90px] w-[90px] border-0 shadow-[0_4px_14px_rgba(237,78,141,0.22)]"
+                : "h-[104px] w-[104px] border-0 shadow-[0_6px_18px_rgba(237,78,141,0.28)] md:h-[160px] md:w-[160px]"
             }`}
             priority
           />
@@ -54,7 +54,7 @@ export function Header() {
             href="/our-menu"
             className="hidden shrink-0 rounded-full bg-brand-pink px-6 py-3 text-base font-semibold !text-white shadow-[0_6px_18px_rgba(237,78,141,0.4)] transition-all duration-300 ease-out hover:-translate-y-px hover:bg-brand-pink-hover hover:!text-white sm:inline-block"
           >
-            See the Menu
+            View Our Menu
           </Link>
 
           <button
@@ -98,7 +98,7 @@ export function Header() {
               onClick={() => setMobileOpen(false)}
               className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-brand-pink px-6 py-3 text-center text-base font-semibold !text-white shadow-[0_6px_18px_rgba(237,78,141,0.4)] hover:!text-white"
             >
-              See the Menu
+              View Our Menu
               <ChevronRightIcon size={16} />
             </Link>
           </div>

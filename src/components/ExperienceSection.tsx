@@ -20,7 +20,7 @@ export function ExperienceSection() {
     <section id="experience" className="border-t border-brand-border/60 bg-brand-warm-cream px-7 py-20 md:py-24">
       <div className="mx-auto max-w-[1180px]">
         <div className="mb-12 text-center">
-          <div className="mb-2.5 text-base font-semibold uppercase tracking-[1.5px] text-brand-gold">
+          <div className="mb-2.5 text-base font-semibold uppercase tracking-[1.5px] text-brand-pink-dark">
             Why visit us
           </div>
           <h2 className="text-[clamp(1.875rem,4vw,2.625rem)] font-extrabold tracking-[-0.3px] text-brand-dark">

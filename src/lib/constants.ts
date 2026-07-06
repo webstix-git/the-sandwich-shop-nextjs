@@ -17,7 +17,7 @@ export const MENU_ITEMS = [
     image: "/images/smash-burger.jpg",
     alt: "BBQ brisket smash burger on a brioche bun",
     tag: "Smashed to order",
-    tagColor: "text-brand-gold",
+    tagColor: "text-brand-cyan-dark",
     title: "Smash Burgers",
     description:
       "Crispy-edged smash patties stacked with melty cheese, brisket and house sauces on a pillowy bun.",
@@ -68,10 +68,10 @@ export const EXPERIENCE_HIGHLIGHTS = [
     description:
       "Subs piled with the good stuff and smash burgers that don't skimp. Come hungry — you'll leave satisfied.",
     icon: "heart",
-    iconBg: "bg-brand-gold-light",
-    iconColor: "text-brand-gold-dark",
-    accent: "text-brand-gold",
-    glow: "bg-brand-gold",
+    iconBg: "bg-brand-cyan-light",
+    iconColor: "text-brand-cyan-dark",
+    accent: "text-brand-cyan-dark",
+    glow: "bg-brand-cyan",
   },
   {
     eyebrow: "The soda bar",

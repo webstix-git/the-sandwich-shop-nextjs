@@ -7,9 +7,9 @@ import {
 
 const ACCENT = {
   gold: {
-    tag: "text-brand-gold-dark",
-    line: "bg-brand-gold/80",
-    ring: "hover:ring-brand-gold/15",
+    tag: "text-brand-pink-dark",
+    line: "bg-brand-pink/80",
+    ring: "hover:ring-brand-pink/15",
   },
   pink: {
     tag: "text-brand-pink-dark",
@@ -72,7 +72,7 @@ export function AppetizersHighlightsSection({
       })}
     >
       <div
-        className="pointer-events-none absolute -left-16 top-20 h-56 w-56 rounded-full bg-brand-gold/8 blur-3xl"
+        className="pointer-events-none absolute -left-16 top-20 h-56 w-56 rounded-full bg-brand-pink/8 blur-3xl"
         aria-hidden
       />
       <div
@@ -82,13 +82,13 @@ export function AppetizersHighlightsSection({
 
       <div className={`relative ${CATEGORY_PAGE_LAYOUT.inner}`}>
         <header className={`max-w-[580px] ${CATEGORY_PAGE_LAYOUT.header}`}>
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-gold-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-gold/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
+            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
             Highlights
           </p>
           <h2 className="mt-4 text-[clamp(1.65rem,3vw,2.25rem)] font-extrabold leading-[1.08] tracking-[-0.04em] text-brand-dark text-balance">
             What makes this{" "}
-            <span className="text-brand-gold-dark">category special.</span>
+            <span className="text-brand-cyan-dark">category special.</span>
           </h2>
           <p className="mt-4 text-[16px] leading-[1.72] text-brand-body">
             Four starters fried fresh and made to order — simple, generous, and

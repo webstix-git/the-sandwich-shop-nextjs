@@ -51,7 +51,7 @@ export function AddressLink({
 }) {
   const darkClass =
     variant === "on-dark"
-      ? "text-white hover:!text-[#fcd98a] decoration-white/40"
+      ? "font-semibold !text-white hover:!text-brand-pink-light decoration-white/40 underline-offset-[3px]"
       : linkClassName;
 
   return (

@@ -21,12 +21,74 @@ type PageIntroHeroProps = {
   description?: string;
   breadcrumbParent?: { label: string; href: string };
   imageLayout?: "contain" | "cover";
+  /** @deprecated Use heroOverlay="solid" instead */
   solidOverlay?: boolean;
+  heroOverlay?: "default" | "solid" | "premium";
+  imagePosition?: string;
   breadcrumbClassName?: string;
   children?: ReactNode;
 };
 
 const DEFAULT_BREADCRUMB_CLASSNAME = BREADCRUMB_LIST_CLASSNAME;
+
+function HeroOverlay({
+  imageLayout,
+  overlay,
+}: {
+  imageLayout: "contain" | "cover";
+  overlay: "default" | "solid" | "premium";
+}) {
+  if (overlay === "solid") {
+    return (
+      <div
+        className="pointer-events-none absolute inset-0 bg-black/55"
+        aria-hidden
+      />
+    );
+  }
+
+  if (overlay === "premium" && imageLayout === "cover") {
+    return (
+      <>
+        <div
+          className="pointer-events-none absolute inset-0 bg-black/42"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/92 via-black/62 to-black/22"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/48 via-black/10 to-black/20"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_18%_50%,rgba(0,0,0,0.35),transparent_58%)]"
+          aria-hidden
+        />
+      </>
+    );
+  }
+
+  return (
+    <>
+      <div
+        className={`pointer-events-none absolute inset-0 ${
+          imageLayout === "cover" ? "bg-black/48" : "bg-black/42"
+        }`}
+        aria-hidden
+      />
+      <div
+        className={`pointer-events-none absolute inset-0 ${
+          imageLayout === "cover"
+            ? "bg-gradient-to-r from-black/82 via-black/55 to-black/25"
+            : "bg-gradient-to-r from-black/72 via-black/38 to-black/10"
+        }`}
+        aria-hidden
+      />
+    </>
+  );
+}
 
 export function PageIntroHero({
   intro,
@@ -35,10 +97,13 @@ export function PageIntroHero({
   breadcrumbParent,
   imageLayout = "contain",
   solidOverlay = false,
+  heroOverlay,
+  imagePosition = "center_42%",
   breadcrumbClassName = DEFAULT_BREADCRUMB_CLASSNAME,
   children,
 }: PageIntroHeroProps) {
   const isCover = imageLayout === "cover";
+  const overlay = heroOverlay ?? (solidOverlay ? "solid" : "default");
 
   return (
     <>
@@ -52,7 +117,8 @@ export function PageIntroHero({
             alt=""
             fill
             sizes="100vw"
-            className="object-cover object-[center_42%]"
+            className="object-cover"
+            style={{ objectPosition: imagePosition.replace(/_/g, " ") }}
             priority
             unoptimized
             aria-hidden
@@ -72,26 +138,7 @@ export function PageIntroHero({
           </div>
         )}
 
-        <div
-          className={`pointer-events-none absolute inset-0 ${
-            solidOverlay
-              ? "bg-black/55"
-              : isCover
-                ? "bg-black/48"
-                : "bg-black/42"
-          }`}
-          aria-hidden
-        />
-        {!solidOverlay ? (
-          <div
-            className={`pointer-events-none absolute inset-0 ${
-              isCover
-                ? "bg-gradient-to-r from-black/82 via-black/55 to-black/25"
-                : "bg-gradient-to-r from-black/72 via-black/38 to-black/10"
-            }`}
-            aria-hidden
-          />
-        ) : null}
+        <HeroOverlay imageLayout={imageLayout} overlay={overlay} />
 
         <div className="relative z-[1] mx-auto flex h-full max-w-[1240px] items-center px-7 sm:px-8 md:px-10 lg:px-12">
           <div className="w-full max-w-[600px]">

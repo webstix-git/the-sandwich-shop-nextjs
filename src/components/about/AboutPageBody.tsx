@@ -41,13 +41,13 @@ function AboutFeatureSection() {
         </div>
 
         <div className="order-1 lg:order-2">
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-gold-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-gold/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
+            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
             {feature.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.5rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark">
             {feature.title}{" "}
-            <span className="text-brand-gold-dark">{feature.highlight}</span>
+            <span className="text-brand-pink-dark">{feature.highlight}</span>
           </h2>
           {feature.paragraphs.map((paragraph) => (
             <p
@@ -80,13 +80,13 @@ function AboutValuesSection() {
     <section className="border-t border-brand-border/60 bg-brand-warm-cream px-7 py-20 md:py-24">
       <div className="mx-auto max-w-[1180px]">
         <div className="mx-auto max-w-[640px] text-center">
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-gold-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-gold/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
+            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
             {values.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.5rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark text-balance">
             {values.title}{" "}
-            <span className="text-brand-gold-dark">{values.highlight}</span>
+            <span className="text-brand-pink-dark">{values.highlight}</span>
           </h2>
           <p className="mt-5 text-[16px] leading-[1.72] text-brand-nav md:text-[17px]">
             {values.description}
@@ -94,13 +94,19 @@ function AboutValuesSection() {
         </div>
 
         <div className="mt-12 grid gap-5 md:mt-14 md:grid-cols-3 md:gap-6">
-          {values.items.map((item) => (
+          {values.items.map((item, index) => {
+            const numberClass =
+              index === 1
+                ? "bg-brand-cyan-light text-brand-cyan-dark"
+                : "bg-brand-pink-light text-brand-pink-dark";
+
+            return (
             <article
               key={item.number}
               className="group flex flex-col rounded-[24px] border border-brand-card-border bg-white px-7 py-8 shadow-[0_12px_36px_rgba(52,36,47,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_44px_rgba(52,36,47,0.1)] md:px-8 md:py-9"
             >
               <div className="mb-5 flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-gold-light text-[13px] font-extrabold tracking-[0.04em] text-brand-gold-dark">
+                <span className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-[13px] font-extrabold tracking-[0.04em] ${numberClass}`}>
                   {item.number}
                 </span>
                 <span className="h-px flex-1 bg-brand-border/70" aria-hidden />
@@ -112,7 +118,8 @@ function AboutValuesSection() {
                 {item.description}
               </p>
             </article>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
@@ -135,27 +142,33 @@ function AboutPhilosophySection() {
 
       <div className="relative mx-auto grid max-w-[1180px] items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
         <div>
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-gold-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-gold/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
+            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
             {philosophy.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.5rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark text-balance">
             {philosophy.title}{" "}
-            <span className="text-brand-gold-dark">{philosophy.highlight}</span>
+            <span className="text-brand-pink-dark">{philosophy.highlight}</span>
           </h2>
           <p className="mt-5 max-w-[54ch] text-[16px] leading-[1.75] text-brand-body md:text-[17px]">
             {philosophy.intro}
           </p>
 
           <ul className="mt-9 space-y-5 md:mt-10">
-            {philosophy.principles.map((principle, index) => (
+            {philosophy.principles.map((principle, index) => {
+              const numberClass =
+                index === 1
+                  ? "bg-brand-cyan-light text-brand-cyan-dark"
+                  : "bg-brand-pink-light text-brand-pink-dark";
+
+              return (
               <li
                 key={principle.label}
                 className="rounded-[20px] border border-brand-card-border bg-brand-warm-cream px-5 py-5 shadow-[0_8px_28px_rgba(52,36,47,0.05)] md:px-6 md:py-5"
               >
                 <div className="flex items-start gap-4">
-                  <span className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-gold-light text-[12px] font-extrabold text-brand-gold-dark">
-                    {String(index + 1).padStart(2, "0")}
+                  <span className={`mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-[12px] font-extrabold ${numberClass}`}>
+                    {index + 1}
                   </span>
                   <div>
                     <h3 className="text-[17px] font-extrabold tracking-[-0.02em] text-brand-dark md:text-[18px]">
@@ -167,7 +180,8 @@ function AboutPhilosophySection() {
                   </div>
                 </div>
               </li>
-            ))}
+              );
+            })}
           </ul>
         </div>
 
@@ -185,7 +199,7 @@ function AboutPhilosophySection() {
               aria-hidden
             />
             <div className="absolute inset-x-0 bottom-0 p-7 md:p-8">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#fcd98a]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-brand-pink-light">
                 The Sandwich Shop &amp; Dirty Soda Bar
               </p>
               <p className="mt-2 max-w-[28ch] text-[clamp(1.25rem,2.5vw,1.5rem)] font-extrabold leading-[1.15] tracking-[-0.03em] text-white [text-shadow:0_2px_16px_rgba(0,0,0,0.4)]">
@@ -200,7 +214,7 @@ function AboutPhilosophySection() {
             rel="noopener noreferrer"
             className="absolute -bottom-4 -left-3 hidden rounded-2xl border-4 border-white bg-brand-footer px-5 py-4 shadow-[0_14px_36px_rgba(52,36,47,0.18)] transition-transform hover:-translate-y-0.5 sm:block md:-bottom-5 md:-left-5"
           >
-            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#fcd98a]">
+            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-brand-pink-light">
               Locally owned
             </p>
             <p className="mt-1 text-[16px] font-extrabold leading-tight text-white">
@@ -215,12 +229,12 @@ function AboutPhilosophySection() {
 
 const SIGNATURE_ACCENT_STYLES = {
   gold: {
-    eyebrow: "text-[#fcd98a]",
-    line: "bg-[#fcd98a]/85",
-    headline: "text-brand-gold-dark",
-    cta: "text-brand-gold-dark group-hover:text-brand-gold",
-    ctaCircle: "bg-brand-gold-light text-brand-gold-dark group-hover:bg-brand-gold group-hover:text-[#261e17]",
-    ring: "group-hover:ring-brand-gold/25",
+    eyebrow: "text-brand-pink-light",
+    line: "bg-brand-pink/85",
+    headline: "text-brand-pink-dark",
+    cta: "text-brand-pink-dark group-hover:text-brand-pink",
+    ctaCircle: "bg-brand-pink-light text-brand-pink-dark group-hover:bg-brand-pink group-hover:text-white",
+    ring: "group-hover:ring-brand-pink/25",
   },
   cyan: {
     eyebrow: "text-brand-cyan-light",
@@ -320,14 +334,14 @@ function AboutSignatureSection() {
 
       <div className="relative mx-auto max-w-[1180px]">
         <header className="mx-auto mb-12 max-w-[680px] text-center md:mb-14">
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-gold-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-gold/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
+            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
             {section.eyebrow}
-            <span className="h-px w-8 bg-brand-gold/80" aria-hidden />
+            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.65rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark text-balance">
             {section.title}{" "}
-            <span className="text-brand-gold-dark">{section.highlight}</span>
+            <span className="text-brand-pink-dark">{section.highlight}</span>
           </h2>
           <p className="mx-auto mt-5 max-w-[52ch] text-[16px] leading-[1.72] text-brand-nav md:text-[17px]">
             {section.description}
@@ -365,7 +379,7 @@ function AboutCtaSection() {
 
   return (
     <section className="border-t border-brand-border/60 bg-brand-warm-cream px-7 pb-16 pt-4 md:pb-20 md:pt-6">
-      <div className="relative mx-auto max-w-[1180px] overflow-hidden rounded-[28px] border border-brand-gold/35 bg-brand-footer pb-[70px] shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
+      <div className="relative mx-auto max-w-[1180px] overflow-hidden rounded-[28px] border border-brand-pink/35 bg-brand-footer pb-[70px] shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
         <Image
           src={cta.backgroundImage}
           alt=""
@@ -386,13 +400,13 @@ function AboutCtaSection() {
 
         <div className="relative z-[2] grid items-center gap-10 px-7 pt-8 md:grid-cols-[1.05fr_0.95fr] md:gap-12 md:px-10 md:pt-10 lg:px-12 lg:pt-12">
           <div>
-            <span className="inline-flex items-center rounded-full border border-brand-gold/50 bg-black/25 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-[#fce6b8]">
+            <span className="inline-flex items-center rounded-full border border-brand-pink/50 bg-black/25 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-pink-light">
               {cta.badge}
             </span>
 
             <h2 className="mt-5 text-[clamp(1.75rem,3.5vw,2.35rem)] font-extrabold leading-[1.12] tracking-[-0.03em] text-white text-balance [text-shadow:0_2px_20px_rgba(0,0,0,0.45)]">
               {cta.title}{" "}
-              <span className="text-[#fcd98a]">{cta.titleAccent}</span>
+              <span className="text-brand-cyan-accent">{cta.titleAccent}</span>
             </h2>
 
             <p className="mt-4 max-w-[560px] text-[16px] leading-[1.75] text-[#ece4dc] md:text-[17px]">
@@ -401,15 +415,18 @@ function AboutCtaSection() {
 
             <div className="mt-7 space-y-4">
               <div className="flex items-start gap-3">
-                <MapPinIcon size={18} className="mt-0.5 shrink-0 text-[#fcd98a]" />
-                <AddressLink variant="on-dark" />
+                <MapPinIcon size={18} className="mt-0.5 shrink-0 text-brand-pink-light" />
+                <AddressLink
+                  variant="on-dark"
+                  className="text-[16px] leading-relaxed md:text-[17px]"
+                />
               </div>
               <div className="flex items-start gap-3">
-                <PhoneIcon size={18} className="mt-0.5 shrink-0 text-[#fcd98a]" />
-                <PhoneLink variant="on-dark" className="text-[16px] md:text-[17px]" />
+                <PhoneIcon size={18} className="mt-0.5 shrink-0 text-brand-cyan-accent" />
+                <PhoneLink variant="on-dark" className="text-[16px] hover:!text-brand-cyan-accent md:text-[17px]" />
               </div>
               <div className="flex items-start gap-3">
-                <ClockIcon size={18} className="mt-0.5 shrink-0 text-[#fcd98a]" />
+                <ClockIcon size={18} className="mt-0.5 shrink-0 text-brand-cyan-accent" />
                 <div className="text-[16px] text-[#ece4dc] md:text-[17px]">
                   {HOURS.map((row) => (
                     <p key={row.day}>
@@ -424,7 +441,7 @@ function AboutCtaSection() {
             <div className="mt-8 flex flex-wrap gap-3.5">
               <Link
                 href={cta.primaryHref}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-gold px-7 py-3.5 text-[16px] font-extrabold !text-[#261e17] shadow-[0_10px_28px_rgba(0,0,0,0.28)] transition-all hover:-translate-y-0.5 hover:bg-[#f5b82e] md:text-[17px]"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-pink px-7 py-3.5 text-[16px] font-extrabold !text-white shadow-[0_10px_28px_rgba(237,78,141,0.35)] transition-all hover:-translate-y-0.5 hover:bg-brand-pink-hover md:text-[17px]"
               >
                 {cta.primaryLabel}
               </Link>
