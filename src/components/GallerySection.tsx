@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { GALLERY_IMAGES, type GalleryImage } from "@/lib/constants";
 import { foodImageClassName } from "@/lib/dessert-cups-image";
+import { HomeSectionEyebrow } from "@/components/HomeSectionEyebrow";
 import { ChevronLeftIcon, ChevronRightIcon, CloseIcon } from "./icons";
 
 const CLOSE_DURATION_MS = 220;
@@ -167,9 +168,9 @@ export function GallerySection() {
       <section id="gallery" className="border-t border-brand-border/60 bg-white px-7 py-20 md:py-24">
         <div className="mx-auto max-w-[1280px]">
           <div className="mb-10 text-center md:mb-12">
-            <div className="mb-2.5 text-base font-semibold uppercase tracking-[1.5px] text-brand-cyan">
+            <HomeSectionEyebrow accent="cyan" className="mb-4">
               Straight from the shop
-            </div>
+            </HomeSectionEyebrow>
             <h2 className="text-[clamp(1.875rem,4vw,2.625rem)] font-extrabold tracking-[-0.3px] text-brand-dark">
               A taste of the gallery
             </h2>
@@ -191,15 +192,13 @@ export function GallerySection() {
               <button
                 type="button"
                 onClick={() => setShowAll((expanded) => !expanded)}
-                className="group inline-flex items-center gap-2.5 rounded-full border-2 border-brand-dark/15 bg-white px-8 py-3.5 text-[16px] font-bold text-brand-dark shadow-[0_8px_24px_rgba(52,36,47,0.08)] transition-all hover:-translate-y-0.5 hover:border-brand-pink/30 hover:bg-brand-blush hover:text-brand-pink md:text-[17px]"
+                className="inline-flex items-center gap-2.5 rounded-full bg-white px-7 py-3 text-[16px] font-bold text-brand-dark shadow-[0_10px_24px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-0.5 hover:bg-brand-cream md:text-[17px]"
                 aria-expanded={showAll}
               >
                 {showAll ? "Show Less" : "View More Gallery"}
                 <ChevronRightIcon
                   size={17}
-                  className={`transition-transform duration-200 group-hover:translate-x-0.5 ${
-                    showAll ? "rotate-90" : ""
-                  }`}
+                  className={showAll ? "rotate-90" : ""}
                 />
               </button>
             </div>

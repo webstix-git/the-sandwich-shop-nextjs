@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SodaFlavorIcon } from "@/components/icons";
-import { SODA_FLAVORS } from "@/lib/constants";
+import { HomeSectionEyebrow } from "@/components/HomeSectionEyebrow";
+import { SodaFlavorChips } from "@/components/SodaFlavorChips";
 
 const BUBBLES = [
   { left: "5%", size: 14, animation: "rise", duration: "3.2s", delay: "0s" },
@@ -106,27 +106,17 @@ export function SodaBarSection({
         </div>
 
         <div>
-          <div className="mb-3 text-base font-semibold uppercase tracking-[1.5px] text-white/90">
+          <HomeSectionEyebrow accent="cyan" onDark className="soda-bar-copy mb-4">
             {eyebrow}
-          </div>
-          <h2 className="mb-4 text-[clamp(2rem,4.5vw,2.875rem)] font-extrabold leading-[1.05] tracking-[-0.4px] text-white">
+          </HomeSectionEyebrow>
+          <h2 className="soda-bar-title mb-4 text-[clamp(2rem,4.5vw,2.875rem)] font-extrabold leading-[1.05] tracking-[-0.4px] text-white">
             {title}
           </h2>
-          <p className="mb-6 max-w-[540px] text-lg leading-relaxed text-white/90 md:text-[19px]">
+          <p className="soda-bar-copy mb-6 max-w-[540px] text-lg leading-relaxed text-white md:text-[19px]">
             {description}
           </p>
 
-          <div className="mb-8 flex flex-wrap gap-2.5">
-            {SODA_FLAVORS.map((flavor) => (
-              <span
-                key={flavor.name}
-                className="inline-flex items-center gap-1.5 rounded-full border border-white/40 bg-white/18 px-[18px] py-2.5 text-[15px] font-medium text-white"
-              >
-                <SodaFlavorIcon icon={flavor.icon} />
-                {flavor.name}
-              </span>
-            ))}
-          </div>
+          <SodaFlavorChips className="mb-8" />
 
           <Link
             href={ctaHref}

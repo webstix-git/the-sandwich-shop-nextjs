@@ -1,5 +1,4 @@
 import type { MenuNavIconKey } from "@/components/menu/menu-icons";
-import { SITE } from "@/lib/constants";
 
 export type MenuTextItem = {
   name: string;
@@ -413,6 +412,6 @@ export const MENU_CATERING_CTA = {
   primaryLabel: "Explore Catering",
   primaryHref: "/services/catering-services",
   secondaryLabel: "Request a Quote",
-  secondaryHref: SITE.cateringEmail,
+  secondaryHref: "/contact-us",
   backgroundImage: "/images/catering-cta-event.jpg",
 } as const;

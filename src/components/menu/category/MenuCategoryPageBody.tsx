@@ -2,14 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRightIcon, SodaFlavorIcon } from "@/components/icons";
+import { ChevronRightIcon } from "@/components/icons";
 import { MenuColdSandwichesSection } from "@/components/menu/MenuColdSandwichesSection";
 import { AppetizersHighlightsSection } from "@/components/menu/category/AppetizersHighlightsSection";
 import { AppetizersTrySomethingElseSection } from "@/components/menu/category/AppetizersTrySomethingElseSection";
 import { CategoryHighlightsSection } from "@/components/menu/category/CategoryHighlightsSection";
 import { MenuCategoryShowcaseGallery } from "@/components/menu/category/MenuCategoryShowcaseGallery";
 import { MenuPremiumItemList } from "@/components/menu/category/MenuPremiumItemList";
-import { SODA_FLAVORS } from "@/lib/constants";
+import { SodaFlavorChips } from "@/components/SodaFlavorChips";
 import { MENU_HASH_BROWNS_NOTE } from "@/lib/menu-page-data";
 import type {
   MenuCategoryEditorial,
@@ -301,17 +301,7 @@ export function MenuCategoryPageBody({ page }: { page: MenuCategoryPageData }) {
               </p>
             </header>
 
-            <div className="flex flex-wrap justify-center gap-2.5 md:gap-3">
-              {SODA_FLAVORS.map((flavor) => (
-                <span
-                  key={flavor.name}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-brand-cyan/25 bg-brand-cyan-light/40 px-5 py-2.5 text-[15px] font-semibold text-brand-cyan-dark"
-                >
-                  <SodaFlavorIcon icon={flavor.icon} />
-                  {flavor.name}
-                </span>
-              ))}
-            </div>
+            <SodaFlavorChips tone="light" showLabel={false} className="mx-auto max-w-[920px]" />
           </div>
         </section>
       ) : null}

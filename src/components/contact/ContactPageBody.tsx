@@ -127,7 +127,10 @@ function ContactHoursAndFormSection() {
     "w-full rounded-2xl border border-brand-border/80 bg-white px-4 py-3.5 text-[16px] text-brand-dark shadow-[0_2px_8px_rgba(52,36,47,0.04)] outline-none transition-all placeholder:text-brand-subtle focus:border-brand-pink/50 focus:shadow-[0_4px_16px_rgba(237,78,141,0.12)]";
 
   return (
-    <section className="border-t border-brand-border/60 bg-[linear-gradient(180deg,#fdf8f3_0%,#fff_50%,#fdf8f3_100%)] px-7 py-20 md:py-24">
+    <section
+      id="send-message"
+      className="border-t border-brand-border/60 bg-[linear-gradient(180deg,#fdf8f3_0%,#fff_50%,#fdf8f3_100%)] px-7 py-20 md:py-24"
+    >
       <div className="mx-auto grid max-w-[1180px] gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div>
           <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">

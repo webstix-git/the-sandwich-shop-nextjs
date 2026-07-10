@@ -9,31 +9,6 @@ export function Hero() {
       id="top"
       className="relative z-30 overflow-hidden bg-[#fffaf4]"
     >
-      <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#fff9f5] via-[#fff3e4] to-[#fde8f0]/55"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute -left-24 -top-24 h-[min(520px,90vw)] w-[min(520px,90vw)] rounded-full bg-[radial-gradient(circle,rgba(237,78,141,0.12),transparent_68%)]"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute -bottom-28 -right-20 h-[min(460px,85vw)] w-[min(460px,85vw)] rounded-full bg-[radial-gradient(circle,rgba(237,78,141,0.11),transparent_70%)]"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute right-[22%] top-[14%] h-36 w-36 rounded-full bg-[radial-gradient(circle,rgba(35,191,216,0.09),transparent_72%)]"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-pink/25 to-transparent"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-brand-pink/15 to-transparent"
-        aria-hidden
-      />
-
       <HomeHeader />
 
       <div className="relative z-[2] mx-auto grid max-w-[1180px] items-center gap-10 px-7 pb-20 pt-6 md:gap-14 md:pb-24 lg:grid-cols-[1.05fr_0.95fr]">

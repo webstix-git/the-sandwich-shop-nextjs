@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SITE } from "@/lib/constants";
+import { HomeSectionEyebrow } from "@/components/HomeSectionEyebrow";
 import { CATEGORY_PAGE_LAYOUT } from "@/lib/category-page-layout";
 import { ChevronRightIcon } from "./icons";
 
@@ -12,9 +12,9 @@ function CateringContentSection() {
     >
       <div className="mx-auto max-w-[1240px]">
         <header className="mb-12 text-center md:mb-16">
-          <div className="mb-4 inline-flex items-center rounded-full border-2 border-brand-pink-light bg-white px-4 py-2 text-[13px] font-bold uppercase tracking-[0.12em] text-brand-pink-dark">
+          <HomeSectionEyebrow accent="pink" className="mb-4">
             Catering &amp; Events
-          </div>
+          </HomeSectionEyebrow>
           <h2 className="mx-auto max-w-[760px] text-[clamp(1.875rem,4.2vw,2.875rem)] font-extrabold leading-[1.14] tracking-[-0.02em] text-brand-dark text-balance">
             However you want to{" "}
             <span className="text-brand-pink">enjoy us</span>
@@ -121,7 +121,7 @@ function CateringCtaSection() {
 
             <div className="mt-8 flex flex-wrap gap-3.5">
               <Link
-                href={SITE.cateringEmail}
+                href="/contact-us"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-pink px-7 py-3.5 text-[16px] font-extrabold !text-white shadow-[0_10px_28px_rgba(237,78,141,0.35)] transition-all hover:-translate-y-0.5 hover:bg-brand-pink-hover md:text-[17px]"
               >
                 Request catering

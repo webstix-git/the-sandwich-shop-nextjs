@@ -18,6 +18,8 @@ export const CATERING_OPENING = {
   ],
   image: "/images/catering-hero.jpg",
   imageAlt: "Catering spread with sandwiches, burgers, and dirty sodas",
+  ctaLabel: "Request a quote",
+  ctaHref: "/contact-us",
 } as const;
 
 export const CATERING_OCCASIONS_SECTION = {
@@ -180,10 +182,11 @@ export const CATERING_SODA_FEATURE = {
   title: "A dirty soda bar",
   highlight: "at your event.",
   description:
-    "No one else in La Crosse does it like we do. Add a full dirty soda bar to any catering order — flavored syrups, cream, candy rims, and custom combos your guests can build themselves.",
+    "Add our Dirty Soda Bar to your catering package and let guests build their perfect drink with handcrafted flavors, creamy add-ins, candy rims, and creative mix-and-match combinations.",
   image: "/images/dirty-soda-green.jpg",
   imageAlt: "Signature green dirty soda with candy rim",
   ctaLabel: "Add soda bar to your order",
+  ctaHref: "/contact-us",
 } as const;
 
 export const CATERING_CTA = {
@@ -191,10 +194,10 @@ export const CATERING_CTA = {
   title: "Let's make your next event",
   titleAccent: "unforgettable.",
   description:
-    "Email us with your event date, headcount, and what you're craving — we'll reply with menu options within 24 hours.",
+    "Tell us your event date, headcount, and what you're craving — we'll reply with menu options within 24 hours.",
   backgroundImage: "/images/catering-cta-bg.png",
   primaryLabel: "Request catering",
-  primaryHref: SITE.cateringEmail,
+  primaryHref: "/contact-us",
   secondaryLabel: "Call us",
   secondaryHref: SITE.phoneHref,
 } as const;

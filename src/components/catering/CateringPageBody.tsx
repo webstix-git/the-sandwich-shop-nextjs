@@ -15,7 +15,6 @@ import {
   CATERING_SIGNATURE_SECTION,
   CATERING_SODA_FEATURE,
 } from "@/lib/catering-page-data";
-import { SITE } from "@/lib/constants";
 
 const CATERING_LAYOUT = {
   section: "px-7 pt-[80px] pb-[80px]",
@@ -214,10 +213,10 @@ function CateringOpeningSection() {
             </p>
           ))}
           <Link
-            href={SITE.cateringEmail}
+            href={opening.ctaHref}
             className="group mt-8 inline-flex items-center gap-2 rounded-full bg-brand-pink px-7 py-3.5 text-[16px] font-semibold !text-white shadow-[0_10px_28px_rgba(237,78,141,0.32)] transition-all hover:-translate-y-0.5 hover:bg-brand-pink-hover md:text-[17px]"
           >
-            Request a quote
+            {opening.ctaLabel}
             <ChevronRightIcon
               size={17}
               className="transition-transform duration-200 group-hover:translate-x-1"
@@ -233,7 +232,7 @@ function CateringPackagesSection() {
   const section = CATERING_PACKAGES_SECTION;
 
   return (
-    <section className={cateringSectionClass("peach")}>
+    <section className={cateringSectionClass("white")}>
       <div className={CATERING_LAYOUT.inner}>
         <header className={`max-w-[640px] ${CATERING_LAYOUT.header}`}>
           <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
@@ -428,7 +427,7 @@ function CateringSodaFeatureSection() {
       title={`${feature.title} ${feature.highlight}`}
       description={feature.description}
       ctaLabel={feature.ctaLabel}
-      ctaHref={SITE.cateringEmail}
+      ctaHref={feature.ctaHref}
       image={feature.image}
       imageAlt={feature.imageAlt}
       sectionPadding="standard"

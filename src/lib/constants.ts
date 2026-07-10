@@ -3,32 +3,35 @@ import { DESSERT_CUPS_IMAGE } from "./dessert-cups-image";
 
 export const MENU_ITEMS = [
   {
-    href: "#menu",
+    href: "/our-menu#specialty-sandwiches",
     image: "/images/sandwiches.png",
     alt: "Fresh deli sandwich with roast beef, cheese, spinach, tomatoes, and mushrooms on a toasted sub roll",
     tag: "Hot Sandwiches",
     tagColor: "text-brand-pink",
     title: "Sandwiches",
+    ctaLabel: "View hot sandwiches",
     description:
       "Stacked high on fresh-baked rolls — from Italian beef with au jus to toasted melts piled with the good stuff.",
   },
   {
-    href: "#menu",
+    href: "/our-menu#smash-burgers",
     image: "/images/smash-burger.jpg",
     alt: "BBQ brisket smash burger on a brioche bun",
     tag: "Smashed to order",
     tagColor: "text-brand-cyan-dark",
     title: "Smash Burgers",
+    ctaLabel: "View smash burgers",
     description:
       "Crispy-edged smash patties stacked with melty cheese, brisket and house sauces on a pillowy bun.",
   },
   {
-    href: "#sodas",
+    href: "/our-menu/wine-cocktails",
     image: "/images/dirty-sodas-trio.jpg",
     alt: "Three colorful iced dirty sodas",
     tag: "The Soda Bar",
     tagColor: "text-brand-cyan",
     title: "Dirty Sodas",
+    ctaLabel: "Explore dirty sodas",
     description:
       "Your favorite fizz, leveled up with cream, syrups, fruit and candy rims. Refreshing, fun, totally craveable.",
   },
@@ -42,12 +45,12 @@ export const SODA_BUILD_STEPS = [
 ] as const;
 
 export const SODA_FLAVORS = [
-  { name: "Strawberry Dream", icon: "droplet" },
-  { name: "Peach Cream", icon: "cherry" },
-  { name: "Rainbow Sour", icon: "waves" },
-  { name: "Coconut Lime", icon: "citrus" },
-  { name: "Blue Raspberry", icon: "droplet" },
-  { name: "Mango Fizz", icon: "cherry" },
+  "Strawberry Dream",
+  "Peach Cream",
+  "Rainbow Sour",
+  "Coconut Lime",
+  "Blue Raspberry",
+  "Mango Fizz",
 ] as const;
 
 export const EXPERIENCE_HIGHLIGHTS = [
@@ -224,9 +227,8 @@ export const SITE = {
   phone: "(608) 797-1748",
   phoneHref: "tel:+16087971748",
   email: "thesandwichshop143@yahoo.com",
-  emailHref: "mailto:thesandwichshop143@yahoo.com",
-  cateringEmail:
-    "mailto:thesandwichshop143@yahoo.com?subject=Catering%20Inquiry",
+  emailHref: "/contact-us",
+  contactHref: "/contact-us",
   announcement: "Now open in Downtown La Crosse — 411 3rd Street",
 } as const;
 

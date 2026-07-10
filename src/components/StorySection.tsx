@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { HomeSectionEyebrow } from "@/components/HomeSectionEyebrow";
 import { ChevronRightIcon, HeartIcon } from "./icons";
 
 export function StorySection() {
@@ -35,9 +36,9 @@ export function StorySection() {
         </div>
 
         <div>
-          <div className="mb-3 text-base font-semibold uppercase tracking-[1.5px] text-brand-pink">
+          <HomeSectionEyebrow accent="pink" className="mb-4">
             Our story
-          </div>
+          </HomeSectionEyebrow>
           <h2 className="mb-5 text-[clamp(1.875rem,4vw,2.625rem)] font-extrabold leading-[1.06] tracking-[-0.3px] text-brand-dark">
             A neighborhood spot, made with love.
           </h2>

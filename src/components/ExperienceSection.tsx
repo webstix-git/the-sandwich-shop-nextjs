@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HomeSectionEyebrow } from "@/components/HomeSectionEyebrow";
 import { EXPERIENCE_HIGHLIGHTS } from "@/lib/constants";
 import {
   ChevronRightIcon,
@@ -20,9 +21,9 @@ export function ExperienceSection() {
     <section id="experience" className="border-t border-brand-border/60 bg-brand-warm-cream px-7 py-20 md:py-24">
       <div className="mx-auto max-w-[1180px]">
         <div className="mb-12 text-center">
-          <div className="mb-2.5 text-base font-semibold uppercase tracking-[1.5px] text-brand-pink-dark">
+          <HomeSectionEyebrow accent="pink" className="mb-4">
             Why visit us
-          </div>
+          </HomeSectionEyebrow>
           <h2 className="text-[clamp(1.875rem,4vw,2.625rem)] font-extrabold tracking-[-0.3px] text-brand-dark">
             The full sandwich shop experience
           </h2>

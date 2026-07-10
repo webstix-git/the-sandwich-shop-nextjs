@@ -42,8 +42,8 @@ export const CONTACT_METHODS = [
     description: "Catering inquiries, feedback, or general questions — we reply within 24 hours.",
     lines: [SITE.email, "We read every message"],
     action: {
-      label: "Send email",
-      href: SITE.emailHref,
+      label: "Send a message",
+      href: "/contact-us#send-message",
       external: false,
     },
     accent: "pink" as const,
