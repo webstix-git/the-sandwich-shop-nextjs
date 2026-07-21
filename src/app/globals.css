@@ -246,6 +246,32 @@ a[class*="bg-[rgb(237,78,141)]"] {
   animation: menu-gallery-fade 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+/* Menu page — white surfaces (header, body, and page content) */
+html.menu-page-white,
+html.menu-page-white body,
+.menu-page-soft-pink {
+  --color-brand-bg: #ffffff;
+  --color-brand-cream: #ffffff;
+  --color-brand-warm-cream: #ffffff;
+  --color-brand-blush: #ffffff;
+  --color-brand-peach: #ffffff;
+  --color-brand-hero-peach: #ffffff;
+  --color-brand-pink-light: #ffffff;
+  --color-brand-border: #f0e8e0;
+  --color-brand-card-border: #f0e8e0;
+  --color-brand-divider: #f0e8e0;
+}
+
+html.menu-page-white,
+html.menu-page-white body,
+.menu-page-soft-pink {
+  background-color: #ffffff;
+}
+
+.menu-page-soft-pink {
+  min-height: 100%;
+}
+
 .home-hero-eyebrow {
   font-family: var(--font-sans);
   font-size: 0.6875rem;

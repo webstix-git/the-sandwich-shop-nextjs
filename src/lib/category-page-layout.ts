@@ -3,7 +3,7 @@ export const CATEGORY_PAGE_LAYOUT = {
   divider: "border-t border-brand-border/60",
   inner: "mx-auto max-w-[1180px]",
   header: "mb-12 md:mb-16",
-  ctaSection: "px-7 pt-[80px] pb-[80px]",
+  ctaSection: "px-7 pt-0 pb-[80px]",
 } as const;
 
 const CATEGORY_TONES = {

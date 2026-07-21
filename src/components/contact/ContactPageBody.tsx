@@ -28,7 +28,7 @@ const METHOD_ICONS = {
 
 const METHOD_ACCENT = {
   gold: {
-    icon: "bg-brand-pink-light text-brand-pink-dark",
+    icon: "bg-[color-mix(in_srgb,var(--color-brand-pink-light)_60%,white)] text-brand-pink-dark",
     headline: "text-brand-pink-dark",
     cta: "text-brand-pink-dark hover:text-brand-pink",
     ring: "hover:ring-brand-pink/20",
@@ -40,7 +40,7 @@ const METHOD_ACCENT = {
     ring: "hover:ring-brand-cyan/20",
   },
   pink: {
-    icon: "bg-brand-pink-light text-brand-pink-dark",
+    icon: "bg-[color-mix(in_srgb,var(--color-brand-pink-light)_60%,white)] text-brand-pink-dark",
     headline: "text-brand-pink-dark",
     cta: "text-brand-pink-dark hover:text-brand-pink",
     ring: "hover:ring-brand-pink/20",
@@ -75,7 +75,7 @@ function ContactMethodsSection() {
             return (
               <article
                 key={method.title}
-                className={`flex flex-col rounded-[28px] border border-brand-card-border bg-brand-bg p-7 shadow-[0_12px_36px_rgba(52,36,47,0.06)] ring-1 ring-transparent transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_44px_rgba(52,36,47,0.1)] md:p-8 ${accent.ring}`}
+                className={`flex flex-col rounded-[28px] border border-brand-card-border bg-[color-mix(in_srgb,var(--color-brand-bg)_60%,white)] p-7 shadow-[0_12px_36px_rgba(52,36,47,0.06)] ring-1 ring-transparent transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_44px_rgba(52,36,47,0.1)] md:p-8 ${accent.ring}`}
               >
                 <span
                   className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl ${accent.icon}`}
@@ -129,7 +129,7 @@ function ContactHoursAndFormSection() {
   return (
     <section
       id="send-message"
-      className="border-t border-brand-border/60 bg-[linear-gradient(180deg,#fdf8f3_0%,#fff_50%,#fdf8f3_100%)] px-7 py-20 md:py-24"
+      className="border-y border-brand-border/60 bg-[linear-gradient(180deg,#fdf8f3_0%,#fff_50%,#fdf8f3_100%)] px-7 pt-20 pb-10 md:pt-24 lg:pb-24"
     >
       <div className="mx-auto grid max-w-[1180px] gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div>
@@ -233,7 +233,7 @@ function ContactHoursAndFormSection() {
           </p>
 
           <div className="mt-8 overflow-hidden rounded-[24px] border border-brand-card-border bg-white shadow-[0_12px_36px_rgba(52,36,47,0.06)]">
-            <div className="flex items-center gap-3 border-b border-brand-border/60 bg-brand-bg px-6 py-4">
+            <div className="flex items-center gap-3 border-b border-brand-border/60 bg-[color-mix(in_srgb,var(--color-brand-bg)_60%,white)] px-6 py-4">
               <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-cyan-light text-brand-cyan-dark">
                 <ClockIcon size={20} />
               </span>
@@ -255,14 +255,14 @@ function ContactHoursAndFormSection() {
           </div>
 
           <div className="mt-8 overflow-hidden rounded-[24px] border border-brand-card-border bg-white shadow-[0_12px_36px_rgba(52,36,47,0.06)]">
-            <div className="flex items-center justify-between gap-4 border-b border-brand-border/60 bg-brand-bg px-6 py-4">
+            <div className="flex items-center justify-between gap-4 border-b border-brand-border/60 bg-[color-mix(in_srgb,var(--color-brand-bg)_60%,white)] px-6 py-4">
               <Link
                 href={SITE.mapsHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 transition-opacity hover:opacity-80"
               >
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-pink-light text-brand-pink-dark">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[color-mix(in_srgb,var(--color-brand-pink-light)_60%,white)] text-brand-pink-dark">
                   <MapPinIcon size={20} />
                 </span>
                 <div>
@@ -308,8 +308,8 @@ function ContactMapCtaSection() {
   const cta = CONTACT_MAP_CTA;
 
   return (
-    <section className="px-7 pb-16 pt-4 md:pb-20 md:pt-6">
-      <div className="relative mx-auto max-w-[1180px] overflow-hidden rounded-[28px] border border-brand-pink/35 bg-brand-footer pb-[70px] shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
+    <section className="bg-white px-7 pb-16 pt-[70px] md:pb-20">
+      <div className="relative mx-auto max-w-[1180px] overflow-hidden rounded-[28px] border border-brand-pink/35 bg-brand-footer pb-[70px] pt-[70px] shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
         <Image
           src={cta.backgroundImage}
           alt=""
@@ -328,7 +328,7 @@ function ContactMapCtaSection() {
           aria-hidden
         />
 
-        <div className="relative z-[2] grid items-center gap-10 px-7 pt-8 md:grid-cols-[1.05fr_0.95fr] md:gap-12 md:px-10 md:pt-10 lg:px-12 lg:pt-12">
+        <div className="relative z-[2] grid items-center gap-10 px-7 md:grid-cols-[1.05fr_0.95fr] md:gap-12 md:px-10 lg:px-12">
           <div>
             <span className="inline-flex items-center rounded-full border border-brand-pink/50 bg-black/25 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-pink-light">
               {cta.badge}

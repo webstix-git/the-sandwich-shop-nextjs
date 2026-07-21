@@ -1,58 +1,128 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MENU_GALLERY_IMAGES } from "@/lib/menu-page-data";
 
-const VISIBLE_COUNT = 4;
-const ROTATE_MS = 4000;
+/** Pause while the new item is fully in view. */
+const PAUSE_MS = 2800;
+/** Slide duration — keep in sync with the transition class. */
+const TRANSITION_MS = 700;
+/** Always show this many full cards on desktop; fewer on smaller screens. */
+const VISIBLE_DESKTOP = 4;
+
+const TOTAL = MENU_GALLERY_IMAGES.length;
+
+/** Extra clones so the last → first jump stays off-screen. */
+const TRACK_IMAGES = [
+  ...MENU_GALLERY_IMAGES,
+  ...MENU_GALLERY_IMAGES.slice(0, VISIBLE_DESKTOP),
+];
+
+function getLayout(width: number) {
+  if (width >= 1024) return { visible: 4, gap: 24 };
+  if (width >= 640) return { visible: 3, gap: 20 };
+  return { visible: 2, gap: 16 };
+}
 
 export function MenuGalleryCarousel() {
-  const [offset, setOffset] = useState(0);
-  const [paused, setPaused] = useState(false);
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const [index, setIndex] = useState(0);
+  const [animate, setAnimate] = useState(true);
+  const [slideWidth, setSlideWidth] = useState(0);
+  const [gap, setGap] = useState(16);
 
   useEffect(() => {
-    if (paused) return;
+    const viewport = viewportRef.current;
+    if (!viewport) return;
 
+    const measure = () => {
+      const width = viewport.clientWidth;
+      const layout = getLayout(width);
+      setGap(layout.gap);
+      setSlideWidth(
+        Math.floor(
+          ((width - layout.gap * (layout.visible - 1)) / layout.visible) * 1000,
+        ) / 1000,
+      );
+    };
+
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(viewport);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (media.matches) return;
 
     const id = window.setInterval(() => {
-      setOffset((current) => (current + 1) % MENU_GALLERY_IMAGES.length);
-    }, ROTATE_MS);
+      setIndex((current) => current + 1);
+    }, PAUSE_MS + TRANSITION_MS);
 
     return () => window.clearInterval(id);
-  }, [paused]);
+  }, []);
 
-  const visibleImages = Array.from({ length: VISIBLE_COUNT }, (_, index) => {
-    const imageIndex = (offset + index) % MENU_GALLERY_IMAGES.length;
-    return MENU_GALLERY_IMAGES[imageIndex];
-  });
+  useEffect(() => {
+    if (index < TOTAL) return;
+
+    const timeout = window.setTimeout(() => {
+      setAnimate(false);
+      setIndex(0);
+      window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => {
+          setAnimate(true);
+        });
+      });
+    }, TRANSITION_MS);
+
+    return () => window.clearTimeout(timeout);
+  }, [index]);
+
+  const stepPx = slideWidth + gap;
 
   return (
     <div
-      className="mt-12 pb-[70px] md:mt-16"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocusCapture={() => setPaused(true)}
-      onBlurCapture={() => setPaused(false)}
+      ref={viewportRef}
+      className="mt-12 overflow-hidden pb-[70px] md:mt-16"
+      aria-roledescription="carousel"
+      aria-label="Menu food gallery"
     >
-      <div className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4 lg:gap-6">
-        {visibleImages.map((image, index) => (
-          <div
-            key={`${offset}-${image.src}`}
-            className="animate-menu-gallery-fade relative aspect-[4/3] overflow-hidden rounded-2xl"
-            style={{ animationDelay: `${index * 70}ms` }}
-          >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              sizes="(max-width: 640px) 50vw, 280px"
-              className="object-cover"
-            />
-          </div>
-        ))}
+      <div className="overflow-hidden">
+        <div
+          className={`flex ${
+            animate
+              ? "transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
+              : ""
+          }`}
+          style={{
+            gap,
+            width: slideWidth > 0 ? "max-content" : undefined,
+            transform:
+              stepPx > 0 ? `translate3d(-${index * stepPx}px, 0, 0)` : undefined,
+          }}
+        >
+          {TRACK_IMAGES.map((image, slideIndex) => (
+            <div
+              key={`${image.src}-${slideIndex}`}
+              className="relative aspect-[4/3] shrink-0 overflow-hidden rounded-2xl"
+              style={{
+                width: slideWidth || undefined,
+                flex: slideWidth ? `0 0 ${slideWidth}px` : "0 0 calc((100% - 1rem) / 2)",
+              }}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                className="object-cover"
+                draggable={false}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

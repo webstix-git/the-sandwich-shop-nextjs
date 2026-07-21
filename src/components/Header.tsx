@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { ChevronRightIcon, CloseIcon, MenuIcon } from "./icons";
 import { DesktopNav, MobileNavItem } from "./HeaderNav";
 import { NAV_LINKS } from "@/lib/navigation";
@@ -11,8 +12,13 @@ import { useStickyHeaderPinned } from "./ScrollStickyTopBar";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [portalReady, setPortalReady] = useState(false);
   const pathname = usePathname();
   const isPinned = useStickyHeaderPinned();
+
+  useEffect(() => {
+    setPortalReady(true);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -24,6 +30,59 @@ export function Header() {
   useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
+
+  const mobileDrawer =
+    mobileOpen && portalReady
+      ? createPortal(
+          <div
+            className="fixed inset-0 z-[100] bg-brand-dark/40 lg:hidden"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Navigation"
+          >
+            <button
+              type="button"
+              className="absolute inset-0 cursor-default"
+              aria-label="Close menu"
+              onClick={() => setMobileOpen(false)}
+            />
+            <div className="absolute right-0 top-0 flex h-full w-[min(100%,340px)] flex-col overflow-y-auto bg-white p-6 shadow-2xl">
+              <div className="mb-6 flex items-center justify-between">
+                <span className="text-lg font-semibold text-brand-dark">
+                  Navigation
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setMobileOpen(false)}
+                  aria-label="Close menu"
+                  className="rounded-lg p-2 text-brand-nav hover:bg-brand-blush"
+                >
+                  <CloseIcon />
+                </button>
+              </div>
+              <nav className="flex flex-col gap-1">
+                {NAV_LINKS.map((link) => (
+                  <MobileNavItem
+                    key={link.href}
+                    link={link}
+                    onClose={() => setMobileOpen(false)}
+                    pathname={pathname}
+                  />
+                ))}
+              </nav>
+              <Link
+                href="/our-menu"
+                onClick={() => setMobileOpen(false)}
+                className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-brand-pink px-6 py-3 text-center text-base font-semibold !text-white shadow-[0_6px_18px_rgba(237,78,141,0.4)] hover:!text-white"
+              >
+                View Our Menu
+                <ChevronRightIcon size={16} />
+              </Link>
+            </div>
+          </div>,
+          document.body,
+        )
+      : null;
 
   return (
     <>
@@ -69,41 +128,7 @@ export function Header() {
         </div>
       </header>
 
-      {mobileOpen && (
-        <div className="fixed inset-0 z-50 bg-brand-dark/40 lg:hidden">
-          <div className="absolute right-0 top-0 flex h-full w-[min(100%,340px)] flex-col overflow-y-auto bg-white p-6 shadow-2xl">
-            <div className="mb-6 flex items-center justify-between">
-              <span className="text-lg font-semibold text-brand-dark">Navigation</span>
-              <button
-                type="button"
-                onClick={() => setMobileOpen(false)}
-                aria-label="Close menu"
-                className="rounded-lg p-2 text-brand-nav hover:bg-brand-blush"
-              >
-                <CloseIcon />
-              </button>
-            </div>
-            <nav className="flex flex-col gap-1">
-              {NAV_LINKS.map((link) => (
-                <MobileNavItem
-                  key={link.href}
-                  link={link}
-                  onClose={() => setMobileOpen(false)}
-                  pathname={pathname}
-                />
-              ))}
-            </nav>
-            <Link
-              href="/our-menu"
-              onClick={() => setMobileOpen(false)}
-              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-brand-pink px-6 py-3 text-center text-base font-semibold !text-white shadow-[0_6px_18px_rgba(237,78,141,0.4)] hover:!text-white"
-            >
-              View Our Menu
-              <ChevronRightIcon size={16} />
-            </Link>
-          </div>
-        </div>
-      )}
+      {mobileDrawer}
     </>
   );
 }

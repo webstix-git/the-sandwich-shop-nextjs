@@ -49,8 +49,8 @@ export type MenuCategoryChip = {
 };
 
 export const MENU_CATEGORY_CHIPS: MenuCategoryChip[] = [
-  { id: "specialty-sandwiches", label: "Hot Sandwiches", icon: "sandwich" },
-  { id: "cold-sandwiches", label: "Cold Sandwiches", icon: "sandwich" },
+  { id: "specialty-sandwiches", label: "Hot Sandwiches", icon: "hot-sandwich" },
+  { id: "cold-sandwiches", label: "Cold Sandwiches", icon: "cold-sandwich" },
   { id: "smash-burgers", label: "Burgers", icon: "burger" },
   { id: "sides", label: "Sides", icon: "sides" },
   { id: "soup", label: "Soup", icon: "soup" },

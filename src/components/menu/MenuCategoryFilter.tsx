@@ -167,14 +167,16 @@ export function MenuCategoryFilter() {
                   }`}
                 >
                   <span
-                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-colors duration-300 sm:h-8 sm:w-8 ${
-                      isActive ? "bg-white/20 text-white" : "bg-brand-bg text-brand-dark"
+                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors duration-300 sm:h-9 sm:w-9 ${
+                      isActive
+                        ? "bg-white/25 text-white"
+                        : "bg-brand-pink/10 text-brand-pink-dark ring-1 ring-brand-pink/20"
                     }`}
                   >
                     <MenuNavIcon
                       icon={chip.icon}
-                      size={18}
-                      className={isActive ? "text-white" : "text-brand-dark"}
+                      size={20}
+                      className={isActive ? "text-white" : "text-brand-pink-dark"}
                     />
                   </span>
                   {chip.label}

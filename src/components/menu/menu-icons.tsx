@@ -1,86 +1,150 @@
+import {
+  Cookie,
+  EggFried,
+  Sandwich,
+  Soup,
+  Star,
+  type LucideIcon,
+} from "lucide-react";
+import {
+  IconBurger,
+  type Icon as TablerIcon,
+} from "@tabler/icons-react";
+
 type IconProps = {
   className?: string;
   size?: number;
 };
 
-const NAV_STROKE = 1.65;
+const NAV_STROKE = 2;
+const CUSTOMIZE_STROKE = 1.75;
+
+function NavLucideIcon({
+  Icon,
+  className,
+  size = 18,
+}: IconProps & { Icon: LucideIcon }) {
+  return (
+    <Icon
+      size={size}
+      strokeWidth={NAV_STROKE}
+      absoluteStrokeWidth
+      className={className}
+      aria-hidden
+    />
+  );
+}
+
+function NavTablerIcon({
+  Icon,
+  className,
+  size = 18,
+}: IconProps & { Icon: TablerIcon }) {
+  return (
+    <Icon
+      size={size}
+      stroke={NAV_STROKE}
+      className={className}
+      aria-hidden
+    />
+  );
+}
 
 export function MenuStarIcon({ className, size = 18 }: IconProps) {
+  return <NavLucideIcon Icon={Star} className={className} size={size} />;
+}
+
+/**
+ * Hot sandwiches — stacked sandwich with rising steam (reads as “hot”).
+ */
+function HotSandwichMark({ className, size = 20 }: IconProps) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden>
-      <path
-        d="M12 3.2l2.2 4.6 5.1.7-3.7 3.6.9 5.1L12 14.8 7.5 17.2l.9-5.1-3.7-3.6 5.1-.7L12 3.2z"
-        stroke="currentColor"
-        strokeWidth={NAV_STROKE}
-        strokeLinejoin="round"
-      />
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={NAV_STROKE}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden
+    >
+      <path d="M9 3.5c.55.9.55 1.8 0 2.7" />
+      <path d="M12 2.5c.7 1.15.7 2.3 0 3.45" />
+      <path d="M15 3.5c.55.9.55 1.8 0 2.7" />
+      <path d="m3 12.2 8.2-5.2a1.7 1.7 0 0 1 1.9 0L21.3 12.2" />
+      <rect x="2.75" y="12" width="18.5" height="3.6" rx="1" />
+      <path d="M4.5 15.6h15" />
+      <path d="M3.5 18.2h8.2a1.5 1.5 0 0 1 1.3.7l.4.6h4.1a1.2 1.2 0 0 0 1.2-1.2V15.6" />
     </svg>
   );
 }
 
 export function MenuSandwichIcon({ className, size = 20 }: IconProps) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={NAV_STROKE} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden>
-      <path d="M4.5 12.5h15" />
-      <path d="M5.5 12.5a6.5 6.5 0 0 1 13 0" />
-      <path d="M7 9.5c1.2-1.8 2.8-2.7 5-2.7s3.8.9 5 2.7" />
-      <path d="M6.5 15.5h11a1.5 1.5 0 0 1 0 3h-11a1.5 1.5 0 0 1 0-3z" />
-    </svg>
-  );
+  return <HotSandwichMark className={className} size={size} />;
+}
+
+export function MenuHotSandwichIcon({ className, size = 20 }: IconProps) {
+  return <HotSandwichMark className={className} size={size} />;
+}
+
+/** Cold sandwiches — classic sandwich (clear, no steam) */
+export function MenuColdSandwichIcon({ className, size = 20 }: IconProps) {
+  return <NavLucideIcon Icon={Sandwich} className={className} size={size} />;
 }
 
 export function MenuBurgerIcon({ className, size = 20 }: IconProps) {
+  return <NavTablerIcon Icon={IconBurger} className={className} size={size} />;
+}
+
+/**
+ * Sides — french fries (the usual sandwich-shop side).
+ */
+function FriesMark({ className, size = 20 }: IconProps) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={NAV_STROKE} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden>
-      <path d="M5 10.5a7 7 0 0 1 14 0" />
-      <path d="M4.5 13.5h15" />
-      <path d="M6 16.5h12a2 2 0 0 1 0 4H6a2 2 0 0 1 0-4z" />
-      <path d="M8.5 10.5V9M12 10V8.5M15.5 10.5V9" />
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={NAV_STROKE}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden
+    >
+      <path d="M6.5 10.5 8 3.75" />
+      <path d="M10 10.5 10.75 3.5" />
+      <path d="M13.5 10.5 14.5 3.75" />
+      <path d="M17 10.5 18.25 4.25" />
+      <path d="M5.5 10.5h13.2l-1.1 9.25a1.75 1.75 0 0 1-1.75 1.5H8.35a1.75 1.75 0 0 1-1.75-1.5L5.5 10.5Z" />
+      <path d="M9 14.25v3.5" />
+      <path d="M12.1 14.25v3.5" />
+      <path d="M15.2 14.25v3.5" />
     </svg>
   );
 }
 
+/** Sides — french fries */
 export function MenuSidesIcon({ className, size = 20 }: IconProps) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={NAV_STROKE} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden>
-      <path d="M8 5.5h8l1.5 14H6.5L8 5.5z" />
-      <path d="M9.5 9.5l1.2 5M12 8.8v6.2M14.5 9.5l-1.2 5" />
-      <path d="M7.5 5.5c0-1.1 2-2 4.5-2s4.5.9 4.5 2" />
-    </svg>
-  );
+  return <FriesMark className={className} size={size} />;
 }
 
 export function MenuSoupIcon({ className, size = 20 }: IconProps) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={NAV_STROKE} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden>
-      <path d="M5 14.5h14" />
-      <path d="M6.5 14.5c0-3.6 2.5-6.5 5.5-6.5s5.5 2.9 5.5 6.5" />
-      <path d="M8.5 18.5h7" />
-      <path d="M9 6.5c.4-.8 1.2-1.5 2.2-1.5M15 6.5c-.4-.8-1.2-1.5-2.2-1.5" />
-      <path d="M12 4v1.5" />
-    </svg>
-  );
+  return <NavLucideIcon Icon={Soup} className={className} size={size} />;
 }
 
+/** Breakfast — sunny-side-up egg */
 export function MenuBreakfastIcon({ className, size = 20 }: IconProps) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={NAV_STROKE} strokeLinecap="round" className={className} aria-hidden>
-      <circle cx="12" cy="12" r="3.8" />
-      <path d="M12 2.5v2.2M12 19.3v2.2M4.4 4.4l1.6 1.6M18 18l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.4 19.6l1.6-1.6M18 6l1.6-1.6" />
-    </svg>
-  );
+  return <NavLucideIcon Icon={EggFried} className={className} size={size} />;
 }
 
+/** Kids — cookie (kid-friendly treat / kids meal) */
 export function MenuKidsIcon({ className, size = 20 }: IconProps) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={NAV_STROKE} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden>
-      <path d="M5.5 11.5c0-3 2.9-5.5 6.5-5.5s6.5 2.5 6.5 5.5" />
-      <path d="M4.5 11.5h15v2.8c0 1-.8 1.8-1.8 1.8H6.3c-1 0-1.8-.8-1.8-1.8V11.5z" />
-      <circle cx="9.5" cy="14.2" r="0.9" fill="currentColor" stroke="none" />
-      <circle cx="14.5" cy="14.2" r="0.9" fill="currentColor" stroke="none" />
-      <path d="M10.2 16.4c.7.6 1.6.9 2.5.9s1.8-.3 2.5-.9" />
-    </svg>
-  );
+  return <NavLucideIcon Icon={Cookie} className={className} size={size} />;
 }
 
 export function MenuHeartOutlineIcon({ className, size = 20 }: IconProps) {
@@ -135,7 +199,7 @@ export function MenuBagIcon({ className, size = 18 }: IconProps) {
 
 export function MenuCheeseIcon({ className, size = 20 }: IconProps) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={NAV_STROKE} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden>
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={CUSTOMIZE_STROKE} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden>
       <path d="M4.5 18.5 8.5 5.5 20 13.5l-3.5 5H4.5z" />
       <circle cx="10" cy="12" r="0.9" fill="currentColor" stroke="none" />
       <circle cx="13.5" cy="14" r="0.9" fill="currentColor" stroke="none" />
@@ -146,7 +210,7 @@ export function MenuCheeseIcon({ className, size = 20 }: IconProps) {
 
 export function MenuLeafIcon({ className, size = 20 }: IconProps) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={NAV_STROKE} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden>
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={CUSTOMIZE_STROKE} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden>
       <path d="M12 21c-4-3.5-6-7-6-11a6 6 0 0 1 12 0c0 4-2 7.5-6 11z" />
       <path d="M12 21V10" />
       <path d="M9.5 13.5C11 12 13 11.5 15 12.5" />
@@ -156,7 +220,7 @@ export function MenuLeafIcon({ className, size = 20 }: IconProps) {
 
 export function MenuSauceIcon({ className, size = 20 }: IconProps) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={NAV_STROKE} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden>
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={CUSTOMIZE_STROKE} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden>
       <path d="M10 4.5h4v2.2c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1V4.5z" />
       <path d="M9 7.7h6v10.3a2.2 2.2 0 0 1-2.2 2.2h-1.6A2.2 2.2 0 0 1 9 18V7.7z" />
       <path d="M10.5 12h3" />
@@ -166,7 +230,7 @@ export function MenuSauceIcon({ className, size = 20 }: IconProps) {
 
 export function MenuSparkleIcon({ className, size = 20 }: IconProps) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={NAV_STROKE} strokeLinecap="round" className={className} aria-hidden>
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={CUSTOMIZE_STROKE} strokeLinecap="round" className={className} aria-hidden>
       <path d="M12 3.5v3.5M12 17v3.5M4.5 12H8M16 12h3.5M6.2 6.2l2.5 2.5M15.3 15.3l2.5 2.5M17.8 6.2l-2.5 2.5M8.7 15.3l-2.5 2.5" />
       <circle cx="12" cy="12" r="2.2" fill="currentColor" stroke="none" />
     </svg>
@@ -199,6 +263,8 @@ export function MenuCustomizeIcon({
 export type MenuNavIconKey =
   | "star"
   | "sandwich"
+  | "hot-sandwich"
+  | "cold-sandwich"
   | "burger"
   | "sides"
   | "soup"
@@ -210,7 +276,10 @@ export function MenuNavIcon({ icon, className, size = 18 }: { icon: MenuNavIconK
     case "star":
       return <MenuStarIcon className={className} size={size} />;
     case "sandwich":
-      return <MenuSandwichIcon className={className} size={size} />;
+    case "hot-sandwich":
+      return <MenuHotSandwichIcon className={className} size={size} />;
+    case "cold-sandwich":
+      return <MenuColdSandwichIcon className={className} size={size} />;
     case "burger":
       return <MenuBurgerIcon className={className} size={size} />;
     case "sides":
