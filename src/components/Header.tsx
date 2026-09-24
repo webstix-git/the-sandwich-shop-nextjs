@@ -8,13 +8,11 @@ import { createPortal } from "react-dom";
 import { ChevronRightIcon, CloseIcon, MenuIcon } from "./icons";
 import { DesktopNav, MobileNavItem } from "./HeaderNav";
 import { NAV_LINKS } from "@/lib/navigation";
-import { useStickyHeaderPinned } from "./ScrollStickyTopBar";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [portalReady, setPortalReady] = useState(false);
   const pathname = usePathname();
-  const isPinned = useStickyHeaderPinned();
 
   useEffect(() => {
     setPortalReady(true);
@@ -87,9 +85,7 @@ export function Header() {
   return (
     <>
       <header
-        className={`mx-auto box-content flex max-w-[1250px] items-center gap-4 px-7 sm:px-8 md:gap-6 md:px-10 lg:gap-8 lg:px-12 ${
-          isPinned ? "h-full py-0" : "py-3"
-        }`}
+        className="mx-auto box-content flex h-full max-w-[1250px] items-center gap-4 px-7 sm:px-8 md:gap-6 md:px-10 lg:gap-8 lg:px-12"
       >
         <Link href="/" className="mr-2 shrink-0 md:mr-4 lg:mr-6">
           <Image
@@ -97,11 +93,7 @@ export function Header() {
             alt="The Sandwich Shop & Dirty Soda Bar logo"
             width={160}
             height={160}
-            className={`rounded-full object-cover transition-all duration-300 ease-out ${
-              isPinned
-                ? "h-[90px] w-[90px] border-0 shadow-[0_4px_14px_rgba(237,78,141,0.22)]"
-                : "h-[96px] w-[96px] border-0 shadow-[0_6px_18px_rgba(237,78,141,0.28)] md:h-[120px] md:w-[120px]"
-            }`}
+            className="h-[60px] w-[60px] rounded-full border-0 object-cover shadow-[0_4px_14px_rgba(237,78,141,0.22)]"
             priority
           />
         </Link>

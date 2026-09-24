@@ -3,7 +3,7 @@
 import { createContext, useContext, useEffect, useRef, useState } from "react";
 
 /** Fallback header height; updated at runtime via ResizeObserver. */
-export const STICKY_HEADER_HEIGHT = 100;
+export const STICKY_HEADER_HEIGHT = 70;
 
 type SiteHeaderContextValue = {
   height: number;
@@ -20,7 +20,7 @@ export function useSiteHeader() {
 }
 
 const PINNED_BAR_CLASSES =
-  "h-[100px] border-b border-brand-border/60 bg-brand-bg/95 shadow-[0_4px_24px_rgba(52,36,47,0.08)] backdrop-blur-sm";
+  "h-[70px] border-b border-brand-border/60 bg-brand-bg/95 shadow-[0_4px_24px_rgba(52,36,47,0.08)] backdrop-blur-sm";
 
 type ScrollStickyTopBarProps = {
   children: React.ReactNode;
@@ -79,15 +79,11 @@ export function ScrollStickyTopBar({ children }: ScrollStickyTopBarProps) {
         className={`left-0 right-0 z-40 w-full overflow-visible transition-[height,background-color,box-shadow,border-color] duration-300 ease-out ${
           isPinned
             ? `fixed top-0 ${PINNED_BAR_CLASSES}`
-            : "relative h-auto border-b border-transparent bg-transparent shadow-none"
+            : "relative h-[70px] border-b border-transparent bg-transparent shadow-none"
         }`}
       >
         {children}
       </div>
     </SiteHeaderContext.Provider>
   );
-}
-
-export function useStickyHeaderPinned() {
-  return useSiteHeader().isFixed;
 }
