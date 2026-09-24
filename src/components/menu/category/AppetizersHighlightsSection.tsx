@@ -8,17 +8,14 @@ import {
 const ACCENT = {
   gold: {
     tag: "text-brand-pink-dark",
-    line: "bg-brand-pink/80",
     ring: "hover:ring-brand-pink/15",
   },
   pink: {
     tag: "text-brand-pink-dark",
-    line: "bg-brand-pink/80",
     ring: "hover:ring-brand-pink/15",
   },
   cyan: {
     tag: "text-brand-cyan-dark",
-    line: "bg-brand-cyan/80",
     ring: "hover:ring-brand-cyan/15",
   },
 } as const;
@@ -41,9 +38,8 @@ function HighlightTile({ item }: { item: MenuCategoryHighlight }) {
       </div>
       <div className="flex flex-1 flex-col px-4 py-4 md:px-5 md:py-4">
         <p
-          className={`flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.16em] ${accent.tag}`}
+          className={`flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.16em] ${accent.tag}`}
         >
-          <span className={`h-px w-4 shrink-0 ${accent.line}`} aria-hidden />
           {item.tagline}
         </p>
         <h3 className="mt-1.5 text-[1.05rem] font-extrabold leading-snug tracking-[-0.02em] text-brand-dark">
@@ -82,8 +78,7 @@ export function AppetizersHighlightsSection({
 
       <div className={`relative ${CATEGORY_PAGE_LAYOUT.inner}`}>
         <header className={`max-w-[580px] ${CATEGORY_PAGE_LAYOUT.header}`}>
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px]">
             Highlights
           </p>
           <h2 className="mt-4 text-[clamp(1.65rem,3vw,2.25rem)] font-extrabold leading-[1.08] tracking-[-0.04em] text-brand-dark text-balance">
@@ -91,7 +86,7 @@ export function AppetizersHighlightsSection({
             <span className="text-brand-cyan-dark">category special.</span>
           </h2>
           <p className="mt-4 text-[16px] leading-[1.72] text-brand-body">
-            Four starters fried fresh and made to order — simple, generous, and
+            Four starters fried fresh and made to order. Simple, generous, and
             easy to share.
           </p>
         </header>

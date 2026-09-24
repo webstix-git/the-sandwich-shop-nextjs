@@ -13,7 +13,7 @@ export const SERVICES_INTRO = {
   primaryImageAlt:
     "Cozy downtown sandwich shop interior with dirty soda bar in the background",
   description:
-    "Dine in on 3rd Street, grab carry-out on the go, or let us cater your next gathering — fresh sandwiches, smash burgers, and dirty sodas, your way.",
+    "Dine in on 3rd Street, grab carry-out on the go, or let us cater your next gathering. Fresh sandwiches, smash burgers, and dirty sodas, your way.",
 } as const;
 
 export const SERVICES_FEATURE = {
@@ -21,7 +21,7 @@ export const SERVICES_FEATURE = {
   title: "Good food,",
   highlight: "however you need it.",
   paragraphs: [
-    "We're a neighborhood spot first — pull up a chair, watch your order come together, and stay awhile. Prefer to grab and go? We'll have it hot and ready when you walk in or call ahead.",
+    "We're a neighborhood spot first: pull up a chair, watch your order come together, and stay awhile. Prefer to grab and go? We'll have it hot and ready when you walk in or call ahead.",
     "Feeding a crowd? Our catering brings sandwich trays, burger spreads, and a full dirty soda bar to offices, parties, and family celebrations across La Crosse.",
   ],
   image: "/images/services-dine-in.jpg",
@@ -35,7 +35,7 @@ export const SERVICES_OFFERINGS_SECTION = {
   title: "Six ways we",
   highlight: "take care of you.",
   description:
-    "From a quick lunch pickup to a full event spread — every service is made fresh, generous, and with the same care you'd get at our counter on 3rd Street.",
+    "From a quick lunch pickup to a full event spread, every service is made fresh, generous, and with the same care you'd get at our counter on 3rd Street.",
 } as const;
 
 export const SERVICES_OFFERINGS: readonly ServiceOffering[] = [
@@ -43,7 +43,7 @@ export const SERVICES_OFFERINGS: readonly ServiceOffering[] = [
     title: "Dine In",
     tagline: "Walk in welcome",
     description:
-      "Enjoy our full menu in our cozy downtown space — fresh sandwiches, smash burgers, and signature dirty sodas made to order while you watch.",
+      "Enjoy our full menu in our cozy downtown space: fresh sandwiches, smash burgers, and signature dirty sodas made to order while you watch.",
     href: "/contact-us",
     image: "/images/services-dine-in.jpg",
     imageAlt: "Cozy dine-in table with sandwiches and dirty sodas in a warm downtown café",
@@ -53,17 +53,17 @@ export const SERVICES_OFFERINGS: readonly ServiceOffering[] = [
     title: "Carry Out",
     tagline: "Quick pickup",
     description:
-      "Call ahead or order at the counter. We'll have your food hot, fresh, and ready to go — perfect for lunch on the run.",
+      "Call ahead or order at the counter. We'll have your food hot, fresh, and ready to go, perfect for lunch on the run.",
     href: "/contact-us",
     image: "/images/services-carry-out.jpg",
     imageAlt: "Takeout order ready for pickup at the counter",
     accent: "cyan",
   },
   {
-    title: "Catering Services",
+    title: "Catering",
     tagline: "Events & groups",
     description:
-      "Office lunches, parties, game days, and family gatherings — we bring the trays, burgers, and soda bar to you.",
+      "Office lunches, parties, game days, and family gatherings. We bring the trays, burgers, and soda bar to you.",
     href: "/services/catering-services",
     image: "/images/services-catering.jpg",
     imageAlt: "Catering spread with sandwiches, burgers, and dirty sodas",
@@ -73,7 +73,7 @@ export const SERVICES_OFFERINGS: readonly ServiceOffering[] = [
     title: "Sandwich Trays",
     tagline: "Catering package",
     description:
-      "Assorted subs cut and ready to serve — perfect for meetings and celebrations. Serves 10–15 guests.",
+      "Assorted subs cut and ready to serve, perfect for meetings and celebrations. Serves 10–15 guests.",
     href: "/services/catering-services",
     image: "/images/services-sandwich-tray.jpg",
     imageAlt: "Assorted sub sandwich catering tray",
@@ -93,7 +93,7 @@ export const SERVICES_OFFERINGS: readonly ServiceOffering[] = [
     title: "Dirty Soda Bar",
     tagline: "Signature experience",
     description:
-      "Bring the legendary soda bar to your event — custom flavors, cream, syrups, and candy rims included.",
+      "Bring the legendary soda bar to your event, with custom flavors, cream, syrups, and candy rims included.",
     href: "/services/catering-services",
     image: "/images/services-soda-bar.jpg",
     imageAlt: "Dirty soda bar setup at an event with colorful custom drinks",
@@ -106,7 +106,7 @@ export const SERVICES_CATERING_SPOTLIGHT = {
   title: "Catering that",
   highlight: "impresses.",
   paragraphs: [
-    "Sandwich trays, burger spreads, and a full dirty soda bar for your office, party, or family gathering. Every tray is made fresh the morning of your event — no warming trays, no shortcuts.",
+    "Sandwich trays, burger spreads, and a full dirty soda bar for your office, party, or family gathering. Every tray is made fresh the morning of your event, no warming trays, no shortcuts.",
     "Tell us your headcount and we'll handle the rest. Same generous portions and made-to-order quality you'd get walking into our shop.",
   ],
   image: "/images/services-catering.jpg",
@@ -120,27 +120,27 @@ export const SERVICES_EXPERIENCE = {
   title: "Simple, fresh,",
   highlight: "and personal.",
   description:
-    "However you order — the same standards apply behind the counter and at your event.",
+    "However you order, the same standards apply behind the counter and at your event.",
   items: [
     {
-      icon: "store" as const,
+      icon: "/images/icons/sandwich.png",
       title: "Made to order",
       description:
-        "Sandwiches stacked, burgers smashed, sodas poured — fresh when you order, never sitting under a heat lamp.",
+        "Sandwiches stacked, burgers smashed, sodas poured, fresh when you order, never sitting under a heat lamp.",
       accent: "pink" as const,
     },
     {
-      icon: "heart" as const,
+      icon: "/images/icons/stacked-containers.png",
       title: "Generous portions",
       description:
         "We believe you should leave full and happy. Our trays are stacked and our sodas are loaded.",
       accent: "cyan" as const,
     },
     {
-      icon: "map-pin" as const,
+      icon: "/images/icons/location.png",
       title: "Neighborly service",
       description:
-        "Locally owned and invested in La Crosse — whether you're a regular or planning your first catering order.",
+        "Locally owned and invested in La Crosse, whether you're a regular or planning your first catering order.",
       accent: "pink" as const,
     },
   ],

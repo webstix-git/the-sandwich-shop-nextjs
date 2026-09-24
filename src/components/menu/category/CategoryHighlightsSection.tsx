@@ -9,17 +9,14 @@ import {
 const ACCENT = {
   gold: {
     tag: "text-brand-pink-dark",
-    line: "bg-brand-pink/80",
     ring: "hover:ring-brand-pink/15",
   },
   pink: {
     tag: "text-brand-pink-dark",
-    line: "bg-brand-pink/80",
     ring: "hover:ring-brand-pink/15",
   },
   cyan: {
     tag: "text-brand-cyan-dark",
-    line: "bg-brand-cyan/80",
     ring: "hover:ring-brand-cyan/15",
   },
 } as const;
@@ -42,9 +39,8 @@ function HighlightCard({ item }: { item: MenuCategoryHighlight }) {
       </div>
       <div className="flex flex-1 flex-col border-t border-brand-border/50 px-5 py-5">
         <p
-          className={`flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] ${accent.tag}`}
+          className={`flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.18em] ${accent.tag}`}
         >
-          <span className={`h-px w-5 shrink-0 ${accent.line}`} aria-hidden />
           {item.tagline}
         </p>
         <h3 className="mt-2.5 text-[1.125rem] font-extrabold leading-snug tracking-[-0.02em] text-brand-dark">
@@ -76,9 +72,8 @@ export function CategoryHighlightsSection({
           className={`${centered ? "mx-auto max-w-[680px] text-center" : "max-w-[640px]"} ${CATEGORY_PAGE_LAYOUT.header}`}
         >
           <p
-            className={`inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px] ${centered ? "justify-center" : ""}`}
+            className={`inline-flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px] ${centered ? "justify-center" : ""}`}
           >
-            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
             Highlights
           </p>
           <h2

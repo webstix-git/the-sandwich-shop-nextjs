@@ -57,8 +57,8 @@ export function InfoProse({
   }
 
   return (
-    <article className="mx-auto max-w-[1180px] px-7 py-16 md:py-20">
-      <div className="mx-auto max-w-[820px] rounded-3xl border border-brand-border bg-white p-8 shadow-[0_12px_30px_rgba(52,36,47,0.06)] md:p-12">
+    <article className="mx-auto box-content max-w-[1250px] px-7 py-16 md:py-20">
+      <div className="mx-auto max-w-[1250px] rounded-3xl border border-brand-border bg-white p-8 shadow-[0_12px_30px_rgba(52,36,47,0.06)] md:p-12">
         {content}
       </div>
     </article>

@@ -1,8 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { createContext, useContext, useEffect, useRef, useState } from "react";
-import { isCompactIntroPage } from "@/lib/compact-intro-pages";
 
 /** Fallback header height; updated at runtime via ResizeObserver. */
 export const STICKY_HEADER_HEIGHT = 100;
@@ -29,14 +27,10 @@ type ScrollStickyTopBarProps = {
 };
 
 export function ScrollStickyTopBar({ children }: ScrollStickyTopBarProps) {
-  const pathname = usePathname();
-  const useCompactIntroHeader = isCompactIntroPage(pathname);
   const barRef = useRef<HTMLDivElement>(null);
-  const [isScrollPinned, setIsScrollPinned] = useState(false);
+  const [isPinned, setIsPinned] = useState(false);
   const [headerHeight, setHeaderHeight] = useState(STICKY_HEADER_HEIGHT);
-
-  const showPinnedAppearance = useCompactIntroHeader || isScrollPinned;
-  const isHeaderFixed = useCompactIntroHeader || isScrollPinned;
+  const [naturalHeight, setNaturalHeight] = useState(0);
 
   useEffect(() => {
     const bar = barRef.current;
@@ -45,6 +39,9 @@ export function ScrollStickyTopBar({ children }: ScrollStickyTopBarProps) {
     const updateHeaderHeight = () => {
       const height = bar.offsetHeight;
       setHeaderHeight(height);
+      if (window.scrollY <= 1) {
+        setNaturalHeight(height);
+      }
       document.documentElement.style.setProperty("--site-header-height", `${height}px`);
     };
 
@@ -54,7 +51,7 @@ export function ScrollStickyTopBar({ children }: ScrollStickyTopBarProps) {
     resizeObserver.observe(bar);
 
     const onScroll = () => {
-      setIsScrollPinned(window.scrollY > 1);
+      setIsPinned(window.scrollY > 1);
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -69,10 +66,10 @@ export function ScrollStickyTopBar({ children }: ScrollStickyTopBarProps) {
   }, []);
 
   return (
-    <SiteHeaderContext.Provider value={{ height: headerHeight, isFixed: isHeaderFixed }}>
-      {isHeaderFixed && (
+    <SiteHeaderContext.Provider value={{ height: headerHeight, isFixed: isPinned }}>
+      {isPinned && naturalHeight > 0 && (
         <div
-          style={{ height: headerHeight }}
+          style={{ height: naturalHeight }}
           className="pointer-events-none"
           aria-hidden="true"
         />
@@ -80,11 +77,9 @@ export function ScrollStickyTopBar({ children }: ScrollStickyTopBarProps) {
       <div
         ref={barRef}
         className={`left-0 right-0 z-40 w-full overflow-visible transition-[height,background-color,box-shadow,border-color] duration-300 ease-out ${
-          isHeaderFixed
+          isPinned
             ? `fixed top-0 ${PINNED_BAR_CLASSES}`
-            : showPinnedAppearance
-              ? `relative ${PINNED_BAR_CLASSES}`
-              : "relative h-auto border-b border-brand-border/60 bg-brand-bg/95 shadow-none backdrop-blur-sm"
+            : "relative h-auto border-b border-transparent bg-transparent shadow-none"
         }`}
       >
         {children}
@@ -93,9 +88,6 @@ export function ScrollStickyTopBar({ children }: ScrollStickyTopBarProps) {
   );
 }
 
-// Backward-compatible alias for compact header styling in Header.tsx
 export function useStickyHeaderPinned() {
-  const { isFixed } = useSiteHeader();
-  const pathname = usePathname();
-  return isCompactIntroPage(pathname) || isFixed;
+  return useSiteHeader().isFixed;
 }

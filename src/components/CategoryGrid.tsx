@@ -16,15 +16,15 @@ export function CategoryGrid({ categories }: CategoryGridProps) {
           href={category.href}
           className="group block overflow-hidden rounded-3xl border border-brand-border bg-white shadow-[0_12px_30px_rgba(52,36,47,0.08)] transition-all hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(52,36,47,0.14)]"
         >
-          <div className="h-[200px] overflow-hidden">
+          <div className="relative h-[200px] overflow-hidden">
             <Image
               src={category.image}
               alt={category.imageAlt}
-              width={400}
-              height={200}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 380px"
               className={foodImageClassName(
                 category.image,
-                "h-full w-full object-cover transition-transform duration-300 group-hover:scale-105",
+                "object-cover transition-transform duration-300 group-hover:scale-105",
               )}
             />
           </div>

@@ -20,27 +20,29 @@ import {
 } from "@/lib/contact-page-data";
 import { HOURS, SITE } from "@/lib/constants";
 
+// Sizes and left offsets compensate for each glyph's padding in its 24px viewBox
+// so the three icons read at the same visual size and share a left edge.
 const METHOD_ICONS = {
-  gold: MapPinIcon,
-  cyan: PhoneIcon,
-  pink: MailIcon,
+  gold: { Icon: MapPinIcon, size: 32, className: "-ml-[6.5px]" },
+  cyan: { Icon: PhoneIcon, size: 28, className: "-ml-[2.5px]" },
+  pink: { Icon: MailIcon, size: 32, className: "-ml-1" },
 } as const;
 
 const METHOD_ACCENT = {
   gold: {
-    icon: "bg-[color-mix(in_srgb,var(--color-brand-pink-light)_60%,white)] text-brand-pink-dark",
+    icon: "text-brand-pink-dark",
     headline: "text-brand-pink-dark",
     cta: "text-brand-pink-dark hover:text-brand-pink",
     ring: "hover:ring-brand-pink/20",
   },
   cyan: {
-    icon: "bg-brand-cyan-light text-brand-cyan-dark",
+    icon: "text-brand-cyan-dark",
     headline: "text-brand-cyan-dark",
     cta: "text-brand-cyan-dark hover:text-brand-cyan",
     ring: "hover:ring-brand-cyan/20",
   },
   pink: {
-    icon: "bg-[color-mix(in_srgb,var(--color-brand-pink-light)_60%,white)] text-brand-pink-dark",
+    icon: "text-brand-pink-dark",
     headline: "text-brand-pink-dark",
     cta: "text-brand-pink-dark hover:text-brand-pink",
     ring: "hover:ring-brand-pink/20",
@@ -52,10 +54,9 @@ function ContactMethodsSection() {
 
   return (
     <section className="border-t border-brand-border/60 bg-white px-7 py-20 md:py-24">
-      <div className="mx-auto max-w-[1180px]">
+      <div className="mx-auto max-w-[1250px]">
         <header className="mb-12 max-w-[640px] md:mb-14">
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px]">
             {section.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.5rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark text-balance">
@@ -69,7 +70,8 @@ function ContactMethodsSection() {
 
         <div className="grid gap-6 md:grid-cols-3 md:gap-7">
           {CONTACT_METHODS.map((method) => {
-            const Icon = METHOD_ICONS[method.accent];
+            const { Icon, size: iconSize, className: iconClassName } =
+              METHOD_ICONS[method.accent];
             const accent = METHOD_ACCENT[method.accent];
 
             return (
@@ -77,10 +79,8 @@ function ContactMethodsSection() {
                 key={method.title}
                 className={`flex flex-col rounded-[28px] border border-brand-card-border bg-[color-mix(in_srgb,var(--color-brand-bg)_60%,white)] p-7 shadow-[0_12px_36px_rgba(52,36,47,0.06)] ring-1 ring-transparent transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_44px_rgba(52,36,47,0.1)] md:p-8 ${accent.ring}`}
               >
-                <span
-                  className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl ${accent.icon}`}
-                >
-                  <Icon size={22} />
+                <span className={`flex h-10 items-center ${accent.icon}`}>
+                  <Icon size={iconSize} className={iconClassName} />
                 </span>
                 <h3 className="mt-5 text-[clamp(1.35rem,2.5vw,1.65rem)] font-extrabold leading-[1.1] tracking-[-0.03em] text-brand-dark">
                   {method.title}{" "}
@@ -101,7 +101,7 @@ function ContactMethodsSection() {
                     rel={
                       method.action.external ? "noopener noreferrer" : undefined
                     }
-                    className={`group mt-6 inline-flex items-center gap-2 text-[16px] font-semibold transition-colors ${accent.cta}`}
+                    className={`group mt-auto inline-flex items-center gap-2 self-start pt-6 text-[16px] font-semibold transition-colors ${accent.cta}`}
                   >
                     {method.action.label}
                     <ChevronRightIcon
@@ -131,10 +131,9 @@ function ContactHoursAndFormSection() {
       id="send-message"
       className="border-y border-brand-border/60 bg-[linear-gradient(180deg,#fdf8f3_0%,#fff_50%,#fdf8f3_100%)] px-7 pt-20 pb-10 md:pt-24 lg:pb-24"
     >
-      <div className="mx-auto grid max-w-[1180px] gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+      <div className="mx-auto grid max-w-[1250px] gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div>
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px]">
             {form.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.35rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark">
@@ -220,8 +219,7 @@ function ContactHoursAndFormSection() {
         </div>
 
         <div>
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px]">
             {hours.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.35rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark">
@@ -234,9 +232,7 @@ function ContactHoursAndFormSection() {
 
           <div className="mt-8 overflow-hidden rounded-[24px] border border-brand-card-border bg-white shadow-[0_12px_36px_rgba(52,36,47,0.06)]">
             <div className="flex items-center gap-3 border-b border-brand-border/60 bg-[color-mix(in_srgb,var(--color-brand-bg)_60%,white)] px-6 py-4">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-cyan-light text-brand-cyan-dark">
-                <ClockIcon size={20} />
-              </span>
+              <ClockIcon size={28} className="-ml-1 shrink-0 text-brand-cyan-dark" />
               <p className="text-[16px] font-semibold text-brand-dark">
                 Store hours
               </p>
@@ -262,9 +258,7 @@ function ContactHoursAndFormSection() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 transition-opacity hover:opacity-80"
               >
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[color-mix(in_srgb,var(--color-brand-pink-light)_60%,white)] text-brand-pink-dark">
-                  <MapPinIcon size={20} />
-                </span>
+                <MapPinIcon size={30} className="-ml-[6.25px] shrink-0 text-brand-pink-dark" />
                 <div>
                   <p className="text-[16px] font-semibold text-brand-dark">
                     {SITE.address}
@@ -309,12 +303,12 @@ function ContactMapCtaSection() {
 
   return (
     <section className="bg-white px-7 pb-16 pt-[70px] md:pb-20">
-      <div className="relative mx-auto max-w-[1180px] overflow-hidden rounded-[28px] border border-brand-pink/35 bg-brand-footer pb-[70px] pt-[70px] shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
+      <div className="relative mx-auto max-w-[1250px] overflow-hidden rounded-[28px] border border-brand-pink/35 bg-brand-footer pb-[70px] pt-[70px] shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
         <Image
           src={cta.backgroundImage}
           alt=""
           fill
-          sizes="(max-width: 1180px) 100vw, 1180px"
+          sizes="(max-width: 1250px) 100vw, 1250px"
           className="object-cover object-[center_0%]"
           unoptimized
           aria-hidden
@@ -330,7 +324,7 @@ function ContactMapCtaSection() {
 
         <div className="relative z-[2] grid items-center gap-10 px-7 md:grid-cols-[1.05fr_0.95fr] md:gap-12 md:px-10 lg:px-12">
           <div>
-            <span className="inline-flex items-center rounded-full border border-brand-pink/50 bg-black/25 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-pink-light">
+            <span className="inline-flex items-center rounded-full border border-brand-pink/50 bg-black/25 px-3.5 py-1.5 text-[13px] font-bold uppercase tracking-[0.2em] text-brand-pink-light">
               {cta.badge}
             </span>
 
@@ -345,7 +339,7 @@ function ContactMapCtaSection() {
 
             <div className="mt-7 space-y-3">
               <p className="flex items-start gap-3 text-[16px] text-[#ece4dc] md:text-[17px]">
-                <MapPinIcon size={18} className="mt-0.5 shrink-0 text-brand-cyan-accent" />
+                <MapPinIcon size={18} className="mt-0.5 shrink-0 text-white" />
                 <AddressLink variant="on-dark" className="hover:!text-brand-pink-light" />
               </p>
             </div>

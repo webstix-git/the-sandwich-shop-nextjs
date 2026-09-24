@@ -26,23 +26,24 @@ function AboutFeatureSection() {
 
   return (
     <section className="bg-white px-7 py-16 md:py-24">
-      <div className="mx-auto grid max-w-[1180px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto grid max-w-[1250px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div className="relative order-2 lg:order-1">
           <div className="overflow-hidden rounded-[24px] border-[6px] border-white shadow-[0_22px_52px_rgba(52,36,47,0.14)]">
-            <Image
-              src={feature.image}
-              alt={feature.imageAlt}
-              width={600}
-              height={450}
-              className="h-[300px] w-full object-cover object-[center_42%] md:h-[420px]"
-              unoptimized
-            />
+            <div className="relative h-[300px] md:h-[420px]">
+              <Image
+                src={feature.image}
+                alt={feature.imageAlt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 560px"
+                className="object-cover object-[center_42%]"
+                unoptimized
+              />
+            </div>
           </div>
         </div>
 
         <div className="order-1 lg:order-2">
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px]">
             {feature.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.5rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark">
@@ -78,10 +79,9 @@ function AboutValuesSection() {
 
   return (
     <section className="border-t border-brand-border/60 bg-brand-warm-cream px-7 py-20 md:py-24">
-      <div className="mx-auto max-w-[1180px]">
+      <div className="mx-auto max-w-[1250px]">
         <div className="mx-auto max-w-[640px] text-center">
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px]">
             {values.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.5rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark text-balance">
@@ -140,10 +140,9 @@ function AboutPhilosophySection() {
         aria-hidden
       />
 
-      <div className="relative mx-auto grid max-w-[1180px] items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+      <div className="relative mx-auto grid max-w-[1250px] items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
         <div>
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px]">
             {philosophy.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.5rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark text-balance">
@@ -199,7 +198,7 @@ function AboutPhilosophySection() {
               aria-hidden
             />
             <div className="absolute inset-x-0 bottom-0 p-7 md:p-8">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-brand-pink-light">
+              <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-brand-pink-light">
                 The Sandwich Shop &amp; Dirty Soda Bar
               </p>
               <p className="mt-2 max-w-[28ch] text-[clamp(1.25rem,2.5vw,1.5rem)] font-extrabold leading-[1.15] tracking-[-0.03em] text-white [text-shadow:0_2px_16px_rgba(0,0,0,0.4)]">
@@ -214,7 +213,7 @@ function AboutPhilosophySection() {
             rel="noopener noreferrer"
             className="absolute -bottom-4 -left-3 hidden rounded-2xl border-4 border-white bg-brand-footer px-5 py-4 shadow-[0_14px_36px_rgba(52,36,47,0.18)] transition-transform hover:-translate-y-0.5 sm:block md:-bottom-5 md:-left-5"
           >
-            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-brand-pink-light">
+            <p className="text-[12px] font-bold uppercase tracking-[0.18em] text-brand-pink-light">
               Locally owned
             </p>
             <p className="mt-1 text-[16px] font-extrabold leading-tight text-white">
@@ -230,7 +229,6 @@ function AboutPhilosophySection() {
 const SIGNATURE_ACCENT_STYLES = {
   gold: {
     eyebrow: "text-brand-pink-light",
-    line: "bg-brand-pink/85",
     headline: "text-brand-pink-dark",
     cta: "text-brand-pink-dark group-hover:text-brand-pink",
     ctaCircle: "bg-brand-pink-light text-brand-pink-dark group-hover:bg-brand-pink group-hover:text-white",
@@ -238,7 +236,6 @@ const SIGNATURE_ACCENT_STYLES = {
   },
   cyan: {
     eyebrow: "text-brand-cyan-light",
-    line: "bg-brand-cyan/85",
     headline: "text-brand-cyan-dark",
     cta: "text-brand-cyan-dark group-hover:text-brand-cyan",
     ctaCircle: "bg-brand-cyan-light text-brand-cyan-dark group-hover:bg-brand-cyan group-hover:text-white",
@@ -246,7 +243,6 @@ const SIGNATURE_ACCENT_STYLES = {
   },
   pink: {
     eyebrow: "text-brand-pink-light",
-    line: "bg-brand-pink/85",
     headline: "text-brand-pink-dark",
     cta: "text-brand-pink-dark group-hover:text-brand-pink",
     ctaCircle: "bg-brand-pink-light text-brand-pink-dark group-hover:bg-brand-pink group-hover:text-white",
@@ -283,9 +279,8 @@ function AboutSignatureCard({
           />
           <div className="absolute inset-x-0 bottom-0 z-[1] p-5 md:p-6">
             <p
-              className={`flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.22em] ${accentStyles.eyebrow}`}
+              className={`flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.22em] ${accentStyles.eyebrow}`}
             >
-              <span className={`h-px w-7 shrink-0 ${accentStyles.line}`} aria-hidden />
               {item.eyebrow}
             </p>
           </div>
@@ -332,12 +327,10 @@ function AboutSignatureSection() {
         aria-hidden
       />
 
-      <div className="relative mx-auto max-w-[1180px]">
+      <div className="relative mx-auto max-w-[1250px]">
         <header className="mx-auto mb-12 max-w-[680px] text-center md:mb-14">
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px]">
             {section.eyebrow}
-            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.65rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark text-balance">
             {section.title}{" "}
@@ -379,12 +372,12 @@ function AboutCtaSection() {
 
   return (
     <section className="border-t border-brand-border/60 bg-brand-warm-cream px-7 pb-16 pt-4 md:pb-20 md:pt-6">
-      <div className="relative mx-auto max-w-[1180px] overflow-hidden rounded-[28px] border border-brand-pink/35 bg-brand-footer pb-[70px] shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
+      <div className="relative mx-auto max-w-[1250px] overflow-hidden rounded-[28px] border border-brand-pink/35 bg-brand-footer pb-[70px] shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
         <Image
           src={cta.backgroundImage}
           alt=""
           fill
-          sizes="(max-width: 1180px) 100vw, 1180px"
+          sizes="(max-width: 1250px) 100vw, 1250px"
           className="object-cover object-[center_0%]"
           unoptimized
           aria-hidden
@@ -400,7 +393,7 @@ function AboutCtaSection() {
 
         <div className="relative z-[2] grid items-center gap-10 px-7 pt-8 md:grid-cols-[1.05fr_0.95fr] md:gap-12 md:px-10 md:pt-10 lg:px-12 lg:pt-12">
           <div>
-            <span className="inline-flex items-center rounded-full border border-brand-pink/50 bg-black/25 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-pink-light">
+            <span className="inline-flex items-center rounded-full border border-brand-pink/50 bg-black/25 px-3.5 py-1.5 text-[13px] font-bold uppercase tracking-[0.2em] text-brand-pink-light">
               {cta.badge}
             </span>
 
@@ -415,18 +408,18 @@ function AboutCtaSection() {
 
             <div className="mt-7 space-y-4">
               <div className="flex items-start gap-3">
-                <MapPinIcon size={18} className="mt-0.5 shrink-0 text-brand-pink-light" />
+                <MapPinIcon size={18} className="mt-0.5 shrink-0 text-white" />
                 <AddressLink
                   variant="on-dark"
                   className="text-[16px] leading-relaxed md:text-[17px]"
                 />
               </div>
               <div className="flex items-start gap-3">
-                <PhoneIcon size={18} className="mt-0.5 shrink-0 text-brand-cyan-accent" />
+                <PhoneIcon size={18} className="mt-0.5 shrink-0 text-white" />
                 <PhoneLink variant="on-dark" className="text-[16px] hover:!text-brand-cyan-accent md:text-[17px]" />
               </div>
               <div className="flex items-start gap-3">
-                <ClockIcon size={18} className="mt-0.5 shrink-0 text-brand-cyan-accent" />
+                <ClockIcon size={18} className="mt-0.5 shrink-0 text-white" />
                 <div className="text-[16px] text-[#ece4dc] md:text-[17px]">
                   {HOURS.map((row) => (
                     <p key={row.day}>

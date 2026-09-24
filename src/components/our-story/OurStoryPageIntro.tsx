@@ -12,23 +12,24 @@ function StoryFeatureSection() {
 
   return (
     <section className={`bg-white ${CATEGORY_PAGE_LAYOUT.section}`}>
-      <div className="mx-auto grid max-w-[1180px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto grid max-w-[1250px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div className="relative order-2 lg:order-1">
           <div className="overflow-hidden rounded-[24px] border-[6px] border-white shadow-[0_22px_52px_rgba(52,36,47,0.14)]">
-            <Image
-              src={feature.image}
-              alt={feature.imageAlt}
-              width={600}
-              height={450}
-              className="h-[300px] w-full object-cover object-[center_42%] md:h-[420px]"
-              unoptimized
-            />
+            <div className="relative h-[300px] md:h-[420px]">
+              <Image
+                src={feature.image}
+                alt={feature.imageAlt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 560px"
+                className="object-cover object-[center_42%]"
+                unoptimized
+              />
+            </div>
           </div>
         </div>
 
         <div className="order-1 lg:order-2">
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px]">
             {feature.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.5rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark">

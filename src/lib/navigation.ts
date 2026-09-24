@@ -51,8 +51,7 @@ export const NAV_LINKS: NavLink[] = [
     href: "/services",
     label: "Services",
     children: [
-      { href: "/services", label: "Services" },
-      { href: "/services/catering-services", label: "Catering Services" },
+      { href: "/services/catering-services", label: "Catering" },
     ],
   },
   { href: "/contact-us", label: "Contact Us" },
@@ -80,7 +79,7 @@ export const FOOTER_QUICK_LINKS = [
   { href: "/about-us", label: "About Us" },
   { href: "/about-us/our-story", label: "Our Story" },
   { href: "/services", label: "Services" },
-  { href: "/services/catering-services", label: "Catering Services" },
+  { href: "/services/catering-services", label: "Catering" },
   { href: "/contact-us", label: "Contact Us" },
 ] as const;
 

@@ -32,7 +32,7 @@ export function CtaBanner({
     variant === "gradient" ? "text-brand-muted" : "text-white/90";
 
   return (
-    <section className="mx-auto max-w-[1120px] px-7 py-16 md:py-20">
+    <section className="mx-auto box-content max-w-[1250px] px-7 py-16 md:py-20">
       <div
         className={`relative overflow-hidden rounded-[30px] px-8 py-12 text-center md:px-14 md:py-16 ${bgClass}`}
       >

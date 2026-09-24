@@ -46,7 +46,7 @@ export function SodaFlavorChips({
             {label}
           </HomeSectionEyebrow>
         ) : (
-          <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-cyan-dark">
+          <p className="mb-5 text-[13px] font-bold uppercase tracking-[0.2em] text-brand-cyan-dark">
             {label}
           </p>
         )

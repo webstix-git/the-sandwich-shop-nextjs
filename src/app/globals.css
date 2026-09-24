@@ -55,10 +55,6 @@
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -274,7 +270,7 @@ html.menu-page-white body,
 
 .home-hero-eyebrow {
   font-family: var(--font-sans);
-  font-size: 0.6875rem;
+  font-size: 0.8125rem;
   font-weight: 800;
   letter-spacing: 0.2em;
   text-transform: uppercase;

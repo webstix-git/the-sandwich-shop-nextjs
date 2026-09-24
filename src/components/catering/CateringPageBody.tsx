@@ -19,7 +19,7 @@ import {
 const CATERING_LAYOUT = {
   section: "px-7 pt-[80px] pb-[80px]",
   divider: "border-t border-brand-border/60",
-  inner: "mx-auto max-w-[1180px]",
+  inner: "mx-auto max-w-[1250px]",
   header: "mb-12 md:mb-16",
   headerCentered: "mx-auto mb-12 max-w-[680px] text-center md:mb-16",
 } as const;
@@ -45,17 +45,14 @@ function cateringSectionClass(tone: CateringTone, { first = false } = {}) {
 const OCCASION_ACCENT = {
   gold: {
     tag: "text-brand-pink-dark",
-    line: "bg-brand-pink/80",
     ring: "hover:ring-brand-pink/15",
   },
   pink: {
     tag: "text-brand-pink-dark",
-    line: "bg-brand-pink/80",
     ring: "hover:ring-brand-pink/15",
   },
   cyan: {
     tag: "text-brand-cyan-dark",
-    line: "bg-brand-cyan/80",
     ring: "hover:ring-brand-cyan/15",
   },
 } as const;
@@ -83,9 +80,8 @@ function CateringOccasionCard({
 
       <div className="flex flex-1 flex-col border-t border-brand-border/50 px-5 py-5">
         <p
-          className={`flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] ${accent.tag}`}
+          className={`flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.18em] ${accent.tag}`}
         >
-          <span className={`h-px w-5 shrink-0 ${accent.line}`} aria-hidden />
           {occasion.tagline}
         </p>
         <h3 className="mt-2.5 text-[1.125rem] font-extrabold leading-snug tracking-[-0.02em] text-brand-dark">
@@ -106,8 +102,7 @@ function CateringOccasionsSection() {
     <section className={cateringSectionClass("cream")}>
       <div className={CATERING_LAYOUT.inner}>
         <header className={`max-w-[640px] ${CATERING_LAYOUT.header}`}>
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px]">
             {section.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.5rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark text-balance">
@@ -150,19 +145,16 @@ const PACKAGE_ACCENT = {
 const SIGNATURE_ACCENT = {
   gold: {
     eyebrow: "text-brand-pink-light",
-    line: "bg-brand-pink/85",
     headline: "text-brand-pink-dark",
     ring: "group-hover:ring-brand-pink/25",
   },
   pink: {
     eyebrow: "text-brand-pink-light",
-    line: "bg-brand-pink/85",
     headline: "text-brand-pink-dark",
     ring: "group-hover:ring-brand-pink/25",
   },
   cyan: {
     eyebrow: "text-brand-cyan-light",
-    line: "bg-brand-cyan/85",
     headline: "text-brand-cyan-dark",
     ring: "group-hover:ring-brand-cyan/25",
   },
@@ -176,28 +168,31 @@ function CateringOpeningSection() {
       <div className={`${CATERING_LAYOUT.inner} grid items-center gap-12 lg:grid-cols-2 lg:gap-16`}>
         <div className="relative order-2 lg:order-1">
           <div className="overflow-hidden rounded-[28px] border-[6px] border-white shadow-[0_24px_56px_rgba(52,36,47,0.14)]">
-            <Image
-              src={opening.image}
-              alt={opening.imageAlt}
-              width={600}
-              height={450}
-              className="h-[300px] w-full object-cover md:h-[440px]"
-            />
+            <div className="relative h-[300px] md:h-[440px]">
+              <Image
+                src={opening.image}
+                alt={opening.imageAlt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 560px"
+                className="object-cover"
+              />
+            </div>
           </div>
           <div className="absolute -bottom-5 -right-4 hidden overflow-hidden rounded-2xl border-4 border-white shadow-[0_16px_40px_rgba(52,36,47,0.18)] sm:block md:-bottom-7 md:-right-6">
-            <Image
-              src="/images/dessert-boxes.jpg"
-              alt="Dessert boxes for catering"
-              width={200}
-              height={150}
-              className="h-[110px] w-[160px] object-cover md:h-[130px] md:w-[200px]"
-            />
+            <div className="relative h-[110px] w-[160px] md:h-[130px] md:w-[200px]">
+              <Image
+                src="/images/dessert-boxes.jpg"
+                alt="Dessert boxes for catering"
+                fill
+                sizes="200px"
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
 
         <div className="order-1 lg:order-2">
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px]">
             {opening.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.65rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark">
@@ -235,8 +230,7 @@ function CateringPackagesSection() {
     <section className={cateringSectionClass("white")}>
       <div className={CATERING_LAYOUT.inner}>
         <header className={`max-w-[640px] ${CATERING_LAYOUT.header}`}>
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px]">
             {section.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.5rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark">
@@ -257,7 +251,7 @@ function CateringPackagesSection() {
                 className={`flex flex-col rounded-[28px] border border-brand-card-border bg-white p-8 shadow-[0_16px_48px_rgba(52,36,47,0.08)] ring-1 ring-brand-border/50 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_28px_56px_rgba(52,36,47,0.12)] ${accent.ring}`}
               >
                 <p
-                  className={`text-[11px] font-bold uppercase tracking-[0.16em] ${accent.tag}`}
+                  className={`text-[13px] font-bold uppercase tracking-[0.16em] ${accent.tag}`}
                 >
                   {pkg.tagline}
                 </p>
@@ -316,9 +310,8 @@ function CateringSignatureCard({
         />
         <div className="absolute inset-x-0 bottom-0 z-[1] p-5 md:p-6">
           <p
-            className={`flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.22em] ${accent.eyebrow}`}
+            className={`flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.22em] ${accent.eyebrow}`}
           >
-            <span className={`h-px w-7 shrink-0 ${accent.line}`} aria-hidden />
             {item.eyebrow}
           </p>
         </div>
@@ -343,10 +336,8 @@ function CateringSignatureSection() {
     <section className={cateringSectionClass("white")}>
       <div className={CATERING_LAYOUT.inner}>
         <header className={CATERING_LAYOUT.headerCentered}>
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px]">
             {section.eyebrow}
-            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.65rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark text-balance">
             {section.title}{" "}
@@ -377,10 +368,8 @@ function CateringProcessSection() {
     <section className={cateringSectionClass("peach")}>
       <div className={CATERING_LAYOUT.inner}>
         <header className={`mx-auto max-w-[640px] text-center ${CATERING_LAYOUT.header}`}>
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px]">
             {section.eyebrow}
-            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.5rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark">
             {section.title}{" "}
@@ -445,7 +434,7 @@ function CateringCtaSection() {
           src={cta.backgroundImage}
           alt=""
           fill
-          sizes="(max-width: 1180px) 100vw, 1180px"
+          sizes="(max-width: 1250px) 100vw, 1250px"
           className="object-cover object-[center_42%]"
           aria-hidden
         />
@@ -460,7 +449,7 @@ function CateringCtaSection() {
 
         <div className="relative z-[2] grid items-center gap-10 px-7 pt-8 md:grid-cols-[1.05fr_0.95fr] md:gap-12 md:px-10 md:pt-10 lg:px-12 lg:pt-12">
           <div>
-            <span className="inline-flex items-center rounded-full border border-brand-pink/50 bg-black/25 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-pink-light">
+            <span className="inline-flex items-center rounded-full border border-brand-pink/50 bg-black/25 px-3.5 py-1.5 text-[13px] font-bold uppercase tracking-[0.2em] text-brand-pink-light">
               {cta.badge}
             </span>
 

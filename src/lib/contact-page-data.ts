@@ -4,7 +4,7 @@ export const CONTACT_INTRO = {
   primaryImage: "/images/about-intro-storefront.png",
   primaryImageAlt: "The Sandwich Shop storefront on 3rd Street in downtown La Crosse",
   description:
-    "411 3rd Street in downtown La Crosse — stop in, call ahead, or reach out about catering for your next event.",
+    "411 3rd Street in downtown La Crosse. Stop in, call ahead, or reach out about catering for your next event.",
 } as const;
 
 export const CONTACT_METHODS_SECTION = {
@@ -12,14 +12,14 @@ export const CONTACT_METHODS_SECTION = {
   title: "We're easy",
   highlight: "to find.",
   description:
-    "411 3rd Street — right downtown. Dine in, grab takeout, or ask about catering for your next event.",
+    "411 3rd Street, right downtown. Dine in, grab takeout, or ask about catering for your next event.",
 } as const;
 
 export const CONTACT_METHODS = [
   {
     title: "Visit us",
     highlight: "downtown",
-    description: "Pull up a chair or grab carry out — we're on 3rd Street in the heart of La Crosse.",
+    description: "Pull up a chair or grab carry out. We're on 3rd Street in the heart of La Crosse.",
     lines: [SITE.address, SITE.city],
     action: {
       label: "Get directions",
@@ -31,16 +31,16 @@ export const CONTACT_METHODS = [
   {
     title: "Call",
     highlight: "ahead",
-    description: "Phone in your order or ask a question — we're happy to help.",
-    lines: [SITE.phone, "Carry out & questions welcome"],
+    description: "Phone in your order or ask a question. We're happy to help.",
+    lines: [SITE.phone],
     action: { label: "Call now", href: SITE.phoneHref, external: false },
     accent: "cyan" as const,
   },
   {
     title: "Email",
     highlight: "us",
-    description: "Catering inquiries, feedback, or general questions — we reply within 24 hours.",
-    lines: [SITE.email, "We read every message"],
+    description: "Catering inquiries, feedback, or general questions. We reply within 24 hours.",
+    lines: [SITE.email],
     action: {
       label: "Send a message",
       href: "/contact-us#send-message",

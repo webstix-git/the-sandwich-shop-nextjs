@@ -12,7 +12,7 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "The Sandwich Shop & Dirty Soda Bar | La Crosse, WI",
   description:
-    "Freshly made hot & cold sandwiches, juicy smash burgers, and outrageous dirty sodas. Locally owned in Downtown La Crosse, WI.",
+    "Freshly made hot & cold sandwiches, juicy smash burgers, and creative dirty sodas. Locally owned in Downtown La Crosse, WI.",
   keywords: [
     "sandwich shop",
     "dirty soda",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Sandwich Shop & Dirty Soda Bar",
     description:
-      "Handcrafted sandwiches & outrageous dirty sodas in Downtown La Crosse, WI.",
+      "Handcrafted sandwiches & creative dirty sodas in Downtown La Crosse, WI.",
     type: "website",
     locale: "en_US",
   },
@@ -37,7 +37,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${manrope.variable} scroll-smooth`}>
-      <body className="min-h-screen overflow-x-hidden bg-brand-bg font-sans text-brand-dark antialiased">
+      <body
+        className="min-h-screen overflow-x-hidden bg-brand-bg font-sans text-brand-dark antialiased"
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>

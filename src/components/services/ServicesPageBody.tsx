@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRightIcon, HeartIcon, MapPinIcon, StoreIcon } from "@/components/icons";
+import { ChevronRightIcon } from "@/components/icons";
+import { MaskIcon } from "@/components/MaskIcon";
 import {
   CATEGORY_PAGE_LAYOUT,
   categorySectionClass,
@@ -18,34 +19,22 @@ import {
 const ACCENT = {
   gold: {
     tag: "text-brand-pink-dark",
-    line: "bg-brand-pink/80",
     ring: "hover:ring-brand-pink/15",
     number: "text-brand-pink-dark",
-    iconBg: "bg-brand-pink-light",
     iconColor: "text-brand-pink-dark",
   },
   pink: {
     tag: "text-brand-pink-dark",
-    line: "bg-brand-pink/80",
     ring: "hover:ring-brand-pink/15",
     number: "text-brand-pink-dark",
-    iconBg: "bg-brand-pink-light",
     iconColor: "text-brand-pink-dark",
   },
   cyan: {
     tag: "text-brand-cyan-dark",
-    line: "bg-brand-cyan/80",
     ring: "hover:ring-brand-cyan/15",
     number: "text-brand-cyan-dark",
-    iconBg: "bg-brand-cyan-light",
     iconColor: "text-brand-cyan-dark",
   },
-} as const;
-
-const EXPERIENCE_ICONS = {
-  store: StoreIcon,
-  heart: HeartIcon,
-  "map-pin": MapPinIcon,
 } as const;
 
 function SectionEyebrow({
@@ -57,9 +46,8 @@ function SectionEyebrow({
 }) {
   return (
     <p
-      className={`inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px] ${centered ? "justify-center" : ""}`}
+      className={`inline-flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px] ${centered ? "justify-center" : ""}`}
     >
-      <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
       {children}
     </p>
   );
@@ -89,17 +77,19 @@ function ServicesFeatureSection() {
 
   return (
     <section className={categorySectionClass("white", { first: true })}>
-      <div className="mx-auto grid max-w-[1180px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto grid max-w-[1250px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div className="relative order-2 lg:order-1">
           <div className="overflow-hidden rounded-[24px] border-[6px] border-white shadow-[0_22px_52px_rgba(52,36,47,0.14)]">
-            <Image
-              src={feature.image}
-              alt={feature.imageAlt}
-              width={600}
-              height={450}
-              className="h-[300px] w-full object-cover object-[center_42%] md:h-[420px]"
-              unoptimized
-            />
+            <div className="relative h-[300px] md:h-[420px]">
+              <Image
+                src={feature.image}
+                alt={feature.imageAlt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 560px"
+                className="object-cover object-[center_42%]"
+                unoptimized
+              />
+            </div>
           </div>
         </div>
 
@@ -150,9 +140,8 @@ function ServiceOfferingCard({ item }: { item: ServiceOffering }) {
       </div>
       <div className="flex flex-1 flex-col border-t border-brand-border/50 px-5 py-5">
         <p
-          className={`flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] ${accent.tag}`}
+          className={`flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.18em] ${accent.tag}`}
         >
-          <span className={`h-px w-5 shrink-0 ${accent.line}`} aria-hidden />
           {item.tagline}
         </p>
         <h3 className="mt-2.5 text-[1.125rem] font-extrabold leading-snug tracking-[-0.02em] text-brand-dark">
@@ -208,7 +197,7 @@ function ServicesCateringSpotlightSection() {
 
   return (
     <section className={categorySectionClass("white")}>
-      <div className="mx-auto grid max-w-[1180px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto grid max-w-[1250px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div>
           <SectionEyebrow>{spotlight.eyebrow}</SectionEyebrow>
           <SectionTitle title={spotlight.title} highlight={spotlight.highlight} />
@@ -229,14 +218,16 @@ function ServicesCateringSpotlightSection() {
         </div>
 
         <div className="overflow-hidden rounded-[28px] border-[6px] border-white shadow-[0_24px_60px_rgba(52,36,47,0.16)]">
-          <Image
-            src={spotlight.image}
-            alt={spotlight.imageAlt}
-            width={600}
-            height={480}
-            className="h-[320px] w-full object-cover object-[center_35%] md:h-[440px]"
-            unoptimized
-          />
+          <div className="relative h-[320px] md:h-[440px]">
+            <Image
+              src={spotlight.image}
+              alt={spotlight.imageAlt}
+              fill
+              sizes="(max-width: 1024px) 100vw, 560px"
+              className="object-cover object-[center_35%]"
+              unoptimized
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -266,17 +257,14 @@ function ServicesExperienceSection() {
         <div className="grid gap-5 md:grid-cols-3 lg:gap-6">
           {experience.items.map((item) => {
             const accent = ACCENT[item.accent];
-            const Icon = EXPERIENCE_ICONS[item.icon];
 
             return (
               <article
                 key={item.title}
                 className="rounded-[20px] border border-brand-card-border bg-white px-6 py-7 shadow-[0_8px_28px_rgba(52,36,47,0.05)]"
               >
-                <span
-                  className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl ${accent.iconBg} ${accent.iconColor}`}
-                >
-                  <Icon size={22} />
+                <span className={`flex h-[46px] items-center ${accent.iconColor}`}>
+                  <MaskIcon src={item.icon} className="size-[46px]" />
                 </span>
                 <h3 className="mt-4 text-[1.25rem] font-extrabold tracking-[-0.02em] text-brand-dark">
                   {item.title}
@@ -298,12 +286,12 @@ function ServicesCtaSection() {
 
   return (
     <section className={categorySectionClass("white")}>
-      <div className="relative mx-auto max-w-[1180px] overflow-hidden rounded-[28px] border border-brand-pink/35 bg-brand-footer pb-[70px] shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
+      <div className="relative mx-auto max-w-[1250px] overflow-hidden rounded-[28px] border border-brand-pink/35 bg-brand-footer pb-[70px] shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
         <Image
           src={cta.backgroundImage}
           alt=""
           fill
-          sizes="(max-width: 1180px) 100vw, 1180px"
+          sizes="(max-width: 1250px) 100vw, 1250px"
           className="object-cover object-[center_0%]"
           unoptimized
           aria-hidden
@@ -319,7 +307,7 @@ function ServicesCtaSection() {
 
         <div className="relative z-[2] grid items-center gap-10 px-7 pt-8 md:grid-cols-[1.05fr_0.95fr] md:gap-12 md:px-10 md:pt-10 lg:px-12 lg:pt-12">
           <div>
-            <span className="inline-flex items-center rounded-full border border-brand-pink/50 bg-black/25 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-pink-light">
+            <span className="inline-flex items-center rounded-full border border-brand-pink/50 bg-black/25 px-3.5 py-1.5 text-[13px] font-bold uppercase tracking-[0.2em] text-brand-pink-light">
               {cta.badge}
             </span>
 

@@ -11,7 +11,7 @@ export const MENU_ITEMS = [
     title: "Sandwiches",
     ctaLabel: "View hot sandwiches",
     description:
-      "Stacked high on fresh-baked rolls — from Italian beef with au jus to toasted melts piled with the good stuff.",
+      "Served hot and stacked high, from our Hot Italian Beef and Chuckie Cheese Steak to Chicken Parm, Reubens and Turkey Melts.",
   },
   {
     href: "/our-menu#smash-burgers",
@@ -58,9 +58,8 @@ export const EXPERIENCE_HIGHLIGHTS = [
     eyebrow: "Made to order",
     title: "Fresh every day",
     description:
-      "Sandwiches stacked, burgers smashed, and sodas poured — all made fresh when you order, never sitting under a heat lamp.",
-    icon: "store",
-    iconBg: "bg-brand-pink-light",
+      "Sandwiches stacked, burgers smashed, and sodas poured, all made fresh when you order, never sitting under a heat lamp.",
+    icon: "/images/icons/sandwich.png",
     iconColor: "text-brand-pink-dark",
     accent: "text-brand-pink",
     glow: "bg-brand-pink",
@@ -69,9 +68,8 @@ export const EXPERIENCE_HIGHLIGHTS = [
     eyebrow: "Stacked high",
     title: "Generous portions",
     description:
-      "Subs piled with the good stuff and smash burgers that don't skimp. Come hungry — you'll leave satisfied.",
-    icon: "heart",
-    iconBg: "bg-brand-cyan-light",
+      "Subs piled with the good stuff and smash burgers that don't skimp. Come hungry. You'll leave satisfied.",
+    icon: "/images/icons/stacked-containers.png",
     iconColor: "text-brand-cyan-dark",
     accent: "text-brand-cyan-dark",
     glow: "bg-brand-cyan",
@@ -80,9 +78,8 @@ export const EXPERIENCE_HIGHLIGHTS = [
     eyebrow: "The soda bar",
     title: "30+ dirty sodas",
     description:
-      "Fizzy, creamy, candy-rimmed creations poured fresh behind the bar — a little celebration in every cup.",
-    icon: "droplet",
-    iconBg: "bg-brand-cyan-light",
+      "Fizzy, creamy, candy-rimmed creations poured fresh behind the bar, a little celebration in every cup.",
+    icon: "/images/icons/soda.png",
     iconColor: "text-brand-cyan-dark",
     accent: "text-brand-cyan",
     glow: "bg-brand-cyan",
@@ -91,9 +88,8 @@ export const EXPERIENCE_HIGHLIGHTS = [
     eyebrow: "Downtown La Crosse",
     title: "Your neighborhood spot",
     description:
-      "Locally owned on 3rd Street — a cozy corner for lunch, a treat with the kids, or a quick carry-out on the go.",
-    icon: "map-pin",
-    iconBg: "bg-brand-pink-light",
+      "Locally owned on 3rd Street, a cozy corner for lunch, a treat with the kids, or a quick carry-out on the go.",
+    icon: "/images/icons/location.png",
     iconColor: "text-brand-pink-dark",
     accent: "text-brand-pink",
     glow: "bg-brand-pink",
@@ -229,7 +225,6 @@ export const SITE = {
   email: "thesandwichshop143@yahoo.com",
   emailHref: "/contact-us",
   contactHref: "/contact-us",
-  announcement: "Now open in Downtown La Crosse — 411 3rd Street",
 } as const;
 
 export const CATERING_SERVICES = [
@@ -238,7 +233,7 @@ export const CATERING_SERVICES = [
     title: "Dine-In",
     eyebrow: "Pull up a seat",
     description:
-      "Enjoy our full menu in our cozy downtown space — watch burgers get smashed, sip a dirty soda, and soak in the neighborhood vibe.",
+      "Enjoy our full menu in our cozy downtown space, watch burgers get smashed, sip a dirty soda, and soak in the neighborhood vibe.",
     image: "/images/hero-sandwich.jpg",
     imageAlt: "Fresh sandwich served in the dining area",
     href: "/contact-us",
@@ -251,7 +246,7 @@ export const CATERING_SERVICES = [
     title: "Takeout",
     eyebrow: "Ready when you are",
     description:
-      "Call ahead or walk in — we'll have your order hot, fresh, and bagged to go. Perfect for lunch on the run or dinner at home.",
+      "Call ahead or walk in. We'll have your order hot, fresh, and bagged to go. Perfect for lunch on the run or dinner at home.",
     image: "/images/dirty-sodas-trio.jpg",
     imageAlt: "Dirty sodas and food ready for takeout",
     href: "tel:+16087971748",

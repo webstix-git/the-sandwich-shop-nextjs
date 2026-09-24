@@ -7,7 +7,6 @@ import { MENU_ITEMS } from "@/lib/constants";
 const MENU_CARD_ACCENT = {
   pink: {
     eyebrow: "text-brand-pink-light",
-    line: "bg-brand-pink/85",
     ring: "group-hover:ring-brand-pink/25",
     cta: "text-brand-pink-dark group-hover:text-brand-pink",
     ctaCircle:
@@ -15,7 +14,6 @@ const MENU_CARD_ACCENT = {
   },
   cyan: {
     eyebrow: "text-brand-cyan-light",
-    line: "bg-brand-cyan/85",
     ring: "group-hover:ring-brand-cyan/25",
     cta: "text-brand-cyan-dark group-hover:text-brand-cyan",
     ctaCircle:
@@ -55,12 +53,8 @@ function MenuItemCard({
           />
           <div className="absolute inset-x-0 bottom-0 z-[1] p-5 md:p-6">
             <p
-              className={`flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.22em] ${accent.eyebrow}`}
+              className={`flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.22em] ${accent.eyebrow}`}
             >
-              <span
-                className={`h-px w-7 shrink-0 ${accent.line}`}
-                aria-hidden
-              />
               {item.tag}
             </p>
           </div>
@@ -98,7 +92,7 @@ export function MenuSection() {
       id="menu"
       className="border-t border-brand-border/60 bg-white px-7 py-20 md:py-24"
     >
-      <div className="mx-auto max-w-[1180px]">
+      <div className="mx-auto max-w-[1250px]">
         <div className="mb-12 text-center md:mb-14">
           <HomeSectionEyebrow accent="cyan" className="mb-4">
             What we make

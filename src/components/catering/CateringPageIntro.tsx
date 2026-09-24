@@ -7,7 +7,7 @@ export function CateringPageIntro() {
   return (
     <PageIntroHero
       intro={CATERING_INTRO}
-      breadcrumbLabel="Catering Services"
+      breadcrumbLabel="Catering"
       description={CATERING_INTRO.description}
       breadcrumbParent={{ label: "Services", href: "/services" }}
       imageLayout="cover"

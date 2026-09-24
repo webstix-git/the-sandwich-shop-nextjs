@@ -39,7 +39,7 @@ const COMPACT_SECTIONS: CompactSection[] = [
 
 function CategorySubtitle({ children }: { children: string }) {
   return (
-    <p className="mt-2 text-xs font-bold uppercase tracking-[0.14em] text-brand-pink-dark sm:text-[16px] sm:tracking-[1.5px]">
+    <p className="mt-1.5 text-xs font-bold uppercase leading-tight tracking-[0.14em] text-brand-pink-dark sm:text-[16px] sm:tracking-[1.5px]">
       {children}
     </p>
   );
@@ -100,7 +100,7 @@ function MenuColumnHeader({
 }) {
   return (
     <header className={relaxed ? "mb-8" : "mb-6"}>
-      <div className="flex items-start gap-3.5 md:gap-4">
+      <div className="flex items-center gap-3.5 md:gap-4">
         <div className="relative h-[52px] w-[52px] shrink-0 overflow-hidden rounded-[14px] shadow-[0_4px_14px_rgba(52,36,47,0.1)] md:h-14 md:w-14 md:rounded-2xl">
           <Image
             src={headingImage}
@@ -111,15 +111,15 @@ function MenuColumnHeader({
           />
         </div>
         <div className="min-w-0 flex-1">
-          <h2 className="text-[clamp(1.375rem,2.5vw,1.875rem)] font-extrabold tracking-[-0.3px] text-brand-dark">
+          <h2 className="text-[clamp(1.375rem,2.5vw,1.875rem)] font-extrabold leading-[1.1] tracking-[-0.3px] text-brand-dark">
             {title}
           </h2>
           <CategorySubtitle>{scriptSubtitle}</CategorySubtitle>
-          {note && (
-            <p className="mt-4 text-[16px] leading-[1.65] text-brand-nav">{note}</p>
-          )}
         </div>
       </div>
+      {note && (
+        <p className="mt-4 text-[16px] leading-[1.65] text-brand-nav">{note}</p>
+      )}
     </header>
   );
 }
@@ -132,9 +132,6 @@ function SignatureCard({
   index: number;
 }) {
   const accentText = index % 2 === 1 ? "text-brand-cyan-accent" : "text-brand-pink-light";
-  const accentLine = index % 2 === 1 ? "bg-brand-cyan-accent/85" : "bg-brand-pink-light/85";
-  const accentBorder = index % 2 === 1 ? "border-brand-cyan-accent/35" : "border-brand-pink-light/35";
-
   return (
     <Link href={item.href} className="group block">
       <article className="relative aspect-[16/10] overflow-hidden rounded-[20px] sm:aspect-[5/3]">
@@ -153,8 +150,7 @@ function SignatureCard({
         </div>
 
         <div className="absolute inset-x-0 bottom-0 z-[1] p-6 md:p-8">
-          <p className={`flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] ${accentText}`}>
-            <span className={`h-px w-7 ${accentLine}`} aria-hidden />
+          <p className={`flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] ${accentText}`}>
             {item.eyebrow}
           </p>
 
@@ -165,7 +161,7 @@ function SignatureCard({
             ) : null}
           </h3>
 
-          <p className={`mt-3.5 max-w-[44ch] border-l-2 ${accentBorder} pl-3.5 text-[13px] font-light leading-[1.78] tracking-[0.02em] text-white/76 md:mt-4 md:pl-4 md:text-[15px] md:leading-[1.72]`}>
+          <p className="mt-3.5 max-w-[44ch] text-[13px] font-light leading-[1.78] tracking-[0.02em] text-white/76 md:mt-4 md:text-[15px] md:leading-[1.72]">
             {item.description}
           </p>
         </div>
@@ -181,12 +177,11 @@ export function MenuPageBody() {
     <>
       <section
         id="signature"
-        className="mx-auto max-w-[1180px] px-7 pb-6 pt-10 md:pt-12"
+        className="mx-auto box-content max-w-[1250px] px-7 pb-6 pt-10 md:pt-12"
         style={{ scrollMarginTop: menuSectionScrollMt }}
       >
         <header className="mb-8 md:mb-10">
-          <p className="inline-flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
+          <p className="inline-flex items-center gap-3 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px]">
             {MENU_SIGNATURE_SECTION.eyebrow}
           </p>
           <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
@@ -206,7 +201,7 @@ export function MenuPageBody() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1180px] px-7 pb-0 pt-10 md:pt-14">
+      <section className="mx-auto box-content max-w-[1250px] px-7 pb-0 pt-10 md:pt-14">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-14">
           <div
             id="specialty-sandwiches"

@@ -143,7 +143,7 @@ export function MenuCategoryFilter() {
         }`}
         style={isPinned ? { top: stickyTop } : undefined}
       >
-        <div className="mx-auto min-w-0 max-w-[1180px]">
+        <div className="mx-auto min-w-0 max-w-[1250px]">
           <div
             className="flex w-full items-center justify-start gap-1 overflow-x-auto rounded-full border border-[#E8D5C4] bg-white px-3 py-2 shadow-[0_8px_24px_rgba(52,36,47,0.07)] scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-1.5 sm:px-4 lg:justify-between lg:overflow-x-visible lg:px-5 [&::-webkit-scrollbar]:hidden"
             role="tablist"

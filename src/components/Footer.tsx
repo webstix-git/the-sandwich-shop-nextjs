@@ -50,7 +50,7 @@ export function Footer() {
         aria-hidden
       />
 
-      <div className="mx-auto max-w-[1240px]">
+      <div className="mx-auto max-w-[1250px]">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 xl:gap-8">
           <div className="sm:col-span-2 lg:col-span-3 xl:col-span-1">
             <Link href="/" className="mb-6 inline-block shrink-0">

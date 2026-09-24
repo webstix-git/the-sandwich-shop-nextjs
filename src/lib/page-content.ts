@@ -98,7 +98,7 @@ export const APPETIZERS: MenuItem[] = [
   },
   {
     name: "Soup of the Day",
-    description: "Rotating homemade soups — ask your server what's simmering.",
+    description: "Rotating homemade soups. Ask your server what's simmering.",
     price: "$6",
   },
 ];
@@ -194,7 +194,7 @@ export const DRINKS: MenuItem[] = [
   },
   {
     name: "House Wine",
-    description: "Red or white — ask about today's selection.",
+    description: "Red or white. Ask about today's selection.",
     price: "$8",
   },
   {
@@ -209,7 +209,7 @@ export const DRINKS: MenuItem[] = [
 export const KIDS_MENU: MenuItem[] = [
   {
     name: "Mini Smash Burger",
-    description: "Single patty with cheese on a soft bun — fries included.",
+    description: "Single patty with cheese on a soft bun, fries included.",
     price: "$8",
     tag: "Includes fries",
     tagColor: "text-brand-gold",
@@ -226,7 +226,7 @@ export const KIDS_MENU: MenuItem[] = [
   },
   {
     name: "Kids Dirty Soda",
-    description: "A smaller cup of any dirty soda flavor — candy rim optional.",
+    description: "A smaller cup of any dirty soda flavor, candy rim optional.",
     price: "$4",
     tag: "Soda bar",
     tagColor: "text-brand-cyan",
@@ -239,7 +239,7 @@ export const PAGE_HEROES = {
     title: "Every craving,",
     highlight: "covered.",
     description:
-      "From shareable starters to stacked subs, smash burgers, sweet treats, and our famous dirty soda bar — everything is made fresh and served generous.",
+      "From shareable starters to stacked subs, smash burgers, sweet treats, and our famous dirty soda bar, everything is made fresh and served generous.",
     image: "/images/hero-sandwich.jpg",
     imageAlt: "Signature sandwich platter",
     accent: "cyan",
@@ -259,7 +259,7 @@ export const PAGE_HEROES = {
     title: "Stacked, smashed,",
     highlight: "served hot.",
     description:
-      "Our subs and burgers are the heart of the shop — built fresh, piled high, and made exactly how you like them.",
+      "Our subs and burgers are the heart of the shop, built fresh, piled high, and made exactly how you like them.",
     image: "/images/italian-beef.jpg",
     imageAlt: "Italian beef sub",
     accent: "pink",
@@ -269,7 +269,7 @@ export const PAGE_HEROES = {
     title: "Sweet endings,",
     highlight: "made by hand.",
     description:
-      "Handcrafted treats baked throughout the day — the perfect finish to any meal.",
+      "Handcrafted treats baked throughout the day, the perfect finish to any meal.",
     image: "/images/dessert-boxes.jpg",
     imageAlt: "Dessert boxes with buttercream",
     accent: "pink",
@@ -279,7 +279,7 @@ export const PAGE_HEROES = {
     title: "Sip something",
     highlight: "extraordinary.",
     description:
-      "Our dirty soda bar is legendary — but we also pour wine and seasonal cocktails worth lingering over.",
+      "Our dirty soda bar is legendary, but we also pour wine and seasonal cocktails worth lingering over.",
     image: "/images/dirty-sodas-trio.jpg",
     imageAlt: "Colorful dirty sodas",
     accent: "cyan",
@@ -289,7 +289,7 @@ export const PAGE_HEROES = {
     title: "Big flavors,",
     highlight: "kid-sized.",
     description:
-      "Portions and prices made for little appetites — with all the same care and quality as the grown-up menu.",
+      "Portions and prices made for little appetites, with all the same care and quality as the grown-up menu.",
     image: "/images/smash-burger.jpg",
     imageAlt: "Kids smash burger",
     accent: "gold",
@@ -309,7 +309,7 @@ export const PAGE_HEROES = {
     title: "Rooted in",
     highlight: "La Crosse.",
     description:
-      "From a dream to a downtown destination — here's how The Sandwich Shop & Dirty Soda Bar came to be.",
+      "From a dream to a downtown destination: here's how The Sandwich Shop & Dirty Soda Bar came to be.",
     image: "/images/hero-sandwich.jpg",
     imageAlt: "Fresh sandwich preparation",
     accent: "pink",
@@ -319,17 +319,17 @@ export const PAGE_HEROES = {
     title: "We bring the",
     highlight: "good stuff to you.",
     description:
-      "Whether you're feeding the office, hosting a party, or planning a family gathering — we've got you covered.",
+      "Whether you're feeding the office, hosting a party, or planning a family gathering, we've got you covered.",
     image: "/images/italian-beef.jpg",
     imageAlt: "Catering spread",
     accent: "gold",
   },
   catering: {
-    eyebrow: "Catering Services",
+    eyebrow: "Catering",
     title: "Feed the whole",
     highlight: "crew.",
     description:
-      "Sandwich trays, burger spreads, and a dirty soda bar for your next event — fresh, generous, and hassle-free.",
+      "Sandwich trays, burger spreads, and a dirty soda bar for your next event. Fresh, generous, and hassle-free.",
     image: "/images/italian-beef.jpg",
     imageAlt: "Catering sandwich tray",
     accent: "pink",
@@ -339,7 +339,7 @@ export const PAGE_HEROES = {
     title: "Come say",
     highlight: "hello.",
     description:
-      "We're right in the heart of Downtown La Crosse. Stop in, call ahead, or drop us a line — we'd love to hear from you.",
+      "We're right in the heart of Downtown La Crosse. Stop in, call ahead, or drop us a line. We'd love to hear from you.",
     image: "/images/dirty-soda-green.jpg",
     imageAlt: "Welcome to our soda bar",
     accent: "cyan",
@@ -350,13 +350,13 @@ export const ABOUT_VALUES = [
   {
     title: "Made Fresh, Daily",
     description:
-      "Every sandwich stacked, every burger smashed, every soda poured — right when you order it. No shortcuts, no warming trays.",
+      "Every sandwich stacked, every burger smashed, every soda poured, right when you order it. No shortcuts, no warming trays.",
     accent: "pink" as const,
   },
   {
     title: "Locally Owned",
     description:
-      "We're your neighbors. No corporate playbook — just a family-run shop invested in this community and the people in it.",
+      "We're your neighbors. No corporate playbook, just a family-run shop invested in this community and the people in it.",
     accent: "cyan" as const,
   },
   {
@@ -372,7 +372,7 @@ export const STORY_MILESTONES = [
     year: "The Dream",
     title: "A corner shop vision",
     description:
-      "The idea was simple: bring together the best sandwiches in town with a soda bar nobody had seen before — all under one roof in Downtown La Crosse.",
+      "The idea was simple: bring together the best sandwiches in town with a soda bar nobody had seen before, all under one roof in Downtown La Crosse.",
   },
   {
     year: "Opening Day",
@@ -399,7 +399,7 @@ export const SERVICE_OFFERINGS = [
   {
     title: "Carry Out",
     description:
-      "Call ahead or walk in — we'll have your order hot, fresh, and ready to go. Perfect for lunch on the run.",
+      "Call ahead or walk in. We'll have your order hot, fresh, and ready to go. Perfect for lunch on the run.",
     href: "/contact-us",
     accent: "cyan" as const,
   },

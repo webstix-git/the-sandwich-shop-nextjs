@@ -36,8 +36,7 @@ function highlightsSectionTone(page: MenuCategoryPageData): CategorySectionTone 
 
 function SectionEyebrow({ children }: { children: string }) {
   return (
-    <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
-      <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
+    <p className="inline-flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px]">
       {children}
     </p>
   );
@@ -79,7 +78,7 @@ function MenuSectionHeader({
 }) {
   return (
     <header className="mb-8">
-      <div className="flex items-start gap-3.5 md:gap-4">
+      <div className="flex items-center gap-3.5 md:gap-4">
         <div className="relative h-[52px] w-[52px] shrink-0 overflow-hidden rounded-[14px] shadow-[0_4px_14px_rgba(52,36,47,0.1)] md:h-14 md:w-14 md:rounded-2xl">
           <Image
             src={headingImage}
@@ -90,17 +89,17 @@ function MenuSectionHeader({
           />
         </div>
         <div className="min-w-0 flex-1">
-          <h3 className="text-[clamp(1.375rem,2.5vw,1.875rem)] font-extrabold tracking-[-0.3px] text-brand-dark">
+          <h3 className="text-[clamp(1.375rem,2.5vw,1.875rem)] font-extrabold leading-[1.1] tracking-[-0.3px] text-brand-dark">
             {title}
           </h3>
-          <p className="mt-2 text-xs font-bold uppercase tracking-[0.14em] text-brand-pink-dark sm:text-[16px] sm:tracking-[1.5px]">
+          <p className="mt-1.5 text-xs font-bold uppercase leading-tight tracking-[0.14em] text-brand-pink-dark sm:text-[16px] sm:tracking-[1.5px]">
             {scriptSubtitle}
           </p>
-          {note ? (
-            <p className="mt-4 text-[16px] leading-[1.65] text-brand-nav">{note}</p>
-          ) : null}
         </div>
       </div>
+      {note ? (
+        <p className="mt-4 text-[16px] leading-[1.65] text-brand-nav">{note}</p>
+      ) : null}
     </header>
   );
 }
@@ -123,16 +122,15 @@ function EditorialBlock({
           className={`relative ${reversed ? "order-2 lg:order-2" : "order-2 lg:order-1"}`}
         >
           <div className="overflow-hidden rounded-[28px] border-[6px] border-white shadow-[0_24px_56px_rgba(52,36,47,0.14)]">
-            <Image
-              src={editorial.image}
-              alt={editorial.imageAlt}
-              width={600}
-              height={450}
-              className={foodImageClassName(
-                editorial.image,
-                "h-[300px] w-full object-cover md:h-[420px]",
-              )}
-            />
+            <div className="relative h-[300px] md:h-[420px]">
+              <Image
+                src={editorial.image}
+                alt={editorial.imageAlt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 560px"
+                className={foodImageClassName(editorial.image, "object-cover")}
+              />
+            </div>
           </div>
         </div>
 
@@ -168,12 +166,12 @@ function EditorialBlock({
 function CategoryCtaSection({ cta }: { cta: MenuCategoryPageData["cta"] }) {
   return (
     <section className={LAYOUT.ctaSection}>
-      <div className="relative mx-auto max-w-[1180px] overflow-hidden rounded-[28px] border border-brand-pink/35 bg-brand-footer pb-[70px] shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
+      <div className="relative mx-auto max-w-[1250px] overflow-hidden rounded-[28px] border border-brand-pink/35 bg-brand-footer pb-[70px] shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
         <Image
           src={cta.backgroundImage}
           alt=""
           fill
-          sizes="(max-width: 1180px) 100vw, 1180px"
+          sizes="(max-width: 1250px) 100vw, 1250px"
           className="object-cover object-center"
           aria-hidden
         />
@@ -188,7 +186,7 @@ function CategoryCtaSection({ cta }: { cta: MenuCategoryPageData["cta"] }) {
 
         <div className="relative z-[2] grid items-center gap-10 px-7 pt-8 md:grid-cols-[1.05fr_0.95fr] md:gap-12 md:px-10 md:pt-10 lg:px-12 lg:pt-12">
           <div>
-            <span className="inline-flex items-center rounded-full border border-brand-pink/50 bg-black/25 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-pink-light">
+            <span className="inline-flex items-center rounded-full border border-brand-pink/50 bg-black/25 px-3.5 py-1.5 text-[13px] font-bold uppercase tracking-[0.2em] text-brand-pink-light">
               {cta.eyebrow}
             </span>
 

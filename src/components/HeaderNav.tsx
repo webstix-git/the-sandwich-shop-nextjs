@@ -96,20 +96,31 @@ export function MobileNavItem({
 
   return (
     <div>
-      <button
-        type="button"
-        onClick={() => setExpanded((e) => !e)}
-        className={`flex w-full items-center justify-between rounded-lg px-3 py-3 text-lg font-medium transition-colors hover:bg-brand-blush hover:text-brand-pink-dark ${
+      <div
+        className={`flex w-full items-center justify-between rounded-lg text-lg font-medium transition-colors ${
           isActive ? "text-brand-pink-dark" : "text-brand-nav"
         }`}
-        aria-expanded={expanded}
       >
-        {link.label}
-        <ChevronDownIcon
-          size={18}
-          className={`transition-transform duration-200 ${expanded ? "rotate-180" : ""}`}
-        />
-      </button>
+        <Link
+          href={link.href}
+          onClick={onClose}
+          className="flex-1 rounded-lg px-3 py-3 transition-colors hover:bg-brand-blush hover:text-brand-pink-dark"
+        >
+          {link.label}
+        </Link>
+        <button
+          type="button"
+          onClick={() => setExpanded((e) => !e)}
+          className="rounded-lg px-3 py-3 transition-colors hover:bg-brand-blush hover:text-brand-pink-dark"
+          aria-expanded={expanded}
+          aria-label={`${expanded ? "Collapse" : "Expand"} ${link.label} menu`}
+        >
+          <ChevronDownIcon
+            size={18}
+            className={`transition-transform duration-200 ${expanded ? "rotate-180" : ""}`}
+          />
+        </button>
+      </div>
       {expanded && (
         <div className="ml-3 mt-1 flex flex-col gap-0.5 border-l-2 border-brand-divider pl-3">
           {link.children.map((child, index) => (

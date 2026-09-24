@@ -8,7 +8,7 @@ import { MINIMAL_PAGE_COPY } from "@/lib/minimal-page-copy";
 export const metadata: Metadata = {
   title: "Sitemap | The Sandwich Shop & Dirty Soda Bar",
   description:
-    "Browse every page on The Sandwich Shop & Dirty Soda Bar website — menus, services, about, and contact.",
+    "Browse every page on The Sandwich Shop & Dirty Soda Bar website: menus, services, about, and contact.",
 };
 
 export default function SitemapPage() {

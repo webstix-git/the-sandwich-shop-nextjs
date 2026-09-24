@@ -182,9 +182,7 @@ function ColdSandwichRow({ item }: { item: ColdSandwichItem }) {
   return (
     <li className="px-4 py-5 md:px-6 md:py-5">
       <p className="text-[18px] font-bold leading-snug text-brand-dark md:text-[19px]">
-        <span
-          className={`mr-1.5 tabular-nums ${item.number % 2 === 0 ? "text-brand-pink-dark" : "text-brand-cyan-dark"}`}
-        >
+        <span className="mr-1.5 tabular-nums text-brand-dark">
           {item.number}.
         </span>
         {item.name}
@@ -223,9 +221,7 @@ function ColdSandwichExtraRow({
     <li className="px-4 py-5 md:px-6 md:py-5">
       <div className="flex items-baseline gap-2.5">
         <span className="text-[18px] font-bold leading-snug text-brand-dark md:text-[19px]">
-          <span
-            className={`mr-1.5 tabular-nums ${number % 2 === 0 ? "text-brand-pink-dark" : "text-brand-cyan-dark"}`}
-          >
+          <span className="mr-1.5 tabular-nums text-brand-dark">
             {number}.
           </span>
           {name}
@@ -380,7 +376,7 @@ export function MenuColdSandwichesSection({
       style={{ scrollMarginTop }}
     >
       <header className="mb-5 md:mb-6">
-        <div className="flex items-start gap-3.5 md:gap-4">
+        <div className="flex items-center gap-3.5 md:gap-4">
           <div className="relative h-[52px] w-[52px] shrink-0 overflow-hidden rounded-[14px] shadow-[0_4px_14px_rgba(52,36,47,0.1)] md:h-14 md:w-14 md:rounded-2xl">
             <Image
               src={section.headingImage}
@@ -391,18 +387,18 @@ export function MenuColdSandwichesSection({
             />
           </div>
           <div className="min-w-0 flex-1">
-            <h2 className="text-[clamp(1.375rem,2.5vw,1.875rem)] font-extrabold tracking-[-0.3px] text-brand-dark">
+            <h2 className="text-[clamp(1.375rem,2.5vw,1.875rem)] font-extrabold leading-[1.1] tracking-[-0.3px] text-brand-dark">
               {section.title}
             </h2>
-            <p className="mt-2 text-xs font-bold uppercase tracking-[0.14em] text-brand-pink-dark sm:text-[16px] sm:tracking-[1.5px]">
+            <p className="mt-1.5 text-xs font-bold uppercase leading-tight tracking-[0.14em] text-brand-pink-dark sm:text-[16px] sm:tracking-[1.5px]">
               {section.scriptSubtitle}
-            </p>
-            <p className="mt-3 max-w-[52ch] text-[15px] leading-[1.65] text-brand-nav md:text-[16px]">
-              Pick your bread size — every sandwich is priced below for each
-              option.
             </p>
           </div>
         </div>
+        <p className="mt-4 max-w-[52ch] text-[15px] leading-[1.65] text-brand-nav md:text-[16px]">
+          Pick your bread size. Every sandwich is priced below for each
+          option.
+        </p>
       </header>
 
       <div className="rounded-2xl border border-[#E5D4C4] bg-white/55 shadow-[0_6px_24px_rgba(52,36,47,0.04)]">

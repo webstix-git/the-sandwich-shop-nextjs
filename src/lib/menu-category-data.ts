@@ -111,19 +111,19 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
     slug: "appetizers",
     title: "Appetizers",
     metaDescription:
-      "Shareable sides and starters — cheese curds, fries, onion rings, and soup of the day. Made fresh in Downtown La Crosse.",
+      "Shareable sides and starters: cheese curds, fries, onion rings, and soup of the day. Made fresh in Downtown La Crosse.",
     intro: {
       primaryImage: "/images/menu-cat-appetizers-hero.jpg",
       primaryImageAlt: "Golden cheese curds, fries, and onion rings",
       description:
-        "Crispy, cheesy, and made to order — the perfect way to start your meal or share with the table.",
+        "Crispy, cheesy, and made to order, the perfect way to start your meal or share with the table.",
     },
     opening: {
       eyebrow: "Starters & sides",
       title: "Perfect for",
       highlight: "sharing.",
       description:
-        "Every side is fried fresh when you order — no heat lamps, no shortcuts. Pair cheese curds with a stacked sub or add soup on a chilly day.",
+        "Every side is fried fresh when you order, no heat lamps, no shortcuts. Pair cheese curds with a stacked sub or add soup on a chilly day.",
     },
     menuSections: [
       {
@@ -148,7 +148,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
         title: "Cheese Curds",
         tagline: "Wisconsin classic",
         description:
-          "Golden and crispy — fried fresh when you order, with that perfect squeak.",
+          "Golden and crispy, fried fresh when you order, with that perfect squeak.",
         image: "/images/appetizers-highlight-cheese-curds-v2.jpg",
         imageAlt: "Crispy golden cheese curds in a rustic basket",
         accent: "gold",
@@ -157,7 +157,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
         title: "French Fries",
         tagline: "Always crisp",
         description:
-          "Hot, salty, and ready to share — the side that goes with everything.",
+          "Hot, salty, and ready to share, the side that goes with everything.",
         image: "/images/appetizers-highlight-french-fries.jpg",
         imageAlt: "Golden French fries in a premium metal basket",
         accent: "pink",
@@ -166,7 +166,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
         title: "Onion Rings",
         tagline: "Thick-cut",
         description:
-          "A crunchy golden coating on every ring — built for dipping.",
+          "A crunchy golden coating on every ring, built for dipping.",
         image: "/images/appetizers-highlight-onion-rings.jpg",
         imageAlt: "Stacked crispy onion rings with dipping sauce",
         accent: "cyan",
@@ -175,7 +175,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
         title: "Soup",
         tagline: "Made fresh daily",
         description:
-          "Warm, hearty, and rotating every day — the comfort pick on a cold afternoon.",
+          "Warm, hearty, and rotating every day, the comfort pick on a cold afternoon.",
         image: "/images/appetizers-highlight-soup-v2.jpg",
         imageAlt: "Fresh homemade soup in a ceramic bowl with artisan bread",
         accent: "gold",
@@ -186,13 +186,13 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
       title: "Try something",
       highlight: "else.",
       description:
-        "Appetizers are a great start — discover more from our full menu.",
+        "Appetizers are a great start. Discover more from our full menu.",
       items: [
         {
           title: "Specialty Sandwiches",
           tagline: "Stacked fresh",
           description:
-            "Hot Italian beef, melts, and stacked subs — made fresh when you walk in.",
+            "Hot Italian beef, melts, and stacked subs, made fresh when you walk in.",
           image: "/images/appetizers-explore-sandwiches-v2.jpg",
           imageAlt: "Stacked Italian beef specialty sandwich with au jus",
           ctaLabel: "Explore Menu",
@@ -214,7 +214,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
           title: "Dirty Sodas",
           tagline: "From the bar",
           description:
-            "Cream, syrups, and candy rims — build your own at our soda bar.",
+            "Cream, syrups, and candy rims. Build your own at our soda bar.",
           image: "/images/appetizers-explore-sodas-v2.jpg",
           imageAlt: "Colorful dirty sodas with candy rims at the soda bar",
           ctaLabel: "Explore Menu",
@@ -225,7 +225,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
           title: "Breakfast",
           tagline: "Served hot",
           description:
-            "Bacon, egg & cheese sandwiches and the Gut Buster — served hot.",
+            "Bacon, egg & cheese sandwiches and the Gut Buster, served hot.",
           image: "/images/appetizers-explore-breakfast-v2.jpg",
           imageAlt: "Bacon egg and cheese breakfast sandwich",
           ctaLabel: "Explore Menu",
@@ -251,7 +251,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
       title: "See the",
       highlight: "full menu.",
       description:
-        "Appetizers are just the beginning — explore subs, burgers, dirty sodas, and more.",
+        "Appetizers are just the beginning. Explore subs, burgers, dirty sodas, and more.",
       backgroundImage: "/images/menu-cat-main-courses-hero.jpg",
       primaryLabel: "View All Menu",
       primaryHref: "/our-menu",
@@ -264,19 +264,19 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
     slug: "main-courses",
     title: "Main Courses",
     metaDescription:
-      "Stacked specialty sandwiches, smash burgers, and cold subs — made fresh daily in Downtown La Crosse.",
+      "Stacked specialty sandwiches, smash burgers, and cold subs, made fresh daily in Downtown La Crosse.",
     intro: {
       primaryImage: "/images/menu-cat-main-courses-hero.jpg",
       primaryImageAlt: "Italian beef sandwich and smash burger",
       description:
-        "The heart of our menu — hot sandwiches, smash burgers, and cold subs stacked high on fresh-baked bread.",
+        "The heart of our menu: hot sandwiches, smash burgers, and cold subs stacked high on fresh-baked bread.",
     },
     opening: {
       eyebrow: "The main event",
       title: "Stacked fresh,",
       highlight: "served hot.",
       description:
-        "From Italian beef with au jus to smash burgers on a bed of caramelized onions — every main course is made when you order.",
+        "From Italian beef with au jus to smash burgers on a bed of caramelized onions, every main course is made when you order.",
     },
     menuSections: [
       {
@@ -303,7 +303,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
         title: "Hot Italian Beef",
         tagline: "House specialty",
         description:
-          "Tender beef piled high with peppers and au jus — a downtown La Crosse staple.",
+          "Tender beef piled high with peppers and au jus, a downtown La Crosse staple.",
         image: "/images/gallery/gallery-italian-beef-au-jus.png",
         imageAlt: "Italian beef sandwich with au jus",
         accent: "gold",
@@ -312,7 +312,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
         title: "Smash burgers",
         tagline: "Never frozen",
         description:
-          "Fresh beef smashed on caramelized onions — served with fries, every time.",
+          "Fresh beef smashed on caramelized onions, served with fries, every time.",
         image: "/images/smash-burger.jpg",
         imageAlt: "Bacon smash burger with fries",
         accent: "pink",
@@ -321,7 +321,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
         title: "Cold subs",
         tagline: "Your way",
         description:
-          "Choose your bread, meats, cheeses, and toppings — from a quick hoagie to a 20-inch party sub.",
+          "Choose your bread, meats, cheeses, and toppings, from a quick hoagie to a 20-inch party sub.",
         image: "/images/gallery/gallery-italian-sub.png",
         imageAlt: "Cold Italian sub on fresh bread",
         accent: "cyan",
@@ -332,7 +332,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
       title: "Fresh every",
       highlight: "single time.",
       paragraphs: [
-        "No warming trays. No pre-made patties sitting under a lamp. We stack your sandwich and smash your burger the moment you walk in — the same way we've done it on 3rd Street since day one.",
+        "No warming trays. No pre-made patties sitting under a lamp. We stack your sandwich and smash your burger the moment you walk in, the same way we've done it on 3rd Street since day one.",
       ],
       image: "/images/signature-sandwich.png",
       imageAlt: "Toasted steak and cheese sandwich",
@@ -357,12 +357,12 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
     slug: "desserts",
     title: "Desserts",
     metaDescription:
-      "Sweet finishes at The Sandwich Shop — dessert cups, treat boxes, and the perfect pairing with our dirty soda bar.",
+      "Sweet finishes at The Sandwich Shop: dessert cups, treat boxes, and the perfect pairing with our dirty soda bar.",
     intro: {
       primaryImage: "/images/menu-cat-desserts-hero.jpg",
       primaryImageAlt: "Colorful dessert cups and sweet treats",
       description:
-        "A sweet finish to your meal — treat yourself to something special from our counter or pair it with a dirty soda.",
+        "A sweet finish to your meal: treat yourself to something special from our counter or pair it with a dirty soda.",
     },
     opening: {
       eyebrow: "Sweet finishes",
@@ -402,7 +402,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
         title: "Dessert cups",
         tagline: "Made fresh",
         description:
-          "Layered cups with whipped cream and toppings — colorful, generous, and perfect for sharing or keeping all to yourself.",
+          "Layered cups with whipped cream and toppings. Colorful, generous, and perfect for sharing or keeping all to yourself.",
         image: "/images/menu-cat-desserts-hero.jpg",
         imageAlt: "Colorful dessert cups with whipped cream and toppings",
         accent: "pink",
@@ -411,7 +411,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
         title: "Treat boxes",
         tagline: "Take home",
         description:
-          "Grab a box of sweets for the office, a party, or a late-night snack — easy to share, hard to resist.",
+          "Grab a box of sweets for the office, a party, or a late-night snack. Easy to share, hard to resist.",
         image: "/images/dessert-boxes.jpg",
         imageAlt: "Assorted dessert treat boxes",
         accent: "gold",
@@ -431,8 +431,8 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
       title: "Ask what's",
       highlight: "fresh today.",
       paragraphs: [
-        "Our dessert selection rotates with what's fresh — stop by the counter and see what's available. Pair it with a dirty soda and you've got the full Sandwich Shop experience.",
-        "Dine in, carry out, or add sweet treats to your next catering order — just ask when you order.",
+        "Our dessert selection rotates with what's fresh. Stop by the counter and see what's available. Pair it with a dirty soda and you've got the full Sandwich Shop experience.",
+        "Dine in, carry out, or add sweet treats to your next catering order. Just ask when you order.",
       ],
       image: "/images/dessert-boxes.jpg",
       imageAlt: "Dessert boxes on the counter",
@@ -444,7 +444,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
       title: "Same care as",
       highlight: "everything else.",
       paragraphs: [
-        "Just like our sandwiches and burgers, our sweets are made with the same attention to quality and presentation — because every part of your visit should feel worth it.",
+        "Just like our sandwiches and burgers, our sweets are made with the same attention to quality and presentation, because every part of your visit should feel worth it.",
       ],
       image: "/images/gallery/gallery-dessert-display.png",
       imageAlt: "Fresh dessert cups on display at the counter",
@@ -456,7 +456,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
       title: "Stop by",
       highlight: "3rd Street.",
       description:
-        "We're in Downtown La Crosse — grab lunch, a sweet treat, and a dirty soda all in one stop.",
+        "We're in Downtown La Crosse. Grab lunch, a sweet treat, and a dirty soda all in one stop.",
       backgroundImage: "/images/dessert-boxes.jpg",
       primaryLabel: "Contact & Hours",
       primaryHref: "/contact-us",
@@ -469,19 +469,19 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
     slug: "wine-cocktails",
     title: "Wine & Cocktails",
     metaDescription:
-      "The Dirty Soda Bar — colorful cream sodas, candy rims, and custom combos. La Crosse's signature drink experience.",
+      "The Dirty Soda Bar: colorful cream sodas, candy rims, and custom combos. La Crosse's signature drink experience.",
     intro: {
       primaryImage: "/images/menu-cat-wine-cocktails-hero.jpg",
       primaryImageAlt: "Colorful dirty sodas and craft drinks at the soda bar",
       description:
-        "This isn't your average drink menu — it's a full dirty soda bar with cream, syrups, fruit, and candy rims.",
+        "This isn't your average drink menu. It's a full dirty soda bar with cream, syrups, fruit, and candy rims.",
     },
     opening: {
       eyebrow: "The soda bar",
       title: "Your favorite fizz,",
       highlight: "leveled up.",
       description:
-        "Rootbeer Float, Orange Dream, Dirty Dr Pepper — build your own combo or try one of our signatures. No one else in La Crosse does it like we do.",
+        "Build your own combo or try a signature like Rootbeer Float, Orange Dream or Dirty Dr Pepper. No one else in La Crosse does it like we do.",
     },
     showcaseImages: [
       {
@@ -518,7 +518,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
         title: "Candy rims",
         tagline: "Signature touch",
         description:
-          "The finishing detail that makes every cup unmistakably ours — sweet, colorful, and totally craveable.",
+          "The finishing detail that makes every cup unmistakably ours: sweet, colorful, and totally craveable.",
         image: "/images/dirty-soda-green.jpg",
         imageAlt: "Green dirty soda with candy rim",
         accent: "cyan",
@@ -527,7 +527,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
         title: "Cream & syrup bar",
         tagline: "Customize it",
         description:
-          "Mix flavors, add cream, layer syrups — build something that's entirely yours.",
+          "Mix flavors, add cream, layer syrups. Build something that's entirely yours.",
         image: "/images/gallery/gallery-dirty-sodas-lineup.png",
         imageAlt: "Dirty soda bar lineup",
         accent: "pink",
@@ -536,7 +536,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
         title: "For every occasion",
         tagline: "Events welcome",
         description:
-          "Add a full dirty soda bar to any catering order — the wow factor your guests will talk about.",
+          "Add a full dirty soda bar to any catering order, the wow factor your guests will talk about.",
         image: "/images/dirty-sodas-trio.jpg",
         imageAlt: "Three colorful dirty sodas",
         accent: "gold",
@@ -547,7 +547,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
       title: "A soda bar",
       highlight: "worth the trip.",
       paragraphs: [
-        "The dirty soda bar is what sets us apart from every other sandwich shop in town. Families, lunch crowds, and anyone with a sweet tooth — there's something for everyone at the bar.",
+        "The dirty soda bar is what sets us apart from every other sandwich shop in town. Families, lunch crowds, and anyone with a sweet tooth: there's something for everyone at the bar.",
         "Ask our team for recommendations or go off-menu with your own creation. That's the fun of it.",
       ],
       image: "/images/wine-cocktails-editorial-soda-bar.jpg",
@@ -560,7 +560,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
       title: "Come see",
       highlight: "the bar.",
       description:
-        "411 3rd Street, Downtown La Crosse — walk in anytime during our hours and order at the soda bar.",
+        "411 3rd Street, Downtown La Crosse. Walk in anytime during our hours and order at the soda bar.",
       backgroundImage: "/images/dirty-sodas-trio.jpg",
       primaryLabel: "Contact & Hours",
       primaryHref: "/contact-us",
@@ -573,19 +573,19 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
     slug: "kids-menu",
     title: "Kids Menu",
     metaDescription:
-      "Kid-approved portions — chicken strip basket, sandwich basket, and smash burger basket. Same quality, right-sized for younger appetites.",
+      "Kid-approved portions: chicken strip basket, sandwich basket, and smash burger basket. Same quality, right-sized for younger appetites.",
     intro: {
       primaryImage: "/images/menu-cat-kids-hero.jpg",
       primaryImageAlt: "Kid's burger basket with fries and dirty soda",
       description:
-        "Same fresh ingredients and care as our full menu — just sized and priced for younger appetites.",
+        "Same fresh ingredients and care as our full menu, just sized and priced for younger appetites.",
     },
     opening: {
       eyebrow: "For the little ones",
       title: "Big taste,",
       highlight: "right-sized.",
       description:
-        "Kid-approved baskets with portions that make sense — and the same quality you'd expect from everything else on our menu.",
+        "Kid-approved baskets with portions that make sense, and the same quality you'd expect from everything else on our menu.",
     },
     menuSections: [
       {
@@ -602,7 +602,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
         title: "Kid's Smash Burger Basket",
         tagline: "Most popular",
         description:
-          "A kid-sized smash burger with fries — the same never-frozen beef we use on our full menu.",
+          "A kid-sized smash burger with fries, the same never-frozen beef we use on our full menu.",
         image: "/images/kids-highlight-smash-burger.jpg",
         imageAlt: "Kid's smash burger basket with fries",
         accent: "gold",
@@ -611,7 +611,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
         title: "Chicken Strip Basket",
         tagline: "Crispy & golden",
         description:
-          "Crispy chicken strips served with fries — a kid-menu favorite made fresh when you order.",
+          "Crispy chicken strips served with fries, a kid-menu favorite made fresh when you order.",
         image: "/images/kids-highlight-chicken-strips.jpg",
         imageAlt: "Kid's chicken strip basket with fries",
         accent: "pink",
@@ -620,7 +620,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
         title: "Dirty sodas for kids",
         tagline: "Fan favorite",
         description:
-          "Colorful, fun, and customizable — the soda bar is a hit with kids of every age.",
+          "Colorful, fun, and customizable, the soda bar is a hit with kids of every age.",
         image: "/images/kids-highlight-sodas.jpg",
         imageAlt: "Colorful kid-friendly dirty sodas",
         accent: "cyan",
@@ -631,7 +631,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
       title: "A spot the whole",
       highlight: "family loves.",
       paragraphs: [
-        "From quick weekday lunches to weekend treats, there's something on the menu for everyone — including our famous dirty soda bar that kids absolutely adore.",
+        "From quick weekday lunches to weekend treats, there's something on the menu for everyone, including our famous dirty soda bar that kids absolutely adore.",
         "High chairs available. Friendly staff. Generous portions for growing appetites.",
       ],
       image: "/images/smash-burger.jpg",
@@ -644,7 +644,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
       title: "We're on",
       highlight: "3rd Street.",
       description:
-        "Downtown La Crosse — dine in, carry out, or call ahead. We'd love to see your family.",
+        "Downtown La Crosse: dine in, carry out, or call ahead. We'd love to see your family.",
       backgroundImage: "/images/menu-cat-kids-hero.jpg",
       primaryLabel: "Contact & Hours",
       primaryHref: "/contact-us",

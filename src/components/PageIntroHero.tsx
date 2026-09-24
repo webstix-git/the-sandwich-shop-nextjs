@@ -140,7 +140,7 @@ export function PageIntroHero({
 
         <HeroOverlay imageLayout={imageLayout} overlay={overlay} />
 
-        <div className="relative z-[1] mx-auto flex h-full max-w-[1240px] items-center px-7 sm:px-8 md:px-10 lg:px-12">
+        <div className="relative z-[1] mx-auto box-content flex h-full max-w-[1250px] items-center px-7 sm:px-8 md:px-10 lg:px-12">
           <div className="w-full max-w-[600px]">
             <h1
               className="animate-menu-intro-rise text-[clamp(2.25rem,5vw,3.25rem)] font-extrabold leading-[1.08] tracking-[-0.03em] text-white opacity-0 [text-shadow:0_2px_28px_rgba(0,0,0,0.45)]"

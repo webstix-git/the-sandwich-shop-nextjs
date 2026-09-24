@@ -3,15 +3,12 @@ import type { MenuCategoryShowcaseImage } from "@/lib/menu-category-data";
 
 const ACCENT = {
   pink: {
-    line: "bg-brand-pink/80",
     tag: "text-brand-pink-dark",
   },
   gold: {
-    line: "bg-brand-pink/80",
     tag: "text-brand-pink-dark",
   },
   cyan: {
-    line: "bg-brand-cyan/80",
     tag: "text-brand-cyan-dark",
   },
 } as const;
@@ -44,11 +41,9 @@ function ShowcaseTile({
         <div className="border-t border-brand-border/50 px-4 py-4 md:px-5 md:py-5">
           {item.tagline ? (
             <p
-              className={`flex items-center justify-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] ${styles.tag}`}
+              className={`flex items-center justify-center gap-2 text-[12px] font-bold uppercase tracking-[0.18em] ${styles.tag}`}
             >
-              <span className={`h-px w-5 shrink-0 ${styles.line}`} aria-hidden />
               {item.tagline}
-              <span className={`h-px w-5 shrink-0 ${styles.line}`} aria-hidden />
             </p>
           ) : null}
           <h3

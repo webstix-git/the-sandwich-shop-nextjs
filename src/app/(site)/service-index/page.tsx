@@ -14,7 +14,7 @@ const TAG_ACCENT = {
 export const metadata: Metadata = {
   title: "Service Index | The Sandwich Shop & Dirty Soda Bar",
   description:
-    "Explore every service at The Sandwich Shop & Dirty Soda Bar — dine in, carry out, catering, and signature soda bar experiences.",
+    "Explore every service at The Sandwich Shop & Dirty Soda Bar: dine in, carry out, catering, and signature soda bar experiences.",
 };
 
 export default function ServiceIndexPage() {
@@ -36,7 +36,7 @@ export default function ServiceIndexPage() {
             >
               <span>
                 <span
-                  className={`block text-[11px] font-semibold uppercase tracking-[0.14em] ${TAG_ACCENT[service.accent]}`}
+                  className={`block text-[13px] font-bold uppercase tracking-[0.14em] ${TAG_ACCENT[service.accent]}`}
                 >
                   {service.tag}
                 </span>

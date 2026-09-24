@@ -87,8 +87,8 @@ export function Header() {
   return (
     <>
       <header
-        className={`mx-auto flex w-full max-w-[1240px] items-center gap-4 px-7 sm:px-8 md:gap-6 md:px-10 lg:gap-8 lg:px-12 ${
-          isPinned ? "h-full py-0" : "py-4"
+        className={`mx-auto box-content flex max-w-[1250px] items-center gap-4 px-7 sm:px-8 md:gap-6 md:px-10 lg:gap-8 lg:px-12 ${
+          isPinned ? "h-full py-0" : "py-3"
         }`}
       >
         <Link href="/" className="mr-2 shrink-0 md:mr-4 lg:mr-6">
@@ -100,7 +100,7 @@ export function Header() {
             className={`rounded-full object-cover transition-all duration-300 ease-out ${
               isPinned
                 ? "h-[90px] w-[90px] border-0 shadow-[0_4px_14px_rgba(237,78,141,0.22)]"
-                : "h-[104px] w-[104px] border-0 shadow-[0_6px_18px_rgba(237,78,141,0.28)] md:h-[160px] md:w-[160px]"
+                : "h-[96px] w-[96px] border-0 shadow-[0_6px_18px_rgba(237,78,141,0.28)] md:h-[120px] md:w-[120px]"
             }`}
             priority
           />

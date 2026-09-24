@@ -51,7 +51,7 @@ export const PRIVACY_POLICY_SECTIONS: readonly InfoProseSection[] = [
     id: "sharing",
     title: "Information Sharing",
     paragraphs: [
-      "We do not sell your personal information. We may share limited data with trusted service providers who help us operate our website, process communications, or deliver services — always under confidentiality obligations.",
+      "We do not sell your personal information. We may share limited data with trusted service providers who help us operate our website, process communications, or deliver services, always under confidentiality obligations.",
     ],
   },
   {
@@ -83,7 +83,7 @@ export const AI_POLICY_SECTIONS: readonly InfoProseSection[] = [
     title: "Our Commitment",
     paragraphs: [
       `${SITE.name} believes in transparency. This AI Policy explains how artificial intelligence may be used in connection with our website, marketing materials, and digital presence.`,
-      "We use technology thoughtfully — always with the goal of serving our guests better while keeping our brand authentic and our information accurate.",
+      "We use technology thoughtfully, always with the goal of serving our guests better while keeping our brand authentic and our information accurate.",
     ],
   },
   {
@@ -99,7 +99,7 @@ export const AI_POLICY_SECTIONS: readonly InfoProseSection[] = [
     title: "Content & Imagery",
     paragraphs: [
       "Written content on this site reflects our menu, services, hours, and story to the best of our knowledge. Food photography and brand imagery represent our actual offerings and atmosphere unless otherwise noted.",
-      "If any AI-generated or AI-assisted imagery is used, it is clearly aligned with our real products and brand identity — never intended to mislead guests.",
+      "If any AI-generated or AI-assisted imagery is used, it is clearly aligned with our real products and brand identity, never intended to mislead guests.",
     ],
   },
   {
@@ -113,7 +113,7 @@ export const AI_POLICY_SECTIONS: readonly InfoProseSection[] = [
     id: "human-oversight",
     title: "Human Oversight",
     paragraphs: [
-      "AI tools support our work — they do not replace human judgment. Our owners and staff review important content, respond to guest inquiries personally, and make all final decisions about menu, pricing, and service offerings.",
+      "AI tools support our work. They do not replace human judgment. Our owners and staff review important content, respond to guest inquiries personally, and make all final decisions about menu, pricing, and service offerings.",
     ],
   },
   {
@@ -157,7 +157,7 @@ export const SITEMAP_PAGES: readonly SitemapLink[] = [
   { href: "/about-us", label: "About Us" },
   { href: "/about-us/our-story", label: "Our Story" },
   { href: "/services", label: "Services" },
-  { href: "/services/catering-services", label: "Catering Services" },
+  { href: "/services/catering-services", label: "Catering" },
 ];
 
 export type ServiceIndexItem = {
@@ -172,7 +172,7 @@ export const SERVICE_INDEX_ITEMS: readonly ServiceIndexItem[] = [
   {
     title: "Dine In",
     description:
-      "Enjoy our full menu in our cozy downtown space — fresh sandwiches, smash burgers, and signature dirty sodas made to order.",
+      "Enjoy our full menu in our cozy downtown space: fresh sandwiches, smash burgers, and signature dirty sodas made to order.",
     href: "/contact-us",
     tag: "Walk in welcome",
     accent: "pink",
@@ -186,7 +186,7 @@ export const SERVICE_INDEX_ITEMS: readonly ServiceIndexItem[] = [
     accent: "cyan",
   },
   {
-    title: "Catering Services",
+    title: "Catering",
     description:
       "Sandwich trays, burger spreads, and dirty soda bar experiences for offices, parties, and family gatherings.",
     href: "/services/catering-services",
@@ -196,7 +196,7 @@ export const SERVICE_INDEX_ITEMS: readonly ServiceIndexItem[] = [
   {
     title: "Sandwich Trays",
     description:
-      "Assorted subs cut and ready to serve — perfect for meetings and celebrations. Serves 10–15 guests.",
+      "Assorted subs cut and ready to serve, perfect for meetings and celebrations. Serves 10–15 guests.",
     href: "/services/catering-services",
     tag: "Catering package",
     accent: "cyan",
@@ -212,7 +212,7 @@ export const SERVICE_INDEX_ITEMS: readonly ServiceIndexItem[] = [
   {
     title: "Dirty Soda Bar",
     description:
-      "Bring the legendary soda bar to your event — custom flavors, cream, syrups, and candy rims included.",
+      "Bring the legendary soda bar to your event, with custom flavors, cream, syrups, and candy rims included.",
     href: "/services/catering-services",
     tag: "Signature experience",
     accent: "cyan",

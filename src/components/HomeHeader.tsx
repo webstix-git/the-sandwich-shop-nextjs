@@ -71,7 +71,7 @@ export function HomeHeader() {
         }`}
       >
         <header
-          className={`mx-auto flex w-full max-w-[1240px] items-center gap-4 px-7 sm:px-8 md:gap-6 md:px-10 lg:gap-8 lg:px-12 ${
+          className={`mx-auto box-content flex max-w-[1250px] items-center gap-4 px-7 sm:px-8 md:gap-6 md:px-10 lg:gap-8 lg:px-12 ${
             isPinned ? "h-full py-0" : "py-4"
           }`}
         >

@@ -62,7 +62,7 @@ export function PageHero({
       />
 
       <div
-        className={`relative z-[2] mx-auto grid max-w-[1180px] items-center gap-10 px-7 ${
+        className={`relative z-[2] mx-auto box-content grid max-w-[1250px] items-center gap-10 px-7 ${
           isCompact ? "lg:grid-cols-[1.1fr_0.9fr]" : "lg:grid-cols-[1.05fr_0.95fr]"
         }`}
       >
@@ -101,19 +101,20 @@ export function PageHero({
               accent === "cyan" ? "-rotate-1" : "rotate-[1.5deg]"
             }`}
           >
-            <Image
-              src={image}
-              alt={imageAlt}
-              width={600}
-              height={430}
-              className={foodImageClassName(
-                image,
-                `block w-full object-cover ${
-                  isCompact ? "h-[240px] sm:h-[300px]" : "h-[280px] sm:h-[360px] md:h-[430px]"
-                }`,
-              )}
-              priority
-            />
+            <div
+              className={`relative ${
+                isCompact ? "h-[240px] sm:h-[300px]" : "h-[280px] sm:h-[360px] md:h-[430px]"
+              }`}
+            >
+              <Image
+                src={image}
+                alt={imageAlt}
+                fill
+                sizes="(max-width: 1024px) 512px, 560px"
+                className={foodImageClassName(image, "object-cover")}
+                priority
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -166,7 +166,7 @@ export function GallerySection() {
   return (
     <>
       <section id="gallery" className="border-t border-brand-border/60 bg-white px-7 py-20 md:py-24">
-        <div className="mx-auto max-w-[1280px]">
+        <div className="mx-auto max-w-[1250px]">
           <div className="mb-10 text-center md:mb-12">
             <HomeSectionEyebrow accent="cyan" className="mb-4">
               Straight from the shop

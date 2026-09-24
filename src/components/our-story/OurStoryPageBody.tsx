@@ -23,9 +23,9 @@ function StoryChapterSection({
         index % 2 === 0 ? "bg-brand-warm-cream" : "bg-white"
       }`}
     >
-      <div className="mx-auto grid max-w-[1180px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto grid max-w-[1250px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div className={reverse ? "lg:order-2" : undefined}>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark">
+          <p className="text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark">
             {chapter.phase}
           </p>
           <h2 className="mt-3 text-[clamp(1.75rem,3.2vw,2.35rem)] font-extrabold leading-[1.08] tracking-[-0.04em] text-brand-dark text-balance">
@@ -42,14 +42,16 @@ function StoryChapterSection({
             reverse ? "lg:order-1" : undefined
           }`}
         >
-          <Image
-            src={chapter.image}
-            alt={chapter.imageAlt}
-            width={600}
-            height={450}
-            className="h-[280px] w-full object-cover md:h-[400px]"
-            unoptimized
-          />
+          <div className="relative h-[280px] md:h-[400px]">
+            <Image
+              src={chapter.image}
+              alt={chapter.imageAlt}
+              fill
+              sizes="(max-width: 1024px) 100vw, 560px"
+              className="object-cover"
+              unoptimized
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -62,10 +64,9 @@ function StoryGallerySection() {
 
   return (
     <section className={`border-t border-brand-border/60 bg-brand-warm-cream ${CATEGORY_PAGE_LAYOUT.section}`}>
-      <div className="mx-auto max-w-[1180px]">
+      <div className="mx-auto max-w-[1250px]">
         <header className="mb-10 max-w-[640px] md:mb-12">
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px]">
             {gallery.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.5rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark text-balance">
@@ -118,21 +119,22 @@ function StoryTodaySection() {
 
   return (
     <section className={`border-t border-brand-border/60 bg-white ${CATEGORY_PAGE_LAYOUT.section}`}>
-      <div className="mx-auto grid max-w-[1180px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto grid max-w-[1250px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div className="overflow-hidden rounded-[28px] border-[6px] border-white shadow-[0_24px_60px_rgba(52,36,47,0.16)]">
-          <Image
-            src={today.image}
-            alt={today.imageAlt}
-            width={600}
-            height={480}
-            className="h-[320px] w-full object-cover object-[center_35%] md:h-[440px]"
-            unoptimized
-          />
+          <div className="relative h-[320px] md:h-[440px]">
+            <Image
+              src={today.image}
+              alt={today.imageAlt}
+              fill
+              sizes="(max-width: 1024px) 100vw, 560px"
+              className="object-cover object-[center_35%]"
+              unoptimized
+            />
+          </div>
         </div>
 
         <div>
-          <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
-            <span className="h-px w-8 bg-brand-pink/80" aria-hidden />
+          <p className="inline-flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px]">
             {today.eyebrow}
           </p>
           <h2 className="mt-4 text-[clamp(1.85rem,3.5vw,2.5rem)] font-extrabold leading-[1.06] tracking-[-0.04em] text-brand-dark text-balance">
@@ -158,12 +160,12 @@ function StoryCtaSection() {
 
   return (
     <section className={`border-t border-brand-border/60 bg-brand-warm-cream ${CATEGORY_PAGE_LAYOUT.section}`}>
-      <div className="relative mx-auto max-w-[1180px] overflow-hidden rounded-[28px] border border-brand-pink/35 bg-brand-footer pb-[70px] shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
+      <div className="relative mx-auto max-w-[1250px] overflow-hidden rounded-[28px] border border-brand-pink/35 bg-brand-footer pb-[70px] shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
         <Image
           src={cta.backgroundImage}
           alt=""
           fill
-          sizes="(max-width: 1180px) 100vw, 1180px"
+          sizes="(max-width: 1250px) 100vw, 1250px"
           className="object-cover object-[center_0%]"
           unoptimized
           aria-hidden
@@ -179,7 +181,7 @@ function StoryCtaSection() {
 
         <div className="relative z-[2] grid items-center gap-10 px-7 pt-8 md:grid-cols-[1.05fr_0.95fr] md:gap-12 md:px-10 md:pt-10 lg:px-12 lg:pt-12">
           <div>
-            <span className="inline-flex items-center rounded-full border border-brand-pink/50 bg-black/25 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-pink-light">
+            <span className="inline-flex items-center rounded-full border border-brand-pink/50 bg-black/25 px-3.5 py-1.5 text-[13px] font-bold uppercase tracking-[0.2em] text-brand-pink-light">
               {cta.badge}
             </span>
 

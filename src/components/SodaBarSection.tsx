@@ -92,16 +92,18 @@ export function SodaBarSection({
         />
       ))}
 
-      <div className="relative z-10 mx-auto grid max-w-[1120px] items-center gap-10 md:gap-14 lg:grid-cols-[0.85fr_1.15fr]">
+      <div className="relative z-10 mx-auto grid max-w-[1250px] items-center gap-10 md:gap-14 lg:grid-cols-[0.85fr_1.15fr]">
         <div className="relative">
           <div className="-rotate-2 overflow-hidden rounded-3xl border-[6px] border-white/85 shadow-[0_22px_50px_rgba(0,0,0,0.22)]">
-            <Image
-              src={image}
-              alt={imageAlt}
-              width={500}
-              height={420}
-              className="block h-[300px] w-full object-cover md:h-[420px]"
-            />
+            <div className="relative h-[300px] md:h-[420px]">
+              <Image
+                src={image}
+                alt={imageAlt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 480px"
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
 

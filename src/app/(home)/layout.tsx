@@ -1,4 +1,3 @@
-import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { Footer } from "@/components/Footer";
 
 export default function HomeLayout({
@@ -8,7 +7,6 @@ export default function HomeLayout({
 }>) {
   return (
     <>
-      <AnnouncementBar />
       <main className="overflow-hidden">{children}</main>
       <Footer />
     </>

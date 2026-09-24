@@ -64,7 +64,7 @@ export const MENU_INTRO = {
   secondaryImage: "/images/dirty-sodas-trio.jpg",
   secondaryImageAlt: "Colorful dirty sodas with candy rims",
   description:
-    "Specialty sandwiches, smash burgers, sides, breakfast, and dirty sodas — everything made fresh when you order.",
+    "Specialty sandwiches, smash burgers, sides, breakfast, and dirty sodas, all made fresh when you order.",
 } as const;
 
 export const MENU_SIGNATURE_SECTION = {
@@ -80,7 +80,7 @@ export const MENU_SIGNATURE_FAVORITES = [
     headline: "Sandwiches",
     headlineAccent: "",
     description:
-      "Stacked high on fresh-baked rolls — from Italian beef with au jus to toasted melts piled with the good stuff.",
+      "Served hot and stacked high, from our Hot Italian Beef and Chuckie Cheese Steak to Chicken Parm, Reubens and Turkey Melts.",
     image: "/images/signature-sandwich.png",
     imageAlt: "Toasted steak and cheese sandwich with melted cheese on a fresh roll",
     href: "#specialty-sandwiches",
@@ -124,7 +124,7 @@ export const MENU_SPECIALTY_SANDWICHES = {
       price: "$14",
     },
     { name: "Rachel", price: "$12" },
-    { name: "Rueben", price: "$12" },
+    { name: "Reuben", price: "$12" },
     { name: "Turkey Melt", price: "$10" },
   ] satisfies MenuTextItem[],
 };
@@ -138,61 +138,61 @@ export const MENU_COLD_SANDWICHES = {
   items: [
     {
       number: 1,
+      name: "Ham, Salami & Cheese",
+      prices: { inch20: 28, inch10: 14, hoagie: 12, farmHouse: 10 },
+    },
+    {
+      number: 2,
+      name: "Ham, Capocollo & Cheese",
+      prices: { inch20: 28, inch10: 14, hoagie: 12, farmHouse: 10 },
+    },
+    {
+      number: 3,
+      name: "Soppressata, Capocollo & Cheese",
+      prices: { inch20: 28, inch10: 14, hoagie: 12, farmHouse: 10 },
+    },
+    {
+      number: 4,
+      name: "Super Sub",
+      description: "Combination of #1, #2 & #3",
+      prices: { inch20: 34, inch10: 17, hoagie: 15, farmHouse: 13 },
+    },
+    {
+      number: 5,
       name: "All Cheese",
       description: "Choose up to 3 cheeses",
       prices: { inch20: 30, inch10: 15, hoagie: 13, farmHouse: 11 },
     },
     {
-      number: 2,
+      number: 6,
       name: "Chicken & Cheese",
       prices: { inch20: 28, inch10: 14, hoagie: 12, farmHouse: 10 },
     },
     {
-      number: 3,
-      name: "Ham, Capocollo, Cheese",
-      prices: { inch20: 28, inch10: 14, hoagie: 12, farmHouse: 10 },
-    },
-    {
-      number: 4,
-      name: "Ham, Salami, Cheese",
-      prices: { inch20: 28, inch10: 14, hoagie: 12, farmHouse: 10 },
-    },
-    {
-      number: 5,
+      number: 7,
       name: "Pastrami & Cheese",
       prices: { inch20: 32, inch10: 16, hoagie: 14, farmHouse: 12 },
     },
     {
-      number: 6,
+      number: 8,
       name: "Pepperoni & Cheese",
       prices: { inch20: 28, inch10: 14, hoagie: 14, farmHouse: 12 },
     },
     {
-      number: 7,
+      number: 9,
       name: "Roast Beef & Cheese",
       prices: { inch20: 32, inch10: 16, hoagie: 14, farmHouse: 12 },
     },
     {
-      number: 8,
+      number: 10,
       name: "Salad Sub",
       description: "No meat or cheese",
       prices: { inch20: 26, inch10: 13, hoagie: 11, farmHouse: 10 },
     },
     {
-      number: 9,
+      number: 11,
       name: "Salami & Cheese",
       prices: { inch20: 28, inch10: 14, hoagie: 12, farmHouse: 10 },
-    },
-    {
-      number: 10,
-      name: "Soppressata & Cheese",
-      prices: { inch20: 28, inch10: 14, hoagie: 12, farmHouse: 10 },
-    },
-    {
-      number: 11,
-      name: "Super Sub",
-      description: "Combination of #3, #4 & #10",
-      prices: { inch20: 34, inch10: 17, hoagie: 15, farmHouse: 13 },
     },
     {
       number: 12,
@@ -203,7 +203,7 @@ export const MENU_COLD_SANDWICHES = {
   extras: [
     {
       number: 13,
-      name: "Build Your Own Salad — 1 meat & 1 cheese",
+      name: "Build Your Own Salad (1 meat & 1 cheese)",
       price: "$15",
     },
     {
@@ -219,11 +219,9 @@ export const MENU_COLD_CUSTOMIZE = {
   cheeses: [
     "American",
     "Cheddar",
-    "Fire Colby",
-    "Jalapeno",
+    "Jalapeno Pepper Jack",
     "Mozzarella",
     "Muenster",
-    "Pepper Jack",
     "Provolone",
     "Sharp Cheddar",
     "Smoked Gouda",
@@ -240,7 +238,7 @@ export const MENU_COLD_CUSTOMIZE = {
         "Banana Peppers",
         "Jalapenos",
         "Giardiniera (Hot or Mild)",
-        "Olives (Black or Green)",
+        "Black Olives",
         "Peppers (Green, Red or Yellow)",
         "Pickles",
       ],
@@ -403,11 +401,11 @@ export const MENU_CATERING_CTA = {
   title: "We'll cater your",
   titleAccent: "next gathering.",
   description:
-    "Sandwich trays, smash burger spreads, and a full dirty soda bar — fresh, generous, and ready for offices, parties, and family celebrations.",
+    "Sandwich trays, smash burger spreads, and a full dirty soda bar. Fresh, generous, and ready for offices, parties, and family celebrations.",
   highlights: [
     "Custom menu packages for any crowd size",
     "Dirty soda bar add-ons for events",
-    "Locally owned — Downtown La Crosse",
+    "Locally owned in Downtown La Crosse",
   ],
   primaryLabel: "Explore Catering",
   primaryHref: "/services/catering-services",

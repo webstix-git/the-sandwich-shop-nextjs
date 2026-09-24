@@ -1,9 +1,9 @@
 export const STORY_INTRO = {
   primaryImage: "/images/our-story/story-roadside-cart.png",
   primaryImageAlt:
-    "Mobile dirty soda cart with chalkboard menu — where The Sandwich Shop story began",
+    "Mobile dirty soda cart with chalkboard menu, where The Sandwich Shop story began",
   description:
-    "From a roadside soda cart and market pop-ups to 411 3rd Street — how we became a Downtown La Crosse favorite.",
+    "From a roadside soda cart and market pop-ups to 411 3rd Street: how we became a Downtown La Crosse favorite.",
 } as const;
 
 export const STORY_FEATURE = {
@@ -11,8 +11,8 @@ export const STORY_FEATURE = {
   title: "A family idea",
   highlight: "with a fizzy twist.",
   paragraphs: [
-    "Long before we had a storefront, we were out in the community — pouring dirty sodas, testing flavor combos on a chalkboard, and serving sandwiches wherever hungry people gathered.",
-    "Every market day taught us something: people wanted generous food, something fun to drink, and a place that felt like it was run by neighbors — not a corporation.",
+    "Long before we had a storefront, we were out in the community, pouring dirty sodas, testing flavor combos on a chalkboard, and serving sandwiches wherever hungry people gathered.",
+    "Every market day taught us something: people wanted generous food, something fun to drink, and a place that felt like it was run by neighbors, not a corporation.",
   ],
   image: "/images/our-story/story-farmers-market.png",
   imageAlt:
@@ -26,7 +26,7 @@ export const STORY_CHAPTERS = [
     phase: "Chapter one",
     title: "The roadside cart",
     highlight: "and a chalkboard menu.",
-    body: "Under a shade umbrella with a hand-lettered dirty soda board, we learned what stuck — Rootbeer Float, Orange Dream, Dirty Dr Pepper — and built the soda bar culture one cup at a time.",
+    body: "Under a shade umbrella with a hand-lettered dirty soda board, we learned what stuck (Rootbeer Float, Orange Dream, Dirty Dr Pepper) and built the soda bar culture one cup at a time.",
     image: "/images/our-story/story-roadside-cart.png",
     imageAlt: "Mobile dirty soda cart with chalkboard menu on a sunny roadside",
   },
@@ -34,7 +34,7 @@ export const STORY_CHAPTERS = [
     phase: "Chapter two",
     title: "Markets, fairs,",
     highlight: "and first hellos.",
-    body: "Pop-up arches, checkered tablecloths, and rows of syrup pumps — we showed up at community events and introduced La Crosse to stacked sandwiches and candy-rimmed sodas long before we had a permanent sign.",
+    body: "Pop-up arches, checkered tablecloths, and rows of syrup pumps. We showed up at community events and introduced La Crosse to stacked sandwiches and candy-rimmed sodas long before we had a permanent sign.",
     image: "/images/our-story/story-farmers-market.png",
     imageAlt: "Sandwich Shop and Dirty Soda Bar booth at an outdoor market",
   },
@@ -42,7 +42,7 @@ export const STORY_CHAPTERS = [
     phase: "Chapter three",
     title: "The cart",
     highlight: "got serious.",
-    body: "Our stainless soda cart went wherever the crowd was — stocked with Torani syrups, creamers, and every base soda you could dream up. Same made-to-order spirit we still pour behind the bar today.",
+    body: "Our stainless soda cart went wherever the crowd was, stocked with Torani syrups, creamers, and every base soda you could dream up. Same made-to-order spirit we still pour behind the bar today.",
     image: "/images/our-story/story-soda-cart.png",
     imageAlt: "Stainless steel mobile soda cart with flavor syrups and canned sodas",
   },
@@ -50,7 +50,7 @@ export const STORY_CHAPTERS = [
     phase: "Chapter four",
     title: "A door on",
     highlight: "3rd Street.",
-    body: "We put down roots at 411 3rd Street in Downtown La Crosse — a real home for hot subs, smash burgers, and the dirty soda bar our regulars had been asking for.",
+    body: "We put down roots at 411 3rd Street in Downtown La Crosse, a real home for hot subs, smash burgers, and the dirty soda bar our regulars had been asking for.",
     image: "/images/our-story/story-storefront-street.png",
     imageAlt: "The Sandwich Shop storefront on 3rd Street in downtown La Crosse",
   },
@@ -94,7 +94,7 @@ export const STORY_TODAY = {
   title: "Your neighborhood spot",
   highlight: "on 3rd Street.",
   paragraphs: [
-    "Walk in and you'll still see that same spirit — chalkboard creativity behind the soda bar, sandwiches stacked high, and a welcome that feels personal.",
+    "Walk in and you'll still see that same spirit: chalkboard creativity behind the soda bar, sandwiches stacked high, and a welcome that feels personal.",
     "Whether you're a lunch regular from day one or walking in for the first time, you're part of the story now.",
   ],
   image: "/images/our-story/story-storefront-seating.png",

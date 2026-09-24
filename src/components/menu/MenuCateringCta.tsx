@@ -9,15 +9,15 @@ export function MenuCateringCta() {
   return (
     <section
       id="catering"
-      aria-label="Catering services"
+      aria-label="Catering"
       className="relative px-7 pb-12 pt-4 md:pb-16 md:pt-6"
     >
-      <div className="relative mx-auto max-w-[1180px] overflow-hidden rounded-[28px] border border-brand-pink/35 bg-brand-footer shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
+      <div className="relative mx-auto max-w-[1250px] overflow-hidden rounded-[28px] border border-brand-pink/35 bg-brand-footer shadow-[0_24px_64px_rgba(50,39,30,0.22)]">
         <Image
           src={cta.backgroundImage}
           alt=""
           fill
-          sizes="(max-width: 1180px) 100vw, 1180px"
+          sizes="(max-width: 1250px) 100vw, 1250px"
           className="object-cover object-[center_40%]"
           aria-hidden
         />
@@ -36,8 +36,8 @@ export function MenuCateringCta() {
 
         <div className="relative z-[1] px-7 py-12 md:px-12 md:py-14 lg:px-14 lg:py-16">
           <div className="max-w-[640px]">
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-pink/50 bg-black/25 px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-brand-pink-light">
-              <StarIcon size={11} className="text-brand-pink-light" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand-pink/50 bg-black/25 px-3.5 py-1.5 text-[12px] font-bold uppercase tracking-[0.2em] text-brand-pink-light">
+              <StarIcon size={11} className="text-white" />
               {cta.badge}
             </span>
 
@@ -57,10 +57,8 @@ export function MenuCateringCta() {
                   className="flex items-start gap-3 text-[15px] font-medium leading-[1.55] text-white md:text-[16px]"
                 >
                   <span
-                    className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${
-                      index % 2 === 1
-                        ? "bg-brand-cyan/30 text-brand-cyan-accent"
-                        : "bg-brand-pink/30 text-brand-pink-light"
+                    className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-white ${
+                      index % 2 === 1 ? "bg-brand-cyan/30" : "bg-brand-pink/30"
                     }`}
                   >
                     <CheckIcon size={11} />

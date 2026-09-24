@@ -10,21 +10,18 @@ import {
 const ACCENT = {
   gold: {
     tag: "text-brand-pink-dark",
-    line: "bg-brand-pink/80",
     ring: "group-hover:ring-brand-pink/20",
     arrow: "bg-brand-pink-light text-brand-pink-dark group-hover:bg-brand-pink group-hover:text-white",
     bar: "bg-brand-pink",
   },
   pink: {
     tag: "text-brand-pink-dark",
-    line: "bg-brand-pink/80",
     ring: "group-hover:ring-brand-pink/20",
     arrow: "bg-brand-pink-light text-brand-pink-dark group-hover:bg-brand-pink group-hover:text-white",
     bar: "bg-brand-pink",
   },
   cyan: {
     tag: "text-brand-cyan-dark",
-    line: "bg-brand-cyan/80",
     ring: "group-hover:ring-brand-cyan/20",
     arrow: "bg-brand-cyan-light text-brand-cyan-dark group-hover:bg-brand-cyan group-hover:text-white",
     bar: "bg-brand-cyan",
@@ -65,9 +62,8 @@ function ExplorePanel({
       <div className="flex flex-1 flex-col justify-between gap-4 px-5 py-5 sm:px-6 sm:py-6">
         <div>
           <p
-            className={`flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] ${accent.tag}`}
+            className={`flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.18em] ${accent.tag}`}
           >
-            <span className={`h-px w-5 shrink-0 ${accent.line}`} aria-hidden />
             {item.tagline}
           </p>
           <h3 className="mt-2 text-[1.125rem] font-extrabold leading-snug tracking-[-0.02em] text-brand-dark md:text-[1.2rem]">
@@ -118,8 +114,7 @@ export function AppetizersTrySomethingElseSection({
           className={`${CATEGORY_PAGE_LAYOUT.header} lg:flex lg:items-end lg:justify-between lg:gap-10`}
         >
           <header className="max-w-[480px]">
-            <p className="inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[11px]">
-              <span className="h-px w-8 bg-brand-pink/70" aria-hidden />
+            <p className="inline-flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px]">
               {section.eyebrow}
             </p>
             <h2 className="mt-4 text-[clamp(1.65rem,3vw,2.25rem)] font-extrabold leading-[1.08] tracking-[-0.04em] text-brand-dark text-balance">

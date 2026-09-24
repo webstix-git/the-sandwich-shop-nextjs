@@ -5,7 +5,7 @@ export const CATERING_INTRO = {
   primaryImageAlt:
     "Premium catering spread with sandwiches, smash burgers, and dirty sodas",
   description:
-    "Sandwich trays, burger spreads, and a dirty soda bar for your next event — fresh, generous, and hassle-free.",
+    "Sandwich trays, burger spreads, and a dirty soda bar for your next event. Fresh, generous, and hassle-free.",
 } as const;
 
 export const CATERING_OPENING = {
@@ -13,8 +13,8 @@ export const CATERING_OPENING = {
   title: "Fresh food.",
   highlight: "Unforgettable gatherings.",
   paragraphs: [
-    "Whether you're feeding the office, hosting a party, or planning a family reunion — we bring stacked sandwiches, smash burger spreads, and a dirty soda bar your guests will talk about.",
-    "Every tray is made fresh the morning of your event. No warming trays, no shortcuts — just generous portions and the same quality you'd get walking into our shop on 3rd Street.",
+    "Whether you're feeding the office, hosting a party, or planning a family reunion, we bring stacked sandwiches, smash burger spreads, and a dirty soda bar your guests will talk about.",
+    "Every tray is made fresh the morning of your event. No warming trays, no shortcuts, just generous portions and the same quality you'd get walking into our shop on 3rd Street.",
   ],
   image: "/images/catering-hero.jpg",
   imageAlt: "Catering spread with sandwiches, burgers, and dirty sodas",
@@ -27,14 +27,14 @@ export const CATERING_OCCASIONS_SECTION = {
   title: "Any occasion",
   highlight: "worth celebrating.",
   description:
-    "From casual get-togethers to full downtown events — we tailor every order to your crowd.",
+    "From casual get-togethers to full downtown events, we tailor every order to your crowd.",
 } as const;
 
 export const CATERING_OCCASIONS = [
   {
     title: "Office lunches",
     tagline: "Workplace",
-    description: "Keep the team fed with sandwich trays and sides — easy pickup, zero hassle.",
+    description: "Keep the team fed with sandwich trays and sides: easy pickup, zero hassle.",
     image: "/images/catering-occasion-office-lunches.jpg",
     imageAlt: "Office lunch catering spread with sandwich trays on a conference table",
     accent: "gold" as const,
@@ -52,13 +52,13 @@ export const CATERING_OCCASIONS = [
     tagline: "Gatherings",
     description: "Feed the crew before kickoff with generous trays built for sharing.",
     image: "/images/catering-occasion-game-day-v2.jpg",
-    imageAlt: "Game day catering spread with burger sliders, subs, and chips — no alcohol",
+    imageAlt: "Game day catering spread with burger sliders, subs, and chips (no alcohol)",
     accent: "cyan" as const,
   },
   {
     title: "Family reunions",
     tagline: "Together",
-    description: "Custom packages for every age — sandwiches, burgers, desserts, and sodas.",
+    description: "Custom packages for every age: sandwiches, burgers, desserts, and sodas.",
     image: "/images/catering-occasion-family-reunion.jpg",
     imageAlt: "Family reunion outdoor catering with sandwiches and desserts",
     accent: "gold" as const,
@@ -70,7 +70,7 @@ export const CATERING_PACKAGES_SECTION = {
   title: "Choose your",
   highlight: "spread.",
   description:
-    "Every package is made fresh and ready to serve. Custom options available — just ask.",
+    "Every package is made fresh and ready to serve. Custom options available. Just ask.",
 } as const;
 
 export const CATERING_PACKAGES = [
@@ -114,7 +114,7 @@ export const CATERING_SIGNATURE_SECTION = {
   title: "The full",
   highlight: "experience.",
   description:
-    "More than trays — we deliver the flavors that make The Sandwich Shop unmistakable.",
+    "More than trays, we deliver the flavors that make The Sandwich Shop unmistakable.",
 } as const;
 
 export const CATERING_SIGNATURE = [
@@ -123,7 +123,7 @@ export const CATERING_SIGNATURE = [
     headlineAccent: "sandwiches",
     eyebrow: "Hot & cold subs",
     description:
-      "Italian beef, steak & cheese, Italian subs — cut, plated, and ready for your guests.",
+      "Italian beef, steak & cheese and Italian subs: cut, plated, and ready for your guests.",
     image: "/images/gallery/gallery-italian-sub.png",
     imageAlt: "Italian sub catering tray",
     accent: "gold" as const,
@@ -133,7 +133,7 @@ export const CATERING_SIGNATURE = [
     headlineAccent: "burgers",
     eyebrow: "Burger spreads",
     description:
-      "Juicy smash burgers with all the fixings — the same ones we serve downtown, scaled for your event.",
+      "Juicy smash burgers with all the fixings, the same ones we serve downtown, scaled for your event.",
     image: "/images/gallery/gallery-brisket-burger.png",
     imageAlt: "Smash burger catering spread",
     accent: "pink" as const,
@@ -143,7 +143,7 @@ export const CATERING_SIGNATURE = [
     headlineAccent: "bar",
     eyebrow: "Only in La Crosse",
     description:
-      "Rootbeer Float, Orange Dream, Dirty Dr Pepper — a full soda bar experience your guests won't forget.",
+      "From Rootbeer Float to Dirty Dr Pepper, a full soda bar experience your guests won't forget.",
     image: "/images/gallery/gallery-dirty-sodas-lineup.png",
     imageAlt: "Dirty soda bar lineup for events",
     accent: "cyan" as const,
@@ -161,13 +161,13 @@ export const CATERING_PROCESS = [
     step: "1",
     title: "Tell us about your event",
     description:
-      "Headcount, date, and what you're craving — we'll help you build the perfect menu.",
+      "Headcount, date, and what you're craving. We'll help you build the perfect menu.",
   },
   {
     step: "2",
     title: "We prepare everything fresh",
     description:
-      "Sandwiches stacked, burgers smashed, sodas prepped — all made the morning of your event.",
+      "Sandwiches stacked, burgers smashed, sodas prepped, all made the morning of your event.",
   },
   {
     step: "3",
@@ -194,7 +194,7 @@ export const CATERING_CTA = {
   title: "Let's make your next event",
   titleAccent: "unforgettable.",
   description:
-    "Tell us your event date, headcount, and what you're craving — we'll reply with menu options within 24 hours.",
+    "Tell us your event date, headcount, and what you're craving. We'll reply with menu options within 24 hours.",
   backgroundImage: "/images/catering-cta-bg.png",
   primaryLabel: "Request catering",
   primaryHref: "/contact-us",
