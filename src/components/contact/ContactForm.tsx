@@ -33,20 +33,24 @@ export function ContactForm({ turnstileSiteKey = "" }: ContactFormProps) {
     event.preventDefault();
     setError(null);
 
-    if (captchaRequired && !turnstileToken) {
+    const formData = new FormData(event.currentTarget);
+    const tokenFromWidget =
+      turnstileToken ||
+      String(formData.get("cf-turnstile-response") ?? "").trim();
+
+    if (captchaRequired && !tokenFromWidget) {
       setError("Please complete the captcha.");
       return;
     }
 
     setSubmitting(true);
 
-    const formData = new FormData(event.currentTarget);
     const payload = {
       name: String(formData.get("name") ?? "").trim(),
       email: String(formData.get("email") ?? "").trim(),
       subject: String(formData.get("subject") ?? "").trim(),
       message: String(formData.get("message") ?? "").trim(),
-      turnstileToken: turnstileToken ?? "",
+      turnstileToken: tokenFromWidget,
     };
 
     try {

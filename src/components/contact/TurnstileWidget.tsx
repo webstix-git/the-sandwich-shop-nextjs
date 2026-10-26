@@ -3,13 +3,14 @@
 import Script from "next/script";
 import {
   forwardRef,
+  useCallback,
   useEffect,
   useImperativeHandle,
   useRef,
 } from "react";
 
 type TurnstileApi = {
-  ready: (callback: () => void) => void;
+  ready?: (callback: () => void) => void;
   render: (
     element: HTMLElement,
     options: {
@@ -21,7 +22,7 @@ type TurnstileApi = {
       "expired-callback"?: () => void;
     },
   ) => string;
-  reset: (widgetId: string) => void;
+  reset: (widgetId?: string) => void;
   remove: (widgetId: string) => void;
 };
 
@@ -49,24 +50,13 @@ export const TurnstileWidget = forwardRef<
   const onTokenChangeRef = useRef(onTokenChange);
   onTokenChangeRef.current = onTokenChange;
 
-  useImperativeHandle(ref, () => ({
-    reset: () => {
-      if (widgetIdRef.current && window.turnstile) {
-        window.turnstile.reset(widgetIdRef.current);
-        onTokenChangeRef.current(null);
-      }
-    },
-  }));
+  const mountWidget = useCallback(() => {
+    if (!siteKey || !containerRef.current || !window.turnstile) return;
+    if (widgetIdRef.current) return;
 
-  useEffect(() => {
-    if (!siteKey) return;
+    containerRef.current.replaceChildren();
 
-    let cancelled = false;
-
-    const renderWidget = () => {
-      if (cancelled || !window.turnstile || !containerRef.current) return;
-      if (widgetIdRef.current) return;
-
+    try {
       widgetIdRef.current = window.turnstile.render(containerRef.current, {
         sitekey: siteKey,
         theme: "light",
@@ -75,44 +65,73 @@ export const TurnstileWidget = forwardRef<
         "error-callback": () => onTokenChangeRef.current(null),
         "expired-callback": () => onTokenChangeRef.current(null),
       });
-    };
+    } catch (error) {
+      console.error("[turnstile] render failed", error);
+      widgetIdRef.current = null;
+    }
+  }, [siteKey]);
 
-    const start = () => {
+  useImperativeHandle(ref, () => ({
+    reset: () => {
+      if (!window.turnstile) return;
+      try {
+        window.turnstile.reset(widgetIdRef.current ?? undefined);
+      } catch {
+        // ignore
+      }
+      onTokenChangeRef.current(null);
+    },
+  }));
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const run = () => {
+      if (cancelled) return;
       if (!window.turnstile) return;
       if (typeof window.turnstile.ready === "function") {
-        window.turnstile.ready(renderWidget);
+        window.turnstile.ready(() => {
+          if (!cancelled) mountWidget();
+        });
       } else {
-        renderWidget();
+        mountWidget();
       }
     };
 
-    start();
+    run();
 
     const interval = window.setInterval(() => {
-      if (window.turnstile) {
-        start();
+      if (widgetIdRef.current) {
         window.clearInterval(interval);
+        return;
       }
-    }, 150);
+      run();
+    }, 250);
 
-    const timeout = window.setTimeout(() => window.clearInterval(interval), 12000);
+    const timeout = window.setTimeout(() => window.clearInterval(interval), 15000);
 
     return () => {
       cancelled = true;
       window.clearInterval(interval);
       window.clearTimeout(timeout);
-      if (widgetIdRef.current && window.turnstile) {
-        window.turnstile.remove(widgetIdRef.current);
-        widgetIdRef.current = null;
+      const id = widgetIdRef.current;
+      widgetIdRef.current = null;
+      if (id && window.turnstile) {
+        try {
+          window.turnstile.remove(id);
+        } catch {
+          // ignore
+        }
       }
     };
-  }, [siteKey]);
+  }, [mountWidget]);
 
   return (
     <>
       <Script
         src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
         strategy="afterInteractive"
+        onLoad={mountWidget}
       />
       <div
         ref={containerRef}
