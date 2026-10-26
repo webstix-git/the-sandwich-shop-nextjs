@@ -112,16 +112,25 @@ export function MenuCategoryFilter() {
   );
 
   useEffect(() => {
-    const hash = window.location.hash.replace("#", "");
-    if (!hash || !MENU_CATEGORY_CHIPS.some((chip) => chip.id === hash)) return;
+    let scrollTimer: number | undefined;
 
-    setActiveChip(hash);
+    const scrollToHash = () => {
+      const hash = window.location.hash.replace("#", "");
+      if (!hash || !MENU_CATEGORY_CHIPS.some((chip) => chip.id === hash)) return;
 
-    const scrollTimer = window.setTimeout(() => {
-      scrollToSection(hash);
-    }, 150);
+      setActiveChip(hash);
+      if (scrollTimer) window.clearTimeout(scrollTimer);
+      scrollTimer = window.setTimeout(() => {
+        scrollToSection(hash);
+      }, 150);
+    };
 
-    return () => window.clearTimeout(scrollTimer);
+    scrollToHash();
+    window.addEventListener("hashchange", scrollToHash);
+    return () => {
+      if (scrollTimer) window.clearTimeout(scrollTimer);
+      window.removeEventListener("hashchange", scrollToHash);
+    };
   }, [scrollToSection]);
 
   const handleChipClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {

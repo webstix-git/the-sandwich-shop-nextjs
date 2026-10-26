@@ -37,6 +37,7 @@ export const NAV_LINKS: NavLink[] = [
       { href: "/our-menu/desserts", label: "Desserts" },
       { href: "/our-menu/wine-cocktails", label: "Wine & Cocktails" },
       { href: "/our-menu/kids-menu", label: "Kids Menu" },
+      { href: "/our-menu#late-night-menu", label: "Late Night Menu" },
     ],
   },
   {
