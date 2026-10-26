@@ -87,7 +87,6 @@ function ServicesFeatureSection() {
                 fill
                 sizes="(max-width: 1024px) 100vw, 560px"
                 className="object-cover object-[center_42%]"
-                unoptimized
               />
             </div>
           </div>
@@ -135,7 +134,6 @@ function ServiceOfferingCard({ item }: { item: ServiceOffering }) {
           fill
           sizes="(max-width: 640px) 100vw, 380px"
           className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.04]"
-          unoptimized
         />
       </div>
       <div className="flex flex-1 flex-col border-t border-brand-border/50 px-5 py-5">
@@ -225,7 +223,6 @@ function ServicesCateringSpotlightSection() {
               fill
               sizes="(max-width: 1024px) 100vw, 560px"
               className="object-cover object-[center_35%]"
-              unoptimized
             />
           </div>
         </div>
@@ -293,7 +290,6 @@ function ServicesCtaSection() {
           fill
           sizes="(max-width: 1250px) 100vw, 1250px"
           className="object-cover object-[center_0%]"
-          unoptimized
           aria-hidden
         />
         <div

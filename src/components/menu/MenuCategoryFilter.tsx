@@ -145,7 +145,7 @@ export function MenuCategoryFilter() {
       >
         <div className="mx-auto min-w-0 max-w-[1250px]">
           <div
-            className="flex w-full items-center justify-start gap-1 overflow-x-auto rounded-full border border-[#E8D5C4] bg-white px-3 py-2 shadow-[0_8px_24px_rgba(52,36,47,0.07)] scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-1.5 sm:px-4 lg:justify-between lg:overflow-x-visible lg:px-5 [&::-webkit-scrollbar]:hidden"
+            className="flex w-full items-center justify-start gap-1 overflow-x-auto rounded-full border border-[#E8D5C4] bg-white px-3 py-2 shadow-[0_8px_24px_rgba(52,36,47,0.07)] scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-1.5 sm:px-4 lg:px-3 min-[1320px]:justify-between min-[1320px]:overflow-x-visible [&::-webkit-scrollbar]:hidden"
             role="tablist"
           >
             {MENU_CATEGORY_CHIPS.map((chip) => {
@@ -160,7 +160,7 @@ export function MenuCategoryFilter() {
                   role="tab"
                   aria-selected={isActive}
                   onClick={(e) => handleChipClick(e, chip.id)}
-                  className={`inline-flex shrink-0 items-center gap-2 rounded-full px-3 py-2 text-[12px] font-bold transition-all duration-300 ease-out sm:gap-2.5 sm:px-3.5 sm:py-2.5 sm:text-[15px] md:text-[16px] ${
+                  className={`inline-flex shrink-0 items-center gap-2 rounded-full px-3 py-2 text-[12px] font-bold transition-all duration-300 ease-out sm:gap-2.5 sm:px-3.5 sm:py-2.5 sm:text-[15px] md:text-[16px] lg:gap-2 lg:px-2.5 lg:text-[15px] ${
                     isActive
                       ? "bg-brand-pink !text-white shadow-[0_4px_16px_rgba(237,78,141,0.32)]"
                       : "text-brand-dark hover:bg-brand-blush/70 hover:text-brand-pink-dark"

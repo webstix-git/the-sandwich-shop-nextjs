@@ -7,7 +7,7 @@ export const MINIMAL_PAGE_COPY = {
   aiPolicy: {
     title: "AI Policy",
     description:
-      "Our approach to artificial intelligence on this website: what we use it for, how we keep content accurate, and where human judgment leads.",
+      "How we prepare our menu, guest tools, and website content so artificial intelligence can support the shop while our team stays in charge.",
   },
   sitemap: {
     title: "Sitemap",
@@ -15,8 +15,8 @@ export const MINIMAL_PAGE_COPY = {
       "A complete guide to every page on our website: menus, services, stories, and contact information in one place.",
   },
   serviceIndex: {
-    title: "Service Index",
+    title: "AI Readiness Service Index",
     description:
-      "Every way to enjoy The Sandwich Shop & Dirty Soda Bar, from dine-in and carry out to full-service catering.",
+      "How we prepare our menu, guest tools, and website content so artificial intelligence can support the shop while our team stays in charge.",
   },
 } as const;

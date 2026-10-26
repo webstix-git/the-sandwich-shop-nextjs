@@ -87,5 +87,5 @@ export const FOOTER_LEGAL_LINKS = [
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/ai-policy", label: "AI Policy" },
   { href: "/sitemap", label: "Sitemap" },
-  { href: "/service-index", label: "Service Index" },
+  { href: "/service-index", label: "AI Readiness Service Index" },
 ] as const;

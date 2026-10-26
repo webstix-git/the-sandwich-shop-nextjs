@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { CateringPageBody } from "@/components/catering/CateringPageBody";
 import { CateringPageIntro } from "@/components/catering/CateringPageIntro";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Catering | The Sandwich Shop & Dirty Soda Bar",
+export const metadata: Metadata = pageMetadata({
+  title: "Catering",
   description:
     "Catering for offices, parties, and events in La Crosse. Sandwich trays, burger spreads, and dirty soda bar experiences.",
-};
+  path: "/services/catering-services",
+});
 
 export default function CateringPage() {
   return (

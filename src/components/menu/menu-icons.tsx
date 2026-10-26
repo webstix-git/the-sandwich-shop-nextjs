@@ -1,6 +1,7 @@
 import {
   Cookie,
   EggFried,
+  Moon,
   Sandwich,
   Soup,
   Star,
@@ -147,6 +148,11 @@ export function MenuKidsIcon({ className, size = 20 }: IconProps) {
   return <NavLucideIcon Icon={Cookie} className={className} size={size} />;
 }
 
+/** Late night — moon */
+export function MenuLateNightIcon({ className, size = 20 }: IconProps) {
+  return <NavLucideIcon Icon={Moon} className={className} size={size} />;
+}
+
 export function MenuHeartOutlineIcon({ className, size = 20 }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" className={className} aria-hidden>
@@ -269,7 +275,8 @@ export type MenuNavIconKey =
   | "sides"
   | "soup"
   | "breakfast"
-  | "kids";
+  | "kids"
+  | "late-night";
 
 export function MenuNavIcon({ icon, className, size = 18 }: { icon: MenuNavIconKey; className?: string; size?: number }) {
   switch (icon) {
@@ -290,5 +297,7 @@ export function MenuNavIcon({ icon, className, size = 18 }: { icon: MenuNavIconK
       return <MenuBreakfastIcon className={className} size={size} />;
     case "kids":
       return <MenuKidsIcon className={className} size={size} />;
+    case "late-night":
+      return <MenuLateNightIcon className={className} size={size} />;
   }
 }

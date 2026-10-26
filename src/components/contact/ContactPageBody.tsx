@@ -145,13 +145,21 @@ function ContactHoursAndFormSection() {
           </p>
 
           <form className="mt-8 space-y-5 rounded-[28px] border border-brand-card-border bg-white p-7 shadow-[0_16px_48px_rgba(52,36,47,0.08)] md:p-8">
+            <p className="text-[14px] leading-relaxed text-brand-muted">
+              Fields marked with an asterisk (<span className="font-semibold text-red-600">*</span>) are required.
+            </p>
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
                 <label
                   htmlFor="contact-name"
                   className="mb-2 block text-[13px] font-semibold uppercase tracking-[0.12em] text-brand-nav"
                 >
-                  Name
+                  Name:
+                  <span className="text-red-600" aria-hidden>
+                    {" "}
+                    *
+                  </span>
+                  <span className="sr-only"> required</span>
                 </label>
                 <input
                   id="contact-name"
@@ -159,6 +167,7 @@ function ContactHoursAndFormSection() {
                   type="text"
                   autoComplete="name"
                   placeholder="Your name"
+                  required
                   className={inputClassName}
                 />
               </div>
@@ -167,7 +176,12 @@ function ContactHoursAndFormSection() {
                   htmlFor="contact-email"
                   className="mb-2 block text-[13px] font-semibold uppercase tracking-[0.12em] text-brand-nav"
                 >
-                  Email
+                  Email:
+                  <span className="text-red-600" aria-hidden>
+                    {" "}
+                    *
+                  </span>
+                  <span className="sr-only"> required</span>
                 </label>
                 <input
                   id="contact-email"
@@ -175,6 +189,7 @@ function ContactHoursAndFormSection() {
                   type="email"
                   autoComplete="email"
                   placeholder="you@email.com"
+                  required
                   className={inputClassName}
                 />
               </div>
@@ -184,7 +199,7 @@ function ContactHoursAndFormSection() {
                 htmlFor="contact-subject"
                 className="mb-2 block text-[13px] font-semibold uppercase tracking-[0.12em] text-brand-nav"
               >
-                Subject
+                Subject:
               </label>
               <input
                 id="contact-subject"
@@ -199,7 +214,7 @@ function ContactHoursAndFormSection() {
                 htmlFor="contact-message"
                 className="mb-2 block text-[13px] font-semibold uppercase tracking-[0.12em] text-brand-nav"
               >
-                Message
+                Message:
               </label>
               <textarea
                 id="contact-message"
@@ -310,7 +325,6 @@ function ContactMapCtaSection() {
           fill
           sizes="(max-width: 1250px) 100vw, 1250px"
           className="object-cover object-[center_0%]"
-          unoptimized
           aria-hidden
         />
         <div

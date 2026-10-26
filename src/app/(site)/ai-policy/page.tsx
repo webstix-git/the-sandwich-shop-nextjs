@@ -3,12 +3,14 @@ import { InfoProse } from "@/components/InfoProse";
 import { MinimalPageLayout } from "@/components/MinimalPageLayout";
 import { AI_POLICY_SECTIONS } from "@/lib/info-pages";
 import { MINIMAL_PAGE_COPY } from "@/lib/minimal-page-copy";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "AI Policy | The Sandwich Shop & Dirty Soda Bar",
+export const metadata: Metadata = pageMetadata({
+  title: "AI Policy",
   description:
-    "Our transparent approach to artificial intelligence on The Sandwich Shop & Dirty Soda Bar website.",
-};
+    "How The Sandwich Shop & Dirty Soda Bar prepares its menu, guest tools, and website content so artificial intelligence supports the shop while the team stays in charge.",
+  path: "/ai-policy",
+});
 
 export default function AiPolicyPage() {
   const copy = MINIMAL_PAGE_COPY.aiPolicy;
@@ -17,7 +19,7 @@ export default function AiPolicyPage() {
     <MinimalPageLayout title={copy.title} description={copy.description}>
       <InfoProse
         sections={AI_POLICY_SECTIONS}
-        lastUpdated="July 3, 2026"
+        lastUpdated="October 26, 2026"
         embedded
       />
     </MinimalPageLayout>

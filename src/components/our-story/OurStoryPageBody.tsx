@@ -49,7 +49,6 @@ function StoryChapterSection({
               fill
               sizes="(max-width: 1024px) 100vw, 560px"
               className="object-cover"
-              unoptimized
             />
           </div>
         </div>
@@ -83,7 +82,6 @@ function StoryGallerySection() {
               fill
               sizes="(max-width: 768px) 100vw, 400px"
               className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-              unoptimized
             />
             <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent px-5 py-4 text-[13px] font-semibold uppercase tracking-[0.16em] text-white">
               {featured.caption}
@@ -101,7 +99,6 @@ function StoryGallerySection() {
                 fill
                 sizes="(max-width: 768px) 50vw, 280px"
                 className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                unoptimized
               />
               <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-white">
                 {image.caption}
@@ -128,7 +125,6 @@ function StoryTodaySection() {
               fill
               sizes="(max-width: 1024px) 100vw, 560px"
               className="object-cover object-[center_35%]"
-              unoptimized
             />
           </div>
         </div>
@@ -167,7 +163,6 @@ function StoryCtaSection() {
           fill
           sizes="(max-width: 1250px) 100vw, 1250px"
           className="object-cover object-[center_0%]"
-          unoptimized
           aria-hidden
         />
         <div

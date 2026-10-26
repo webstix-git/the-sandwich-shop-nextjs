@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import { MenuCategoryPageBody } from "@/components/menu/category/MenuCategoryPageBody";
 import { MenuCategoryPageIntro } from "@/components/menu/category/MenuCategoryPageIntro";
 import { MENU_CATEGORY_PAGES } from "@/lib/menu-category-data";
+import { pageMetadata } from "@/lib/seo";
 
 const page = MENU_CATEGORY_PAGES["kids-menu"];
 
-export const metadata: Metadata = {
-  title: `${page.title} | The Sandwich Shop & Dirty Soda Bar`,
+export const metadata: Metadata = pageMetadata({
+  title: page.title,
   description: page.metaDescription,
-};
+  path: `/our-menu/${page.slug}`,
+});
 
 export default function KidsMenuPage() {
   return (

@@ -54,7 +54,7 @@ export function MinimalPageLayout({
           <li>
             <Link
               href="/"
-              className="text-brand-nav transition-colors hover:text-brand-pink-dark"
+              className="!text-black transition-colors hover:!text-black"
             >
               Home
             </Link>
@@ -67,7 +67,7 @@ export function MinimalPageLayout({
               <li>
                 <Link
                   href={breadcrumbParent.href}
-                  className="text-brand-nav transition-colors hover:text-brand-pink-dark"
+                  className="!text-black transition-colors hover:!text-black"
                 >
                   {breadcrumbParent.label}
                 </Link>
@@ -77,7 +77,7 @@ export function MinimalPageLayout({
           <li className="text-brand-body/50" aria-hidden>
             /
           </li>
-          <li className="font-semibold text-brand-dark" aria-current="page">
+          <li className="font-semibold text-black" aria-current="page">
             {currentLabel}
           </li>
         </ol>

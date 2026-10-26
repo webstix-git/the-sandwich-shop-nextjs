@@ -82,52 +82,56 @@ export const AI_POLICY_SECTIONS: readonly InfoProseSection[] = [
     id: "commitment",
     title: "Our Commitment",
     paragraphs: [
-      `${SITE.name} believes in transparency. This AI Policy explains how artificial intelligence may be used in connection with our website, marketing materials, and digital presence.`,
-      "We use technology thoughtfully, always with the goal of serving our guests better while keeping our brand authentic and our information accurate.",
+      `${SITE.name} prepares its menu, guest tools, and website content so artificial intelligence can support the shop while our team stays in charge.`,
+      "The sections below follow the AI Readiness Service Index: structured menu data, personal replies, staff review, current information, privacy limits, and catering that stays a conversation.",
     ],
   },
   {
-    id: "website-use",
-    title: "Use of AI on This Website",
+    id: "menu-data",
+    title: "Menu Data",
     paragraphs: [
-      "Parts of this website may be developed, maintained, or enhanced with the assistance of AI-powered tools. This can include layout suggestions, code generation, content drafting, accessibility improvements, and performance optimization.",
-      "All AI-assisted output is reviewed and approved by our team before publication.",
+      "Item names, prices, and descriptions follow one format so guests and assistive tools can read the menu without guessing.",
+      "What is published on the menu is the same information our staff uses at the counter.",
     ],
   },
   {
-    id: "content-imagery",
-    title: "Content & Imagery",
+    id: "guest-messages",
+    title: "Guest Messages",
     paragraphs: [
-      "Written content on this site reflects our menu, services, hours, and story to the best of our knowledge. Food photography and brand imagery represent our actual offerings and atmosphere unless otherwise noted.",
-      "If any AI-generated or AI-assisted imagery is used, it is clearly aligned with our real products and brand identity, never intended to mislead guests.",
+      "The contact form labels every field, marks name and email as required, and sends each note to our team for a personal reply.",
+      "We do not send automated answers in place of a person.",
     ],
   },
   {
-    id: "accuracy",
-    title: "Accuracy & Limitations",
+    id: "content-review",
+    title: "Content Review",
     paragraphs: [
-      "While we strive for accuracy, AI-assisted content may occasionally contain errors. Menu items, prices, hours, and availability are always subject to change. When in doubt, please contact us directly or visit in person for the most current information.",
+      "AI-assisted drafts are checked by our staff before they go live. Menu, hours, and prices stay under human approval.",
+      "Tools may help draft or lay out a page. They do not publish it.",
     ],
   },
   {
-    id: "human-oversight",
-    title: "Human Oversight",
+    id: "accuracy-checks",
+    title: "Accuracy Checks",
     paragraphs: [
-      "AI tools support our work. They do not replace human judgment. Our owners and staff review important content, respond to guest inquiries personally, and make all final decisions about menu, pricing, and service offerings.",
+      "Published details can change. When a page and the counter disagree, the team on 3rd Street is the source of truth.",
+      `Call ${SITE.phone} or visit ${SITE.address}, ${SITE.city}, for the current menu, hours, and availability.`,
     ],
   },
   {
-    id: "data",
-    title: "AI & Your Data",
+    id: "privacy-limits",
+    title: "Privacy Limits",
     paragraphs: [
-      "We do not use AI to make automated decisions that significantly affect you without human review. Any personal information handled through our site is governed by our Privacy Policy.",
+      "We do not use AI to make automated decisions about guests. Information from forms is handled under our privacy policy.",
+      "Personal details you send us are used to answer you, not to score or profile you.",
     ],
   },
   {
-    id: "updates",
-    title: "Updates to This Policy",
+    id: "catering-inquiries",
+    title: "Catering Inquiries",
     paragraphs: [
-      "We may update this AI Policy as our technology practices evolve. Changes will be posted on this page with an updated revision date.",
+      "Event requests stay a conversation. We confirm guest count, menu, and timing with you before anything is booked.",
+      "A form or message is a request. It is not a confirmed order.",
     ],
   },
   {
@@ -158,6 +162,9 @@ export const SITEMAP_PAGES: readonly SitemapLink[] = [
   { href: "/about-us/our-story", label: "Our Story" },
   { href: "/services", label: "Services" },
   { href: "/services/catering-services", label: "Catering" },
+  { href: "/privacy-policy", label: "Privacy Policy", description: "How we handle personal information" },
+  { href: "/ai-policy", label: "AI Policy", description: "How we use artificial intelligence" },
+  { href: "/service-index", label: "AI Readiness Service Index", description: "How the shop prepares for AI" },
 ];
 
 export type ServiceIndexItem = {
@@ -170,51 +177,51 @@ export type ServiceIndexItem = {
 
 export const SERVICE_INDEX_ITEMS: readonly ServiceIndexItem[] = [
   {
-    title: "Dine In",
+    title: "Menu Data",
     description:
-      "Enjoy our full menu in our cozy downtown space: fresh sandwiches, smash burgers, and signature dirty sodas made to order.",
-    href: "/contact-us",
-    tag: "Walk in welcome",
+      "Item names, prices, and descriptions follow one format so guests and assistive tools can read the menu without guessing.",
+    href: "/our-menu",
+    tag: "Structured content",
     accent: "pink",
   },
   {
-    title: "Carry Out",
+    title: "Guest Messages",
     description:
-      "Call ahead or order at the counter. We'll have your food hot, fresh, and ready when you are.",
+      "The contact form labels every field, marks name and email as required, and sends each note to our team for a personal reply.",
     href: "/contact-us",
-    tag: "Quick pickup",
+    tag: "Human reply",
     accent: "cyan",
   },
   {
-    title: "Catering",
+    title: "Content Review",
     description:
-      "Sandwich trays, burger spreads, and dirty soda bar experiences for offices, parties, and family gatherings.",
-    href: "/services/catering-services",
-    tag: "Events & groups",
+      "AI-assisted drafts are checked by our staff before they go live. Menu, hours, and prices stay under human approval.",
+    href: "/ai-policy",
+    tag: "Staff oversight",
     accent: "pink",
   },
   {
-    title: "Sandwich Trays",
+    title: "Accuracy Checks",
     description:
-      "Assorted subs cut and ready to serve, perfect for meetings and celebrations. Serves 10–15 guests.",
-    href: "/services/catering-services",
-    tag: "Catering package",
+      "Published details can change. When a page and the counter disagree, the team on 3rd Street is the source of truth.",
+    href: "/ai-policy",
+    tag: "Current information",
     accent: "cyan",
   },
   {
-    title: "Burger Spreads",
+    title: "Privacy Limits",
     description:
-      "Smash burgers with all the fixings, scaled for your crowd. A crowd-pleaser for any occasion.",
-    href: "/services/catering-services",
-    tag: "Catering package",
+      "We do not use AI to make automated decisions about guests. Information from forms is handled under our privacy policy.",
+    href: "/privacy-policy",
+    tag: "Your information",
     accent: "pink",
   },
   {
-    title: "Dirty Soda Bar",
+    title: "Catering Inquiries",
     description:
-      "Bring the legendary soda bar to your event, with custom flavors, cream, syrups, and candy rims included.",
+      "Event requests stay a conversation. We confirm guest count, menu, and timing with you before anything is booked.",
     href: "/services/catering-services",
-    tag: "Signature experience",
+    tag: "Events",
     accent: "cyan",
   },
 ];

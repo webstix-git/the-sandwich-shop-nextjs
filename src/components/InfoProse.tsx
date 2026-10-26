@@ -21,14 +21,14 @@ export function InfoProse({
   const content = (
     <>
       {lastUpdated ? (
-        <p className="mb-6 text-sm font-medium text-brand-cyan-dark">
+        <p className="mb-6 text-sm font-medium text-black">
           Last updated: {lastUpdated}
         </p>
       ) : null}
-      <div className="space-y-10">
+      <div className="space-y-10 [&_a]:!text-black [&_a]:decoration-black/35 [&_a]:hover:!text-black [&_a]:hover:decoration-black">
         {sections.map((section) => (
           <section key={section.id} id={section.id}>
-            <h2 className="mb-4 text-[20px] font-semibold text-brand-pink-dark">
+            <h2 className="mb-4 text-[20px] font-semibold text-black">
               {section.title}
             </h2>
             {section.paragraphs?.map((paragraph) => (

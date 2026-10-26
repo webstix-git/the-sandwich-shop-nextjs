@@ -120,7 +120,6 @@ export function PageIntroHero({
             className="object-cover"
             style={{ objectPosition: imagePosition.replace(/_/g, " ") }}
             priority
-            unoptimized
             aria-hidden
           />
         ) : (
@@ -132,7 +131,6 @@ export function PageIntroHero({
               height={350}
               className="h-full w-auto max-w-none translate-x-8 object-contain object-right md:translate-x-14 lg:translate-x-20"
               priority
-              unoptimized
               aria-hidden
             />
           </div>

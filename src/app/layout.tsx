@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
+import { RestaurantJsonLd } from "@/components/RestaurantJsonLd";
+import { SITE } from "@/lib/constants";
+import { getSiteUrl } from "@/lib/seo";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -9,10 +12,15 @@ const manrope = Manrope({
   display: "swap",
 });
 
+const defaultTitle = `${SITE.name} | La Crosse, WI`;
+
 export const metadata: Metadata = {
-  title: "The Sandwich Shop & Dirty Soda Bar | La Crosse, WI",
-  description:
-    "Freshly made hot & cold sandwiches, juicy smash burgers, and creative dirty sodas. Locally owned in Downtown La Crosse, WI.",
+  metadataBase: new URL(getSiteUrl()),
+  title: {
+    default: defaultTitle,
+    template: `%s | ${SITE.name}`,
+  },
+  description: SITE.description,
   keywords: [
     "sandwich shop",
     "dirty soda",
@@ -21,12 +29,27 @@ export const metadata: Metadata = {
     "catering",
     "downtown La Crosse",
   ],
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
-    title: "The Sandwich Shop & Dirty Soda Bar",
-    description:
-      "Handcrafted sandwiches & creative dirty sodas in Downtown La Crosse, WI.",
+    title: defaultTitle,
+    description: SITE.description,
     type: "website",
     locale: "en_US",
+    siteName: SITE.name,
+    images: [
+      {
+        url: "/images/hero-sandwich.jpg",
+        alt: "Fresh sandwich from The Sandwich Shop & Dirty Soda Bar",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: defaultTitle,
+    description: SITE.description,
   },
 };
 
@@ -41,6 +64,7 @@ export default function RootLayout({
         className="min-h-screen overflow-x-hidden bg-brand-bg font-sans text-brand-dark antialiased"
         suppressHydrationWarning
       >
+        <RestaurantJsonLd />
         {children}
       </body>
     </html>

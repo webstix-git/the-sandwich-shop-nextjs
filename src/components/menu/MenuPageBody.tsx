@@ -12,6 +12,7 @@ import {
   MENU_BREAKFAST,
   MENU_HASH_BROWNS_NOTE,
   MENU_KIDS_MENU,
+  MENU_LATE_NIGHT,
   MENU_SIDES,
   MENU_SIGNATURE_FAVORITES,
   MENU_SIGNATURE_SECTION,
@@ -35,12 +36,18 @@ const COMPACT_SECTIONS: CompactSection[] = [
   MENU_SOUP,
   MENU_BREAKFAST,
   MENU_KIDS_MENU,
+  MENU_LATE_NIGHT,
 ];
 
 function CategorySubtitle({ children }: { children: string }) {
+  const time = "11pm - 3am";
+  const timeStart = children.indexOf(time);
+  const lead = timeStart === -1 ? children : children.slice(0, timeStart).trimEnd();
+
   return (
     <p className="mt-1.5 text-xs font-bold uppercase leading-tight tracking-[0.14em] text-brand-pink-dark sm:text-[16px] sm:tracking-[1.5px]">
-      {children}
+      {lead}
+      {timeStart === -1 ? null : <span className="normal-case"> {time}</span>}
     </p>
   );
 }

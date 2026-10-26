@@ -22,7 +22,6 @@ function StoryFeatureSection() {
                 fill
                 sizes="(max-width: 1024px) 100vw, 560px"
                 className="object-cover object-[center_42%]"
-                unoptimized
               />
             </div>
           </div>

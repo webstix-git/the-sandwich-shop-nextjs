@@ -56,6 +56,7 @@ export const MENU_CATEGORY_CHIPS: MenuCategoryChip[] = [
   { id: "soup", label: "Soup", icon: "soup" },
   { id: "breakfast", label: "Breakfast", icon: "breakfast" },
   { id: "kids-menu", label: "Kids", icon: "kids" },
+  { id: "late-night-menu", label: "Late Night Menu", icon: "late-night" },
 ];
 
 export const MENU_INTRO = {
@@ -339,6 +340,23 @@ export const MENU_KIDS_MENU = {
     { name: "Chicken Strip Basket", price: "$10" },
     { name: "Kid's Sandwich Basket", price: "$6" },
     { name: "Kid's Smash Burger Basket", price: "$5" },
+  ] satisfies MenuSideItem[],
+};
+
+export const MENU_LATE_NIGHT = {
+  id: "late-night-menu",
+  title: "Late Night Menu",
+  scriptSubtitle: "Friday & Saturday nights 11pm - 3am",
+  headingImage: "/images/smash-burger.jpg",
+  headingImageAlt: "Oklahoma City smash burger",
+  items: [
+    { name: "Oklahoma City Smash Burger", price: "$12" },
+    {
+      name: "Hot Italian Beef",
+      price: "$14",
+      description: "Thin sliced roast beef & giardiniera on a toasted hoagie",
+    },
+    { name: "French Fries", price: "$4" },
   ] satisfies MenuSideItem[],
 };
 
