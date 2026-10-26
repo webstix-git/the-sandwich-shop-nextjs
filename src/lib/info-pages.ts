@@ -3,142 +3,141 @@ import { SITE } from "@/lib/constants";
 
 export const PRIVACY_POLICY_SECTIONS: readonly InfoProseSection[] = [
   {
-    id: "introduction",
-    title: "Introduction",
+    id: "overview",
+    title: "Overview",
     paragraphs: [
-      `${SITE.name} ("we," "us," or "our") respects your privacy. This Privacy Policy explains how we handle information when you visit our website, contact us, or visit our restaurant at ${SITE.address}, ${SITE.city}.`,
-      "By using our website or services, you agree to the practices described in this policy.",
+      `${SITE.name} ("we," "us," or "our") respects your privacy. This policy explains what information we collect when you visit our website, contact us, or dine with us, how we use it, and the choices you have.`,
     ],
   },
   {
     id: "information-we-collect",
     title: "Information We Collect",
     paragraphs: [
-      "We may collect information you provide directly to us, such as when you:",
-    ],
-    list: [
-      "Submit a contact or catering inquiry form",
-      "Call, email, or visit us in person",
-      "Subscribe to updates or promotions (if offered)",
-      "Interact with us on social media",
-    ],
-  },
-  {
-    id: "automatic-data",
-    title: "Automatically Collected Data",
-    paragraphs: [
-      "When you browse our website, we may automatically collect certain technical information, including your browser type, device type, pages visited, and general usage data. This helps us improve site performance and user experience.",
+      "Information you give us. When you call, email, submit a form, ask about catering, or place an order, we may collect your name, email address, phone number, and details about your request.",
+      "Information collected automatically. Like most websites, our site may record basic technical information such as your browser type, device, pages visited, and the site that referred you. This helps us keep the site working and understand how it is used.",
     ],
   },
   {
     id: "how-we-use",
-    title: "How We Use Your Information",
+    title: "How We Use Information",
     list: [
-      "Respond to your questions, orders, and catering requests",
-      "Provide and improve our website and restaurant services",
-      "Send confirmations or follow-ups related to your inquiries",
-      "Comply with legal obligations and protect our business",
+      "To respond to questions, orders, and catering requests",
+      "To provide dine-in, carry-out, and catering service",
+      "To improve our website, menu presentation, and guest experience",
+      "To send confirmations or follow-ups related to your inquiries",
+      "To meet legal, tax, and accounting requirements",
     ],
   },
   {
     id: "cookies",
-    title: "Cookies & Analytics",
+    title: "Cookies",
     paragraphs: [
-      "Our website may use cookies and similar technologies to remember preferences and understand how visitors use our site. You can adjust cookie settings through your browser at any time.",
+      "Our website may use cookies and similar technologies to remember your preferences and measure site traffic. You can set your browser to refuse cookies or alert you when cookies are being sent. Some parts of the site may not work properly without them.",
     ],
   },
   {
     id: "sharing",
-    title: "Information Sharing",
+    title: "How We Share Information",
     paragraphs: [
-      "We do not sell your personal information. We may share limited data with trusted service providers who help us operate our website, process communications, or deliver services, always under confidentiality obligations.",
+      "We do not sell your personal information. We share it only when needed to serve you, including with:",
+    ],
+    list: [
+      "Service providers who help us with website hosting, form delivery, and communications",
+      "Government authorities or others when required by law or to protect our rights",
     ],
   },
   {
     id: "security",
-    title: "Data Security",
+    title: "Data Security and Retention",
     paragraphs: [
-      "We take reasonable measures to protect your information from unauthorized access, alteration, or disclosure. However, no method of transmission over the internet is completely secure.",
+      "We use reasonable safeguards to protect your information. No method of transmission or storage is completely secure, so we cannot guarantee absolute security. We keep information only as long as needed for the purposes described in this policy or as required by law.",
     ],
   },
   {
-    id: "your-rights",
-    title: "Your Rights",
+    id: "your-choices",
+    title: "Your Choices",
     paragraphs: [
-      "Depending on your location, you may have the right to request access to, correction of, or deletion of personal information we hold about you. Contact us using the details below to make a request.",
+      "You can ask us to access, correct, or delete the personal information we hold about you by contacting us with the details below.",
     ],
   },
   {
-    id: "contact",
-    title: "Contact Us",
+    id: "children",
+    title: "Children's Privacy",
     paragraphs: [
-      `If you have questions about this Privacy Policy, please contact us at ${SITE.email} or ${SITE.phone}. You may also visit us at ${SITE.address}, ${SITE.city}.`,
+      "Our website is intended for a general audience and is not directed to children under 13. We do not knowingly collect personal information from children.",
+    ],
+  },
+  {
+    id: "third-party",
+    title: "Third-Party Links",
+    paragraphs: [
+      "Our website may link to maps, social media, or partner sites. We are not responsible for the privacy practices of those sites, and we encourage you to review their policies.",
+    ],
+  },
+  {
+    id: "changes",
+    title: "Changes to This Policy",
+    paragraphs: [
+      'We may update this policy from time to time. The "Last updated" date shows when it was last changed.',
     ],
   },
 ];
 
 export const AI_POLICY_SECTIONS: readonly InfoProseSection[] = [
   {
-    id: "commitment",
-    title: "Our Commitment",
+    id: "approach",
+    title: "Our Approach",
     paragraphs: [
-      `${SITE.name} prepares its menu, guest tools, and website content so artificial intelligence can support the shop while our team stays in charge.`,
-      "The sections below follow the AI Readiness Service Index: structured menu data, personal replies, staff review, current information, privacy limits, and catering that stays a conversation.",
+      `At ${SITE.name}, our business is built on fresh food and personal service. We may use artificial intelligence (AI) tools to help our team work more efficiently, but people remain responsible for the menu, prices, hours, and service you receive.`,
     ],
   },
   {
-    id: "menu-data",
-    title: "Menu Data",
+    id: "how-we-use",
+    title: "How We Use AI",
     paragraphs: [
-      "Item names, prices, and descriptions follow one format so guests and assistive tools can read the menu without guessing.",
-      "What is published on the menu is the same information our staff uses at the counter.",
+      "Everything produced with the help of AI is reviewed by a member of our team before it is used.",
+    ],
+    list: [
+      "Drafting and editing website and marketing content",
+      "Organizing menu copy, hours, and routine website tasks",
+      "Summarizing publicly available product or ingredient information when helpful",
     ],
   },
   {
-    id: "guest-messages",
-    title: "Guest Messages",
-    paragraphs: [
-      "The contact form labels every field, marks name and email as required, and sends each note to our team for a personal reply.",
-      "We do not send automated answers in place of a person.",
+    id: "what-we-do-not",
+    title: "What We Do Not Use AI For",
+    list: [
+      "Final menu prices or catering quotes without review by our staff",
+      "Guest recommendations that have not been checked by our team",
+      "Pretending to be a person when you are talking with an automated tool",
     ],
   },
   {
-    id: "content-review",
-    title: "Content Review",
+    id: "accuracy",
+    title: "Accuracy",
     paragraphs: [
-      "AI-assisted drafts are checked by our staff before they go live. Menu, hours, and prices stay under human approval.",
-      "Tools may help draft or lay out a page. They do not publish it.",
+      "Menu items, availability, and pricing are confirmed by our staff. If you notice information on our website that looks wrong, please let us know so we can correct it. When a page and the counter disagree, the team on 3rd Street is the source of truth.",
     ],
   },
   {
-    id: "accuracy-checks",
-    title: "Accuracy Checks",
+    id: "your-information",
+    title: "Your Information and AI Tools",
     paragraphs: [
-      "Published details can change. When a page and the counter disagree, the team on 3rd Street is the source of truth.",
-      `Call ${SITE.phone} or visit ${SITE.address}, ${SITE.city}, for the current menu, hours, and availability.`,
+      "We do not enter guests' personal information into public AI tools. When we use AI services, we choose tools with appropriate privacy and security protections. See our Privacy Policy for how we handle personal information.",
     ],
   },
   {
-    id: "privacy-limits",
-    title: "Privacy Limits",
+    id: "assistants",
+    title: "AI Assistants and Our Website",
     paragraphs: [
-      "We do not use AI to make automated decisions about guests. Information from forms is handled under our privacy policy.",
-      "Personal details you send us are used to answer you, not to score or profile you.",
+      "Search engines and AI assistants may read the public pages of our website. To help them describe our business accurately, we publish an AI Readiness Service Index with a plain summary of who we are and what we offer.",
     ],
   },
   {
-    id: "catering-inquiries",
-    title: "Catering Inquiries",
+    id: "changes",
+    title: "Changes to This Policy",
     paragraphs: [
-      "Event requests stay a conversation. We confirm guest count, menu, and timing with you before anything is booked.",
-      "A form or message is a request. It is not a confirmed order.",
-    ],
-  },
-  {
-    id: "contact",
-    title: "Questions",
-    paragraphs: [
-      `For questions about our use of AI, contact us at ${SITE.email} or call ${SITE.phone}.`,
+      'We will update this policy as our use of AI changes. The "Last updated" date shows when it was last changed.',
     ],
   },
 ];
@@ -149,76 +148,135 @@ export type SitemapLink = {
   description?: string;
 };
 
-export const SITEMAP_PAGES: readonly SitemapLink[] = [
-  { href: "/", label: "Home", description: "Our homepage" },
-  { href: "/contact-us", label: "Contact Us", description: "Hours, location & inquiries" },
-  { href: "/our-menu", label: "Our Menu" },
-  { href: "/our-menu/appetizers", label: "Appetizers" },
-  { href: "/our-menu/main-courses", label: "Main Courses" },
-  { href: "/our-menu/desserts", label: "Desserts" },
-  { href: "/our-menu/wine-cocktails", label: "Wine & Cocktails" },
-  { href: "/our-menu/kids-menu", label: "Kids Menu" },
-  { href: "/about-us", label: "About Us" },
-  { href: "/about-us/our-story", label: "Our Story" },
-  { href: "/services", label: "Services" },
-  { href: "/services/catering-services", label: "Catering" },
-];
-
-export type ServiceIndexItem = {
+export type SitemapSection = {
   title: string;
-  description: string;
-  href: string;
-  tag: string;
-  accent: "pink" | "cyan" | "gold";
+  links: readonly SitemapLink[];
 };
 
-export const SERVICE_INDEX_ITEMS: readonly ServiceIndexItem[] = [
+export const SITEMAP_SECTIONS: readonly SitemapSection[] = [
   {
-    title: "Menu Data",
-    description:
-      "Item names, prices, and descriptions follow one format so guests and assistive tools can read the menu without guessing.",
-    href: "/our-menu",
-    tag: "Structured content",
-    accent: "pink",
+    title: "Main Pages",
+    links: [
+      { href: "/", label: "Home" },
+      { href: "/our-menu", label: "Our Menu" },
+      { href: "/about-us", label: "About Us" },
+      { href: "/about-us/our-story", label: "Our Story" },
+      { href: "/services", label: "Services" },
+      { href: "/services/catering-services", label: "Catering" },
+      { href: "/contact-us", label: "Contact Us" },
+    ],
   },
   {
-    title: "Guest Messages",
-    description:
-      "The contact form labels every field, marks name and email as required, and sends each note to our team for a personal reply.",
-    href: "/contact-us",
-    tag: "Human reply",
-    accent: "cyan",
+    title: "Our Menu",
+    links: [
+      { href: "/our-menu/appetizers", label: "Appetizers" },
+      { href: "/our-menu/main-courses", label: "Main Courses" },
+      { href: "/our-menu/desserts", label: "Desserts" },
+      { href: "/our-menu/wine-cocktails", label: "Wine & Cocktails" },
+      { href: "/our-menu/kids-menu", label: "Kids Menu" },
+    ],
   },
   {
-    title: "Content Review",
-    description:
-      "AI-assisted drafts are checked by our staff before they go live. Menu, hours, and prices stay under human approval.",
-    href: "/ai-policy",
-    tag: "Staff oversight",
-    accent: "pink",
+    title: "On the Home Page",
+    links: [
+      { href: "/#menu", label: "What We Make" },
+      { href: "/#sodas", label: "Dirty Sodas" },
+      { href: "/#story", label: "Our Story" },
+      { href: "/#gallery", label: "Gallery" },
+      { href: "/#catering", label: "Catering & Events" },
+      { href: "/#visit", label: "Visit Us" },
+    ],
+  },
+];
+
+/** Flat list used by the 404 page and similar link lists. */
+export const SITEMAP_PAGES: readonly SitemapLink[] = SITEMAP_SECTIONS.flatMap(
+  (section) => section.links,
+);
+
+export type ServiceIndexRow = {
+  label: string;
+  value: string;
+  href?: string;
+};
+
+export type ServiceIndexTable = {
+  title: string;
+  rows: readonly ServiceIndexRow[];
+};
+
+export const SERVICE_INDEX_TABLES: readonly ServiceIndexTable[] = [
+  {
+    title: "Business Profile",
+    rows: [
+      { label: "Business name", value: SITE.name },
+      { label: "Business type", value: "Locally owned sandwich shop and dirty soda bar" },
+      { label: "Address", value: `${SITE.address}, ${SITE.city}` },
+      { label: "Service area", value: "Downtown La Crosse, WI" },
+      { label: "Phone", value: SITE.phone, href: SITE.phoneHref },
+      { label: "Email", value: SITE.email, href: SITE.emailHref },
+      {
+        label: "Hours",
+        value: "Tuesday–Saturday 10:00 AM–8:00 PM; closed Sunday–Monday",
+      },
+    ],
   },
   {
-    title: "Accuracy Checks",
-    description:
-      "Published details can change. When a page and the counter disagree, the team on 3rd Street is the source of truth.",
-    href: "/ai-policy",
-    tag: "Current information",
-    accent: "cyan",
+    title: "What We Serve",
+    rows: [
+      {
+        label: "Sandwiches",
+        value: "Hot and cold specialty sandwiches made fresh to order",
+      },
+      {
+        label: "Smash burgers",
+        value: "Crispy-edged smash burgers stacked to order",
+      },
+      {
+        label: "Dirty sodas",
+        value: "Cream, syrups, fruit, and candy-rimmed soda bar creations",
+      },
+      {
+        label: "Sides & more",
+        value: "Appetizers, soup, desserts, breakfast, and kids menu items",
+      },
+      {
+        label: "Catering",
+        value: "Sandwich trays, burger spreads, and dirty soda bar for events",
+      },
+    ],
   },
   {
-    title: "Privacy Limits",
-    description:
-      "We do not use AI to make automated decisions about guests. Information from forms is handled under our privacy policy.",
-    href: "/privacy-policy",
-    tag: "Your information",
-    accent: "pink",
+    title: "Key Pages",
+    rows: [
+      { label: "Home", value: "Homepage", href: "/" },
+      { label: "Our Menu", value: "Full menu", href: "/our-menu" },
+      { label: "About Us", value: "Who we are", href: "/about-us" },
+      { label: "Our Story", value: "How we got here", href: "/about-us/our-story" },
+      { label: "Services", value: "Dine in, carry out, catering", href: "/services" },
+      { label: "Catering", value: "Event catering", href: "/services/catering-services" },
+      { label: "Contact Us", value: "Hours, location, and messages", href: "/contact-us" },
+    ],
+  },
+];
+
+export const SERVICE_INDEX_FAQS: readonly { question: string; answer: string }[] = [
+  {
+    question: `Where is ${SITE.shortName} located?`,
+    answer: `${SITE.address}, ${SITE.city}, in downtown La Crosse.`,
   },
   {
-    title: "Catering Inquiries",
-    description:
-      "Event requests stay a conversation. We confirm guest count, menu, and timing with you before anything is booked.",
-    href: "/services/catering-services",
-    tag: "Events",
-    accent: "cyan",
+    question: "What do you serve?",
+    answer:
+      "Fresh sandwiches, smash burgers, sides, desserts, kids meals, and a dirty soda bar.",
+  },
+  {
+    question: "Do you offer catering?",
+    answer:
+      "Yes. We offer sandwich trays, burger spreads, and dirty soda bar setups for offices, parties, and events.",
+  },
+  {
+    question: "How do I get in touch?",
+    answer: `Call ${SITE.phone}, email ${SITE.email}, or use the form on our Contact page.`,
   },
 ];

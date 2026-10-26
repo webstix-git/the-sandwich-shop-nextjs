@@ -31,10 +31,7 @@ export const PUBLIC_ROUTES: readonly PublicRoute[] = [
   { path: "/services", changeFrequency: "monthly", priority: 0.8 },
   { path: "/services/catering-services", changeFrequency: "monthly", priority: 0.8 },
   { path: "/contact-us", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/privacy-policy", changeFrequency: "yearly", priority: 0.3 },
-  { path: "/ai-policy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/sitemap", changeFrequency: "monthly", priority: 0.4 },
-  { path: "/service-index", changeFrequency: "monthly", priority: 0.4 },
 ];
 
 export function pageMetadata({

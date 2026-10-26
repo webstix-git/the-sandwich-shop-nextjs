@@ -141,12 +141,12 @@ export function Footer() {
                   {SITE.phone}
                 </span>
               </Link>
-              <a href={SITE.emailHref} className="group flex gap-3">
+              <a href={SITE.emailHref} className="group flex min-w-0 gap-3">
                 <MailIcon
                   size={18}
                   className="mt-0.5 shrink-0 text-white"
                 />
-                <span className="break-all text-[15px] text-brand-footer-link transition-colors group-hover:text-white">
+                <span className="whitespace-nowrap text-[15px] text-brand-footer-link transition-colors group-hover:text-white">
                   {SITE.email}
                 </span>
               </a>
