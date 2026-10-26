@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import type { FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { CONTACT_FORM_SECTION } from "@/lib/contact-page-data";
 
 const inputClassName =
@@ -10,10 +10,45 @@ const inputClassName =
 export function ContactForm() {
   const router = useRouter();
   const form = CONTACT_FORM_SECTION;
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    router.push("/contact-us/thank-you");
+    setError(null);
+    setSubmitting(true);
+
+    const formData = new FormData(event.currentTarget);
+    const payload = {
+      name: String(formData.get("name") ?? "").trim(),
+      email: String(formData.get("email") ?? "").trim(),
+      subject: String(formData.get("subject") ?? "").trim(),
+      message: String(formData.get("message") ?? "").trim(),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        const data = (await response.json().catch(() => null)) as {
+          error?: string;
+        } | null;
+        throw new Error(data?.error || "Unable to send your message.");
+      }
+
+      router.push("/contact-us/thank-you");
+    } catch (submitError) {
+      setError(
+        submitError instanceof Error
+          ? submitError.message
+          : "Unable to send your message.",
+      );
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -101,11 +136,17 @@ export function ContactForm() {
           className={`${inputClassName} resize-none`}
         />
       </div>
+      {error ? (
+        <p className="text-[15px] font-medium text-red-600" role="alert">
+          {error}
+        </p>
+      ) : null}
       <button
         type="submit"
-        className="w-full rounded-full bg-brand-pink px-8 py-4 text-[17px] font-semibold text-white shadow-[0_10px_28px_rgba(237,78,141,0.32)] transition-all hover:-translate-y-0.5 hover:bg-brand-pink-hover sm:w-auto"
+        disabled={submitting}
+        className="w-full rounded-full bg-brand-pink px-8 py-4 text-[17px] font-semibold text-white shadow-[0_10px_28px_rgba(237,78,141,0.32)] transition-all hover:-translate-y-0.5 hover:bg-brand-pink-hover disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
       >
-        {form.submitLabel}
+        {submitting ? "Sending..." : form.submitLabel}
       </button>
     </form>
   );

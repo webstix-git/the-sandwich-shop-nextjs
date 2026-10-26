@@ -86,9 +86,10 @@ export function restaurantJsonLd() {
     image: `${url}/images/hero-sandwich.jpg`,
     telephone: "+1-608-797-1748",
     email: SITE.email,
-    servesCuisine: ["Sandwiches", "Burgers", "American"],
-    priceRange: "$",
+    servesCuisine: ["Sandwiches", "Burgers", "American", "Dirty Sodas"],
+    priceRange: "$$",
     menu: `${url}/our-menu`,
+    acceptsReservations: false,
     address: {
       "@type": "PostalAddress",
       streetAddress: "411 3rd Street",
@@ -96,6 +97,11 @@ export function restaurantJsonLd() {
       addressRegion: "WI",
       postalCode: "54601",
       addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 43.8138,
+      longitude: -91.2518,
     },
     openingHoursSpecification: [
       {

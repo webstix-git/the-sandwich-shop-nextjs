@@ -2,12 +2,18 @@ import type { Metadata } from "next";
 import { MinimalPageLayout } from "@/components/MinimalPageLayout";
 import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Thank You",
-  description:
-    "Thanks for contacting The Sandwich Shop & Dirty Soda Bar. We will get in touch with you shortly.",
-  path: "/contact-us/thank-you",
-});
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title: "Thank You",
+    description:
+      "Thanks for contacting The Sandwich Shop & Dirty Soda Bar. We will get in touch with you shortly.",
+    path: "/contact-us/thank-you",
+  }),
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function ContactThankYouPage() {
   return (

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { RestaurantJsonLd } from "@/components/RestaurantJsonLd";
 import { ScrollManager } from "@/components/ScrollManager";
 import { ScrollToTopButton } from "@/components/ScrollToTopButton";
@@ -66,6 +67,9 @@ export default function RootLayout({
       className={`${manrope.variable} scroll-smooth`}
       data-scroll-behavior="smooth"
     >
+      <head>
+        <GoogleAnalytics />
+      </head>
       <body
         className="min-h-screen overflow-x-hidden bg-brand-bg font-sans text-brand-dark antialiased"
         suppressHydrationWarning
