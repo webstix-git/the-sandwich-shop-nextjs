@@ -9,7 +9,7 @@ export const MENU_ITEMS = [
     tag: "Hot Sandwiches",
     tagColor: "text-brand-pink",
     title: "Sandwiches",
-    ctaLabel: "View hot sandwiches",
+    ctaLabel: "View Hot Sandwiches",
     description:
       "Served hot and stacked high, from our Hot Italian Beef and Chuckie Cheese Steak to Chicken Parm, Reubens and Turkey Melts.",
   },
@@ -20,7 +20,7 @@ export const MENU_ITEMS = [
     tag: "Smashed to order",
     tagColor: "text-brand-cyan-dark",
     title: "Smash Burgers",
-    ctaLabel: "View smash burgers",
+    ctaLabel: "View Smash Burgers",
     description:
       "Crispy-edged smash patties stacked with melty cheese, brisket and house sauces on a pillowy bun.",
   },
@@ -31,7 +31,7 @@ export const MENU_ITEMS = [
     tag: "The Soda Bar",
     tagColor: "text-brand-cyan",
     title: "Dirty Sodas",
-    ctaLabel: "Explore dirty sodas",
+    ctaLabel: "Explore Dirty Sodas",
     description:
       "Your favorite fizz, leveled up with cream, syrups, fruit and candy rims. Refreshing, fun, totally craveable.",
   },
@@ -223,7 +223,7 @@ export const SITE = {
   phone: "(608) 797-1748",
   phoneHref: "tel:+16087971748",
   email: "thesandwichshop143@yahoo.com",
-  emailHref: "/contact-us",
+  emailHref: "mailto:thesandwichshop143@yahoo.com",
   contactHref: "/contact-us",
 } as const;
 
@@ -237,7 +237,7 @@ export const CATERING_SERVICES = [
     image: "/images/hero-sandwich.jpg",
     imageAlt: "Fresh sandwich served in the dining area",
     href: "/contact-us",
-    cta: "Plan your visit",
+    cta: "Plan Your Visit",
     icon: "store" as const,
     accent: "pink" as const,
   },
@@ -250,7 +250,7 @@ export const CATERING_SERVICES = [
     image: "/images/dirty-sodas-trio.jpg",
     imageAlt: "Dirty sodas and food ready for takeout",
     href: "tel:+16087971748",
-    cta: "Call to order",
+    cta: "Call To Order",
     icon: "clock" as const,
     accent: "cyan" as const,
   },
@@ -263,7 +263,7 @@ export const CATERING_SERVICES = [
     image: "/images/italian-beef.jpg",
     imageAlt: "Catering sandwich spread for events",
     href: "/services/catering-services",
-    cta: "Explore catering",
+    cta: "Explore Catering",
     icon: "star" as const,
     accent: "gold" as const,
   },

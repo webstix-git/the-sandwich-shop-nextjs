@@ -257,7 +257,7 @@ function AboutSignatureCard({
   const accentStyles = SIGNATURE_ACCENT_STYLES[item.accent];
 
   return (
-    <Link href={item.href} className="group block h-full">
+    <Link href={item.href} scroll={false} className="group block h-full">
       <article
         className={`flex h-full flex-col overflow-hidden rounded-[32px] bg-white p-2.5 shadow-[0_16px_48px_rgba(52,36,47,0.08)] ring-1 ring-brand-border/50 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_32px_64px_rgba(52,36,47,0.14)] ${accentStyles.ring}`}
       >
@@ -354,7 +354,7 @@ function AboutSignatureSection() {
             href="/our-menu"
             className="group inline-flex items-center gap-2.5 rounded-full border-2 border-brand-dark/10 bg-white px-8 py-3.5 text-[16px] font-semibold text-brand-dark shadow-[0_8px_24px_rgba(52,36,47,0.06)] transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-pink/25 hover:shadow-[0_14px_32px_rgba(52,36,47,0.1)]"
           >
-            View full menu
+            View Full Menu
             <ChevronRightIcon
               size={16}
               className="transition-transform duration-300 group-hover:translate-x-1"

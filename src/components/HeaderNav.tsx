@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { NAV_LINKS } from "@/lib/navigation";
 import type { NavLink } from "@/lib/navigation";
-import { ChevronDownIcon } from "./icons";
+import { ChevronDownIcon, ChevronRightIcon, CloseIcon } from "./icons";
 
 export function NavDropdown({
   link,
@@ -142,6 +143,86 @@ export function MobileNavItem({
         </div>
       )}
     </div>
+  );
+}
+
+export function MobileNavDrawer({
+  onClose,
+  pathname,
+}: {
+  onClose: () => void;
+  pathname: string;
+}) {
+  const [ready, setReady] = useState(false);
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
+
+  useEffect(() => {
+    setReady(true);
+  }, []);
+
+  useEffect(() => {
+    const html = document.documentElement;
+    const body = document.body;
+    const previousHtmlOverflow = html.style.overflow;
+    const previousBodyOverflow = body.style.overflow;
+    html.style.overflow = "hidden";
+    body.style.overflow = "hidden";
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onCloseRef.current();
+    };
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      html.style.overflow = previousHtmlOverflow;
+      body.style.overflow = previousBodyOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, []);
+
+  if (!ready) return null;
+
+  return createPortal(
+    <div
+      className="fixed inset-0 z-[100] flex h-dvh max-h-dvh w-full flex-col bg-white lg:hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Navigation"
+    >
+      <div className="flex shrink-0 items-center justify-between px-6 pb-4 pt-[max(1.25rem,env(safe-area-inset-top))]">
+        <span className="text-lg font-semibold text-brand-dark">Navigation</span>
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close menu"
+          className="rounded-lg p-2 text-brand-nav hover:bg-brand-blush"
+        >
+          <CloseIcon />
+        </button>
+      </div>
+      <nav className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto overscroll-contain px-6 pb-4">
+        {NAV_LINKS.map((link) => (
+          <MobileNavItem
+            key={link.href}
+            link={link}
+            onClose={onClose}
+            pathname={pathname}
+          />
+        ))}
+      </nav>
+      <div className="shrink-0 px-6 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-2">
+        <Link
+          href="/our-menu"
+          onClick={onClose}
+          className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-pink px-6 py-3 text-center text-base font-semibold !text-white shadow-[0_6px_18px_rgba(237,78,141,0.4)] hover:!text-white"
+        >
+          View Our Menu
+          <ChevronRightIcon size={16} />
+        </Link>
+      </div>
+    </div>,
+    document.body,
   );
 }
 

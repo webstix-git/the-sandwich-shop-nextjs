@@ -141,10 +141,7 @@ export function Footer() {
                   {SITE.phone}
                 </span>
               </Link>
-              <Link
-                href={SITE.emailHref}
-                className="group flex gap-3"
-              >
+              <a href={SITE.emailHref} className="group flex gap-3">
                 <MailIcon
                   size={18}
                   className="mt-0.5 shrink-0 text-white"
@@ -152,18 +149,21 @@ export function Footer() {
                 <span className="break-all text-[15px] text-brand-footer-link transition-colors group-hover:text-white">
                   {SITE.email}
                 </span>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
-          <span className="text-center text-sm text-brand-footer-copyright sm:text-left">
-            © 2026 {SITE.name}. All rights reserved.
+        <div className="mt-12 flex flex-col items-center gap-4 border-t border-white/10 pt-7 xl:flex-row xl:justify-between">
+          <span className="max-w-full text-center text-sm leading-5 text-brand-footer-copyright sm:whitespace-nowrap xl:text-left">
+            <span className="block sm:inline">© 2026 {SITE.name}.</span>
+            <span className="mt-1 block sm:ml-1 sm:mt-0 sm:inline">
+              All rights reserved.
+            </span>
           </span>
           <nav
             aria-label="Legal and resources"
-            className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 sm:justify-end"
+            className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 xl:justify-end"
           >
             {FOOTER_LEGAL_LINKS.map((link) => (
               <Link

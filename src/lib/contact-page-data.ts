@@ -22,7 +22,7 @@ export const CONTACT_METHODS = [
     description: "Pull up a chair or grab carry out. We're on 3rd Street in the heart of La Crosse.",
     lines: [SITE.address, SITE.city],
     action: {
-      label: "Get directions",
+      label: "Get Directions",
       href: SITE.mapsHref,
       external: true,
     },
@@ -33,7 +33,7 @@ export const CONTACT_METHODS = [
     highlight: "ahead",
     description: "Phone in your order or ask a question. We're happy to help.",
     lines: [SITE.phone],
-    action: { label: "Call now", href: SITE.phoneHref, external: false },
+    action: { label: "Call Now", href: SITE.phoneHref, external: false },
     accent: "cyan" as const,
   },
   {
@@ -42,7 +42,7 @@ export const CONTACT_METHODS = [
     description: "Catering inquiries, feedback, or general questions. We reply within 24 hours.",
     lines: [SITE.email],
     action: {
-      label: "Send a message",
+      label: "Send A Message",
       href: "/contact-us#send-message",
       external: false,
     },
@@ -63,7 +63,7 @@ export const CONTACT_FORM_SECTION = {
   highlight: "hear from you.",
   description:
     "Questions about the menu, catering, or a large order? Drop us a line and we'll get back to you soon.",
-  submitLabel: "Send message",
+  submitLabel: "Send Message",
 } as const;
 
 export const CONTACT_MAP_CTA = {
@@ -73,6 +73,6 @@ export const CONTACT_MAP_CTA = {
   description:
     "Street parking and downtown foot traffic make us an easy stop for lunch, a dirty soda run, or dinner to go.",
   backgroundImage: "/images/about-cta-signs-bg.png",
-  directionsLabel: "Open in Google Maps",
+  directionsLabel: "Open In Google Maps",
   directionsHref: SITE.mapsHref,
 } as const;

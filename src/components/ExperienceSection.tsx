@@ -52,10 +52,10 @@ export function ExperienceSection() {
 
         <div className="mt-10 flex justify-center">
           <Link
-            href="#visit"
+            href="/contact-us#get-in-touch"
             className="group inline-flex items-center gap-2 rounded-full bg-brand-pink px-8 py-4 text-lg font-semibold text-white shadow-[0_8px_22px_rgba(237,78,141,0.32)] transition-all hover:-translate-y-0.5 hover:bg-brand-pink-hover"
           >
-            Plan your visit
+            Plan Your Visit
             <ChevronRightIcon
               size={18}
               className="transition-transform duration-200 group-hover:translate-x-1"

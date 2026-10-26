@@ -67,15 +67,16 @@ export function ScrollStickyTopBar({ children }: ScrollStickyTopBarProps) {
 
   return (
     <SiteHeaderContext.Provider value={{ height: headerHeight, isFixed: isPinned }}>
-      {isPinned && naturalHeight > 0 && (
+      {isPinned && (
         <div
-          style={{ height: naturalHeight }}
+          style={{ height: naturalHeight || headerHeight || STICKY_HEADER_HEIGHT }}
           className="pointer-events-none"
           aria-hidden="true"
         />
       )}
       <div
         ref={barRef}
+        data-site-header
         className={`left-0 right-0 z-40 w-full overflow-visible transition-[height,background-color,box-shadow,border-color] duration-300 ease-out ${
           isPinned
             ? `fixed top-0 ${PINNED_BAR_CLASSES}`

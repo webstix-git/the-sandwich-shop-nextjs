@@ -3,14 +3,40 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { MenuNavIcon } from "@/components/menu/menu-icons";
 import { useSiteHeader } from "@/components/ScrollStickyTopBar";
+import { isBackNavigation } from "@/components/ScrollManager";
 import { MENU_CATEGORY_CHIPS } from "@/lib/menu-page-data";
 
 const FILTER_SCROLL_PADDING = 12;
+const DEFAULT_FILTER_HEIGHT = 115;
+
+const filterHeightListeners = new Set<(height: number) => void>();
+let currentFilterHeight = DEFAULT_FILTER_HEIGHT;
+
+function publishFilterHeight(height: number) {
+  if (height <= 0 || height === currentFilterHeight) return;
+  currentFilterHeight = height;
+  filterHeightListeners.forEach((listener) => listener(height));
+}
+
+export function useMenuSectionScrollMargin(): number {
+  const { height: headerHeight } = useSiteHeader();
+  const [filterHeight, setFilterHeight] = useState(currentFilterHeight);
+
+  useEffect(() => {
+    filterHeightListeners.add(setFilterHeight);
+    setFilterHeight(currentFilterHeight);
+    return () => {
+      filterHeightListeners.delete(setFilterHeight);
+    };
+  }, []);
+
+  return headerHeight + filterHeight + FILTER_SCROLL_PADDING;
+}
 
 export function MenuCategoryFilter() {
   const { height: headerHeight } = useSiteHeader();
   const [activeChip, setActiveChip] = useState<string>(MENU_CATEGORY_CHIPS[0].id);
-  const [filterHeight, setFilterHeight] = useState(72);
+  const [filterHeight, setFilterHeight] = useState(DEFAULT_FILTER_HEIGHT);
   const [isPinned, setIsPinned] = useState(false);
   const anchorRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLElement>(null);
@@ -24,7 +50,10 @@ export function MenuCategoryFilter() {
     const nav = navRef.current;
     if (!nav) return;
 
-    const updateHeight = () => setFilterHeight(nav.offsetHeight);
+    const updateHeight = () => {
+      setFilterHeight(nav.offsetHeight);
+      publishFilterHeight(nav.offsetHeight);
+    };
     updateHeight();
 
     const resizeObserver = new ResizeObserver(updateHeight);
@@ -84,7 +113,20 @@ export function MenuCategoryFilter() {
 
   useEffect(() => {
     const chip = chipRefs.current[activeChip];
-    chip?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+    const scroller = chip?.parentElement;
+    if (!chip || !scroller) return;
+
+    const chipStart = chip.offsetLeft;
+    const chipEnd = chipStart + chip.offsetWidth;
+    const viewStart = scroller.scrollLeft;
+    const viewEnd = viewStart + scroller.clientWidth;
+
+    if (chipStart < viewStart || chipEnd > viewEnd) {
+      scroller.scrollTo({
+        left: chipStart - (scroller.clientWidth - chip.offsetWidth) / 2,
+        behavior: "auto",
+      });
+    }
   }, [activeChip]);
 
   const scrollToSection = useCallback(
@@ -92,17 +134,18 @@ export function MenuCategoryFilter() {
       const section = document.getElementById(id);
       if (!section) return;
 
+      const measuredFilter = navRef.current?.offsetHeight || filterHeight;
       const top =
         section.getBoundingClientRect().top +
         window.scrollY -
         stickyTop -
-        filterHeight -
+        measuredFilter -
         FILTER_SCROLL_PADDING;
 
       isClickScrolling.current = true;
       if (clickScrollTimer.current) clearTimeout(clickScrollTimer.current);
 
-      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+      window.scrollTo({ top: Math.max(0, top), behavior: "auto" });
 
       clickScrollTimer.current = setTimeout(() => {
         isClickScrolling.current = false;
@@ -112,29 +155,32 @@ export function MenuCategoryFilter() {
   );
 
   useEffect(() => {
-    let scrollTimer: number | undefined;
+    const timers: number[] = [];
 
     const scrollToHash = () => {
+      if (isBackNavigation()) return;
+
       const hash = window.location.hash.replace("#", "");
       if (!hash || !MENU_CATEGORY_CHIPS.some((chip) => chip.id === hash)) return;
 
       setActiveChip(hash);
-      if (scrollTimer) window.clearTimeout(scrollTimer);
-      scrollTimer = window.setTimeout(() => {
-        scrollToSection(hash);
-      }, 150);
+      timers.forEach((timer) => window.clearTimeout(timer));
+      timers.length = 0;
+      timers.push(window.setTimeout(() => scrollToSection(hash), 0));
     };
 
     scrollToHash();
     window.addEventListener("hashchange", scrollToHash);
     return () => {
-      if (scrollTimer) window.clearTimeout(scrollTimer);
+      timers.forEach((timer) => window.clearTimeout(timer));
       window.removeEventListener("hashchange", scrollToHash);
     };
   }, [scrollToSection]);
 
   const handleChipClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
+    const nextUrl = `${window.location.pathname}${window.location.search}#${id}`;
+    window.history.replaceState(window.history.state, "", nextUrl);
     setActiveChip(id);
     scrollToSection(id);
   };
@@ -197,9 +243,4 @@ export function MenuCategoryFilter() {
       </nav>
     </div>
   );
-}
-
-export function useMenuSectionScrollMargin(filterHeight = 72): number {
-  const { height: headerHeight } = useSiteHeader();
-  return headerHeight + filterHeight + FILTER_SCROLL_PADDING;
 }

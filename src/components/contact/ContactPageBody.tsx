@@ -53,7 +53,10 @@ function ContactMethodsSection() {
   const section = CONTACT_METHODS_SECTION;
 
   return (
-    <section className="border-t border-brand-border/60 bg-white px-7 py-20 md:py-24">
+    <section
+      id="get-in-touch"
+      className="scroll-mt-[90px] border-t border-brand-border/60 bg-white px-7 py-20 md:py-24"
+    >
       <div className="mx-auto max-w-[1250px]">
         <header className="mb-12 max-w-[640px] md:mb-14">
           <p className="inline-flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px]">
@@ -129,7 +132,7 @@ function ContactHoursAndFormSection() {
   return (
     <section
       id="send-message"
-      className="border-y border-brand-border/60 bg-[linear-gradient(180deg,#fdf8f3_0%,#fff_50%,#fdf8f3_100%)] px-7 pt-20 pb-10 md:pt-24 lg:pb-24"
+      className="scroll-mt-[90px] border-y border-brand-border/60 bg-[linear-gradient(180deg,#fdf8f3_0%,#fff_50%,#fdf8f3_100%)] px-7 pt-20 pb-10 md:pt-24 lg:pb-24"
     >
       <div className="mx-auto grid max-w-[1250px] gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div>
@@ -299,7 +302,7 @@ function ContactHoursAndFormSection() {
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 text-[16px] font-semibold text-brand-pink-dark transition-colors hover:text-brand-pink"
               >
-                Get directions
+                Get Directions
                 <ChevronRightIcon
                   size={16}
                   className="transition-transform duration-200 group-hover:translate-x-1"
@@ -368,12 +371,11 @@ function ContactMapCtaSection() {
                 {cta.directionsLabel}
               </Link>
               <Link
-                href={SITE.mapsHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full border-2 border-white bg-white px-7 py-3 text-[16px] font-bold text-brand-dark transition-all hover:-translate-y-0.5 hover:bg-brand-cream md:text-[17px]"
+                href={SITE.phoneHref}
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white bg-white px-7 py-3 text-[16px] font-bold text-brand-dark transition-all hover:-translate-y-0.5 hover:bg-brand-cream md:text-[17px]"
               >
-                View on map
+                <PhoneIcon size={18} className="shrink-0 text-brand-dark" />
+                Call Us
               </Link>
             </div>
           </div>

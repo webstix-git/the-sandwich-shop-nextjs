@@ -93,9 +93,9 @@ export function EmailLink({
       : `${linkClassName} break-all`;
 
   return (
-    <Link href={SITE.emailHref} className={`${darkClass} ${className}`.trim()}>
+    <a href={SITE.emailHref} className={`${darkClass} ${className}`.trim()}>
       {SITE.email}
-    </Link>
+    </a>
   );
 }
 
@@ -116,9 +116,9 @@ export function ContactMethodLine({
 
   if (line === SITE.email) {
     return (
-      <Link href={SITE.emailHref} className={`block break-all ${className}`}>
+      <a href={SITE.emailHref} className={`block break-all ${className}`}>
         {line}
-      </Link>
+      </a>
     );
   }
 
@@ -149,17 +149,26 @@ export function linkifyContactText(text: string): ReactNode {
   const before = text.slice(0, index);
   const after = text.slice(index + match.value.length);
 
+  const opensApp =
+    match.href.startsWith("mailto:") || match.href.startsWith("tel:");
+
   return (
     <>
       {before}
-      <Link
-        href={match.href}
-        target={match.external ? "_blank" : undefined}
-        rel={match.external ? "noopener noreferrer" : undefined}
-        className={linkClassName}
-      >
-        {match.value}
-      </Link>
+      {opensApp ? (
+        <a href={match.href} className={linkClassName}>
+          {match.value}
+        </a>
+      ) : (
+        <Link
+          href={match.href}
+          target={match.external ? "_blank" : undefined}
+          rel={match.external ? "noopener noreferrer" : undefined}
+          className={linkClassName}
+        >
+          {match.value}
+        </Link>
+      )}
       {typeof after === "string" && after.length > 0
         ? linkifyContactText(after)
         : null}

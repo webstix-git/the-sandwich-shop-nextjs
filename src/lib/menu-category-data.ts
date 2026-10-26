@@ -243,7 +243,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
       ],
       image: "/images/appetizers-highlight-cheese-curds-v2.jpg",
       imageAlt: "Crispy golden Wisconsin cheese curds",
-      ctaLabel: "Explore main courses",
+      ctaLabel: "Explore Main Courses",
       ctaHref: "/our-menu/main-courses",
     },
     cta: {
@@ -336,7 +336,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
       ],
       image: "/images/signature-sandwich.png",
       imageAlt: "Toasted steak and cheese sandwich",
-      ctaLabel: "View full menu",
+      ctaLabel: "View Full Menu",
       ctaHref: "/our-menu",
     },
     cta: {
@@ -436,7 +436,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
       ],
       image: "/images/dessert-boxes.jpg",
       imageAlt: "Dessert boxes on the counter",
-      ctaLabel: "Visit the soda bar",
+      ctaLabel: "Visit The Soda Bar",
       ctaHref: "/our-menu/wine-cocktails",
     },
     secondaryEditorial: {
@@ -448,7 +448,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
       ],
       image: "/images/gallery/gallery-dessert-display.png",
       imageAlt: "Fresh dessert cups on display at the counter",
-      ctaLabel: "See the full menu",
+      ctaLabel: "See The Full Menu",
       ctaHref: "/our-menu",
     },
     cta: {
@@ -552,7 +552,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
       ],
       image: "/images/wine-cocktails-editorial-soda-bar.jpg",
       imageAlt: "Colorful dirty sodas and syrup bar at The Sandwich Shop",
-      ctaLabel: "Add to catering",
+      ctaLabel: "Add To Catering",
       ctaHref: "/services/catering-services",
     },
     cta: {
@@ -636,7 +636,7 @@ export const MENU_CATEGORY_PAGES: Record<MenuCategorySlug, MenuCategoryPageData>
       ],
       image: "/images/smash-burger.jpg",
       imageAlt: "Smash burger with fries",
-      ctaLabel: "Plan your visit",
+      ctaLabel: "Plan Your Visit",
       ctaHref: "/contact-us",
     },
     cta: {

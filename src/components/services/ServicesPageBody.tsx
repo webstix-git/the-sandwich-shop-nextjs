@@ -149,7 +149,7 @@ function ServiceOfferingCard({ item }: { item: ServiceOffering }) {
           {item.description}
         </p>
         <span className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-semibold text-brand-pink transition-colors group-hover:text-brand-pink-hover">
-          Learn more
+          {item.ctaLabel}
           <ChevronRightIcon
             size={16}
             className="transition-transform duration-200 group-hover:translate-x-0.5"

@@ -18,8 +18,8 @@ export const CATERING_OPENING = {
   ],
   image: "/images/catering-hero.jpg",
   imageAlt: "Catering spread with sandwiches, burgers, and dirty sodas",
-  ctaLabel: "Request a quote",
-  ctaHref: "/contact-us",
+  ctaLabel: "Request A Quote",
+  ctaHref: "/contact-us#send-message",
 } as const;
 
 export const CATERING_OCCASIONS_SECTION = {
@@ -185,7 +185,7 @@ export const CATERING_SODA_FEATURE = {
     "Add our Dirty Soda Bar to your catering package and let guests build their perfect drink with handcrafted flavors, creamy add-ins, candy rims, and creative mix-and-match combinations.",
   image: "/images/dirty-soda-green.jpg",
   imageAlt: "Signature green dirty soda with candy rim",
-  ctaLabel: "Add soda bar to your order",
+  ctaLabel: "Add Soda Bar To Your Order",
   ctaHref: "/contact-us",
 } as const;
 
@@ -196,8 +196,8 @@ export const CATERING_CTA = {
   description:
     "Tell us your event date, headcount, and what you're craving. We'll reply with menu options within 24 hours.",
   backgroundImage: "/images/catering-cta-bg.png",
-  primaryLabel: "Request catering",
-  primaryHref: "/contact-us",
-  secondaryLabel: "Call us",
+  primaryLabel: "Request Catering",
+  primaryHref: "/contact-us#send-message",
+  secondaryLabel: "Call Us",
   secondaryHref: SITE.phoneHref,
 } as const;

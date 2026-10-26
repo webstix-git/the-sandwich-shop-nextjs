@@ -17,7 +17,7 @@ export const ABOUT_FEATURE = {
   ],
   image: "/images/about-intro-storefront.png",
   imageAlt: "The Sandwich Shop storefront on 3rd Street in downtown La Crosse",
-  ctaLabel: "Read our full story",
+  ctaLabel: "Read Our Full Story",
   ctaHref: "/about-us/our-story",
 } as const;
 
@@ -90,8 +90,8 @@ export const ABOUT_SIGNATURE = [
       "Italian beef dipped in au jus, toasted melts, and cold subs built your way, piled high on fresh-baked rolls.",
     image: "/images/gallery/gallery-italian-beef-peppers.png",
     imageAlt: "Italian beef sandwich with pickled peppers",
-    href: "/our-menu",
-    ctaLabel: "Browse sandwiches",
+    href: "/our-menu#specialty-sandwiches",
+    ctaLabel: "Browse Sandwiches",
     accent: "gold" as const,
   },
   {
@@ -102,8 +102,8 @@ export const ABOUT_SIGNATURE = [
       "30+ combinations: pick your base, add cream and syrups, and finish with a candy rim. Poured fresh behind the bar.",
     image: "/images/gallery/gallery-dirty-sodas-lineup.png",
     imageAlt: "Colorful dirty sodas lined up at the bar",
-    href: "/our-menu",
-    ctaLabel: "See the soda bar",
+    href: "/our-menu/wine-cocktails",
+    ctaLabel: "See The Soda Bar",
     accent: "cyan" as const,
   },
   {
@@ -114,8 +114,8 @@ export const ABOUT_SIGNATURE = [
       "Crispy-edged patties with melty cheese, brisket, and house sauces on a pillowy bun, never frozen, never sitting under a lamp.",
     image: "/images/gallery/gallery-brisket-burger.png",
     imageAlt: "BBQ brisket smash burger on a brioche bun",
-    href: "/our-menu",
-    ctaLabel: "Try a smash burger",
+    href: "/our-menu#smash-burgers",
+    ctaLabel: "Try A Smash Burger",
     accent: "pink" as const,
   },
   {
@@ -126,8 +126,8 @@ export const ABOUT_SIGNATURE = [
       "Choose your fizz, pick a flavor, add cream and toppings, candy rim optional. Your cup, your rules, every single time.",
     image: "/images/gallery/gallery-dirty-soda-rainbow.png",
     imageAlt: "Dirty soda with rainbow candy rim",
-    href: "/our-menu",
-    ctaLabel: "Customize yours",
+    href: "/our-menu/wine-cocktails",
+    ctaLabel: "Customize Yours",
     accent: "cyan" as const,
   },
   {
@@ -138,8 +138,8 @@ export const ABOUT_SIGNATURE = [
       "Handmade dessert cups and boxes packed to go, the perfect finish after a sub or a stop at the soda bar.",
     image: DESSERT_CUPS_IMAGE,
     imageAlt: "Handmade dessert cups packaged to go",
-    href: "/our-menu",
-    ctaLabel: "See desserts",
+    href: "/our-menu/desserts",
+    ctaLabel: "See Desserts",
     accent: "gold" as const,
   },
   {
@@ -151,7 +151,7 @@ export const ABOUT_SIGNATURE = [
     image: "/images/catering-hero.jpg",
     imageAlt: "Catering spread with sandwiches, burgers, and dirty sodas",
     href: "/services/catering-services",
-    ctaLabel: "Plan catering",
+    ctaLabel: "Plan Catering",
     accent: "pink" as const,
   },
 ] as const;

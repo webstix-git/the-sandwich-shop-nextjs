@@ -38,6 +38,7 @@ function ExplorePanel({
   return (
     <Link
       href={item.href}
+      scroll={false}
       className={`group relative flex h-full flex-col overflow-hidden rounded-[22px] border border-brand-card-border bg-white shadow-[0_10px_32px_rgba(52,36,47,0.06)] ring-1 ring-transparent transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(52,36,47,0.11)] sm:flex-row ${accent.ring}`}
     >
       <div

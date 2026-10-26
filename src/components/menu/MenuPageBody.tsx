@@ -209,7 +209,7 @@ export function MenuPageBody() {
       </section>
 
       <section className="mx-auto box-content max-w-[1250px] px-7 pb-0 pt-10 md:pt-14">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-14">
+        <div className="flex flex-col gap-16 md:gap-20">
           <div
             id="specialty-sandwiches"
             style={{ scrollMarginTop: menuSectionScrollMt }}

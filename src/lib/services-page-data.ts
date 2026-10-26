@@ -3,6 +3,7 @@ export type ServiceOffering = {
   tagline: string;
   description: string;
   href: string;
+  ctaLabel: string;
   image: string;
   imageAlt: string;
   accent: "gold" | "pink" | "cyan";
@@ -26,7 +27,7 @@ export const SERVICES_FEATURE = {
   ],
   image: "/images/services-dine-in.jpg",
   imageAlt: "Cozy dine-in table with sandwiches and dirty sodas in a warm downtown café",
-  ctaLabel: "Explore catering",
+  ctaLabel: "Explore Catering",
   ctaHref: "/services/catering-services",
 } as const;
 
@@ -44,7 +45,8 @@ export const SERVICES_OFFERINGS: readonly ServiceOffering[] = [
     tagline: "Walk in welcome",
     description:
       "Enjoy our full menu in our cozy downtown space: fresh sandwiches, smash burgers, and signature dirty sodas made to order while you watch.",
-    href: "/contact-us",
+    href: "/our-menu",
+    ctaLabel: "Explore The Menu",
     image: "/images/services-dine-in.jpg",
     imageAlt: "Cozy dine-in table with sandwiches and dirty sodas in a warm downtown café",
     accent: "pink",
@@ -54,7 +56,8 @@ export const SERVICES_OFFERINGS: readonly ServiceOffering[] = [
     tagline: "Quick pickup",
     description:
       "Call ahead or order at the counter. We'll have your food hot, fresh, and ready to go, perfect for lunch on the run.",
-    href: "/contact-us",
+    href: "/contact-us#get-in-touch",
+    ctaLabel: "Plan Your Pickup",
     image: "/images/services-carry-out.jpg",
     imageAlt: "Takeout order ready for pickup at the counter",
     accent: "cyan",
@@ -65,6 +68,7 @@ export const SERVICES_OFFERINGS: readonly ServiceOffering[] = [
     description:
       "Office lunches, parties, game days, and family gatherings. We bring the trays, burgers, and soda bar to you.",
     href: "/services/catering-services",
+    ctaLabel: "Explore Catering",
     image: "/images/services-catering.jpg",
     imageAlt: "Catering spread with sandwiches, burgers, and dirty sodas",
     accent: "pink",
@@ -74,7 +78,8 @@ export const SERVICES_OFFERINGS: readonly ServiceOffering[] = [
     tagline: "Catering package",
     description:
       "Assorted subs cut and ready to serve, perfect for meetings and celebrations. Serves 10–15 guests.",
-    href: "/services/catering-services",
+    href: "/services/catering-services#packages",
+    ctaLabel: "Explore Sandwiches",
     image: "/images/services-sandwich-tray.jpg",
     imageAlt: "Assorted sub sandwich catering tray",
     accent: "cyan",
@@ -84,7 +89,8 @@ export const SERVICES_OFFERINGS: readonly ServiceOffering[] = [
     tagline: "Crowd favorite",
     description:
       "Smash burgers with all the fixings, scaled for your crowd. A guaranteed hit for any occasion.",
-    href: "/services/catering-services",
+    href: "/services/catering-services#packages",
+    ctaLabel: "Explore Burgers",
     image: "/images/services-burger-spread.jpg",
     imageAlt: "Smash burger spread for group catering",
     accent: "pink",
@@ -94,7 +100,8 @@ export const SERVICES_OFFERINGS: readonly ServiceOffering[] = [
     tagline: "Signature experience",
     description:
       "Bring the legendary soda bar to your event, with custom flavors, cream, syrups, and candy rims included.",
-    href: "/services/catering-services",
+    href: "/services/catering-services#packages",
+    ctaLabel: "Explore Dirty Sodas",
     image: "/images/services-soda-bar.jpg",
     imageAlt: "Dirty soda bar setup at an event with colorful custom drinks",
     accent: "cyan",
@@ -111,7 +118,7 @@ export const SERVICES_CATERING_SPOTLIGHT = {
   ],
   image: "/images/services-catering.jpg",
   imageAlt: "Premium catering spread for an office lunch event",
-  ctaLabel: "Plan your event",
+  ctaLabel: "Plan Your Event",
   ctaHref: "/services/catering-services",
 } as const;
 

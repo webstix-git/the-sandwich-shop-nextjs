@@ -35,7 +35,7 @@ function MenuItemCard({
   const accent = getMenuCardAccent(item.tagColor);
 
   return (
-    <Link href={item.href} className="group block h-full">
+    <Link href={item.href} scroll={false} className="group block h-full">
       <article
         className={`flex h-full flex-col overflow-hidden rounded-[32px] bg-white p-2.5 shadow-[0_16px_48px_rgba(52,36,47,0.08)] ring-1 ring-brand-border/50 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_32px_64px_rgba(52,36,47,0.14)] ${accent.ring}`}
       >

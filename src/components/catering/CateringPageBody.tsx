@@ -227,7 +227,10 @@ function CateringPackagesSection() {
   const section = CATERING_PACKAGES_SECTION;
 
   return (
-    <section className={cateringSectionClass("white")}>
+    <section
+      id="packages"
+      className={`scroll-mt-[90px] ${cateringSectionClass("white")}`}
+    >
       <div className={CATERING_LAYOUT.inner}>
         <header className={`max-w-[640px] ${CATERING_LAYOUT.header}`}>
           <p className="inline-flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px]">

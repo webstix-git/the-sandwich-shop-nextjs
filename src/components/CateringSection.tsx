@@ -125,10 +125,10 @@ function CateringCtaSection() {
 
             <div className="mt-8 flex flex-wrap gap-3.5">
               <Link
-                href="/contact-us"
+                href="/contact-us#send-message"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-pink px-7 py-3.5 text-[16px] font-extrabold !text-white shadow-[0_10px_28px_rgba(237,78,141,0.35)] transition-all hover:-translate-y-0.5 hover:bg-brand-pink-hover md:text-[17px]"
               >
-                Request catering
+                Request Catering
                 <ChevronRightIcon
                   size={17}
                   className="shrink-0 text-white"
@@ -138,7 +138,7 @@ function CateringCtaSection() {
                 href="/services/catering-services"
                 className="inline-flex items-center justify-center rounded-full border-2 border-white bg-white px-7 py-3 text-[16px] font-bold text-brand-dark transition-all hover:-translate-y-0.5 hover:bg-brand-cream md:text-[17px]"
               >
-                View catering
+                View Catering
               </Link>
             </div>
           </div>

@@ -148,6 +148,7 @@ function EditorialBlock({
           {editorial.ctaLabel && editorial.ctaHref ? (
             <Link
               href={editorial.ctaHref}
+              scroll={false}
               className="group mt-8 inline-flex items-center gap-2 text-[16px] font-semibold text-brand-pink transition-colors hover:text-brand-pink-hover"
             >
               {editorial.ctaLabel}

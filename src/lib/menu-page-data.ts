@@ -427,7 +427,7 @@ export const MENU_CATERING_CTA = {
   ],
   primaryLabel: "Explore Catering",
   primaryHref: "/services/catering-services",
-  secondaryLabel: "Request a Quote",
-  secondaryHref: "/contact-us",
+  secondaryLabel: "Request A Quote",
+  secondaryHref: "/contact-us#send-message",
   backgroundImage: "/images/catering-cta-event.jpg",
 } as const;

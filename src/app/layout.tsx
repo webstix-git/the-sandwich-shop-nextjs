@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import { RestaurantJsonLd } from "@/components/RestaurantJsonLd";
+import { ScrollManager } from "@/components/ScrollManager";
 import { SITE } from "@/lib/constants";
 import { getSiteUrl } from "@/lib/seo";
 import "./globals.css";
@@ -59,12 +60,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${manrope.variable} scroll-smooth`}>
+    <html
+      lang="en"
+      className={`${manrope.variable} scroll-smooth`}
+      data-scroll-behavior="smooth"
+    >
       <body
         className="min-h-screen overflow-x-hidden bg-brand-bg font-sans text-brand-dark antialiased"
         suppressHydrationWarning
       >
         <RestaurantJsonLd />
+        <ScrollManager />
         {children}
       </body>
     </html>

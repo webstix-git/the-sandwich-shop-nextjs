@@ -17,7 +17,7 @@ export const STORY_FEATURE = {
   image: "/images/our-story/story-farmers-market.png",
   imageAlt:
     "The Sandwich Shop pop-up at a local market with dirty soda chalkboard menu",
-  ctaLabel: "Explore the chapters",
+  ctaLabel: "Explore The Chapters",
   ctaHref: "#story-chapters",
 } as const;
 
