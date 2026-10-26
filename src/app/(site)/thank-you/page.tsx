@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     title: "Thank You",
     description:
       "Thanks for contacting The Sandwich Shop & Dirty Soda Bar. We will get in touch with you shortly.",
-    path: "/contact-us/thank-you",
+    path: "/thank-you",
   }),
   robots: {
     index: false,
@@ -15,12 +15,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ContactThankYouPage() {
+export default function ThankYouPage() {
   return (
     <MinimalPageLayout
       title="CONTACT – THANK YOU"
       breadcrumbLabel="Thank You"
       breadcrumbParent={{ label: "Contact Us", href: "/contact-us" }}
+      showHomeLink={false}
     >
       <p className="inline-flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.24em] text-brand-pink-dark sm:text-[13px]">
         Request received

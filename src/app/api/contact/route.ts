@@ -2,6 +2,9 @@ import { NextResponse } from "next/server";
 import { SITE } from "@/lib/constants";
 import { getTurnstileSecretKey, verifyTurnstileToken } from "@/lib/turnstile";
 
+const DEFAULT_CONTACT_WEBHOOK_URL =
+  "https://ywwxvriolxwuqcwjaluh.supabase.co/functions/v1/form-submit/6592a5f3-d123-49a9-b5f9-67e89de8344c";
+
 type ContactPayload = {
   name?: string;
   email?: string;
@@ -55,73 +58,29 @@ export async function POST(request: Request) {
     }
   }
 
-  const webhookUrl = process.env.CONTACT_FORM_WEBHOOK_URL?.trim();
-  const resendApiKey = process.env.RESEND_API_KEY?.trim();
-  const notifyTo = process.env.CONTACT_NOTIFICATION_TO?.trim() || SITE.email;
+  const webhookUrl =
+    process.env.CONTACT_FORM_WEBHOOK_URL?.trim() || DEFAULT_CONTACT_WEBHOOK_URL;
 
-  if (webhookUrl) {
-    const response = await fetch(webhookUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name,
-        email,
-        subject,
-        message,
-        source: SITE.name,
-        submittedAt: new Date().toISOString(),
-      }),
-    });
+  const response = await fetch(webhookUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name,
+      email,
+      subject,
+      message,
+      source: SITE.name,
+      submittedAt: new Date().toISOString(),
+    }),
+  });
 
-    if (!response.ok) {
-      return NextResponse.json(
-        { error: "Unable to deliver your message right now." },
-        { status: 502 },
-      );
-    }
-
-    return NextResponse.json({ ok: true });
+  if (!response.ok) {
+    console.error("[contact-form] webhook failed", response.status);
+    return NextResponse.json(
+      { error: "Unable to deliver your message right now." },
+      { status: 502 },
+    );
   }
 
-  if (resendApiKey) {
-    const response = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${resendApiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from: process.env.CONTACT_FROM_EMAIL?.trim() || "onboarding@resend.dev",
-        to: [notifyTo],
-        reply_to: email,
-        subject: subject
-          ? `Website contact: ${subject}`
-          : `Website contact from ${name}`,
-        text: [
-          `Name: ${name}`,
-          `Email: ${email}`,
-          subject ? `Subject: ${subject}` : null,
-          "",
-          message || "(No message provided)",
-        ]
-          .filter(Boolean)
-          .join("\n"),
-      }),
-    });
-
-    if (!response.ok) {
-      return NextResponse.json(
-        { error: "Unable to deliver your message right now." },
-        { status: 502 },
-      );
-    }
-
-    return NextResponse.json({ ok: true });
-  }
-
-  // Local / unset notification providers still accept the submission so the
-  // thank-you flow works. Configure CONTACT_FORM_WEBHOOK_URL or RESEND_API_KEY
-  // in production to deliver email notifications.
-  console.info("[contact-form]", { name, email, subject, messageLength: message.length });
-  return NextResponse.json({ ok: true, delivered: false });
+  return NextResponse.json({ ok: true });
 }

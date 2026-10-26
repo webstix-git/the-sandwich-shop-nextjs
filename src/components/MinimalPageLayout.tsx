@@ -11,6 +11,7 @@ type MinimalPageLayoutProps = {
   description?: string;
   breadcrumbLabel?: string;
   breadcrumbParent?: { label: string; href: string };
+  showHomeLink?: boolean;
   children: ReactNode;
 };
 
@@ -19,6 +20,7 @@ export function MinimalPageLayout({
   description,
   breadcrumbLabel,
   breadcrumbParent,
+  showHomeLink = true,
   children,
 }: MinimalPageLayoutProps) {
   const currentLabel = breadcrumbLabel ?? title;
@@ -86,14 +88,16 @@ export function MinimalPageLayout({
       <div className={`bg-white ${CATEGORY_PAGE_LAYOUT.section}`}>
         <div className="mx-auto max-w-[1250px]">
           {children}
-          <div className="mt-14">
-            <Link
-              href="/"
-              className="inline-flex items-center justify-center rounded-full border-2 border-black px-7 py-3 text-[16px] font-semibold !text-black transition-colors hover:bg-black hover:!text-white"
-            >
-              Back To Home
-            </Link>
-          </div>
+          {showHomeLink ? (
+            <div className="mt-14">
+              <Link
+                href="/"
+                className="inline-flex items-center justify-center rounded-full border-2 border-black px-7 py-3 text-[16px] font-semibold !text-black transition-colors hover:bg-black hover:!text-white"
+              >
+                Back To Home
+              </Link>
+            </div>
+          ) : null}
         </div>
       </div>
     </>

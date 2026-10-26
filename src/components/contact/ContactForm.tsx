@@ -67,7 +67,7 @@ export function ContactForm({ turnstileSiteKey = "" }: ContactFormProps) {
         throw new Error(data?.error || "Unable to send your message.");
       }
 
-      router.push("/contact-us/thank-you");
+      router.push("/thank-you");
     } catch (submitError) {
       turnstileRef.current?.reset();
       setTurnstileToken(null);

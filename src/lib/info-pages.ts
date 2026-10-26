@@ -162,9 +162,6 @@ export const SITEMAP_PAGES: readonly SitemapLink[] = [
   { href: "/about-us/our-story", label: "Our Story" },
   { href: "/services", label: "Services" },
   { href: "/services/catering-services", label: "Catering" },
-  { href: "/privacy-policy", label: "Privacy Policy", description: "How we handle personal information" },
-  { href: "/ai-policy", label: "AI Policy", description: "How we use artificial intelligence" },
-  { href: "/service-index", label: "AI Readiness Service Index", description: "How the shop prepares for AI" },
 ];
 
 export type ServiceIndexItem = {
