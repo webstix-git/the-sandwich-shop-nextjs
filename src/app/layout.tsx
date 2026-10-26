@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import { RestaurantJsonLd } from "@/components/RestaurantJsonLd";
 import { ScrollManager } from "@/components/ScrollManager";
+import { ScrollToTopButton } from "@/components/ScrollToTopButton";
 import { SITE } from "@/lib/constants";
 import { getSiteUrl } from "@/lib/seo";
 import "./globals.css";
@@ -71,6 +72,7 @@ export default function RootLayout({
       >
         <RestaurantJsonLd />
         <ScrollManager />
+        <ScrollToTopButton />
         {children}
       </body>
     </html>

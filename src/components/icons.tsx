@@ -309,6 +309,25 @@ export function ChevronRightIcon({ className, size = 16 }: IconProps) {
   );
 }
 
+export function ChevronUpIcon({ className, size = 16 }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden
+    >
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  );
+}
+
 export function CheckIcon({ className, size = 15 }: IconProps) {
   return (
     <svg
