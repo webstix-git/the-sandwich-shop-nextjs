@@ -1,21 +1,43 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
+import {
+  TurnstileWidget,
+  type TurnstileWidgetHandle,
+} from "@/components/contact/TurnstileWidget";
 import { CONTACT_FORM_SECTION } from "@/lib/contact-page-data";
 
 const inputClassName =
   "w-full rounded-2xl border border-brand-border/80 bg-white px-4 py-3.5 text-[16px] text-brand-dark shadow-[0_2px_8px_rgba(52,36,47,0.04)] outline-none transition-all placeholder:text-brand-subtle focus:border-brand-pink/50 focus:shadow-[0_4px_16px_rgba(237,78,141,0.12)]";
 
-export function ContactForm() {
+type ContactFormProps = {
+  turnstileSiteKey?: string;
+};
+
+export function ContactForm({ turnstileSiteKey = "" }: ContactFormProps) {
   const router = useRouter();
   const form = CONTACT_FORM_SECTION;
+  const turnstileRef = useRef<TurnstileWidgetHandle>(null);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const siteKey =
+    turnstileSiteKey ||
+    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim() ||
+    "";
+  const captchaRequired = Boolean(siteKey);
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setError(null);
+
+    if (captchaRequired && !turnstileToken) {
+      setError("Please complete the captcha.");
+      return;
+    }
+
     setSubmitting(true);
 
     const formData = new FormData(event.currentTarget);
@@ -24,6 +46,7 @@ export function ContactForm() {
       email: String(formData.get("email") ?? "").trim(),
       subject: String(formData.get("subject") ?? "").trim(),
       message: String(formData.get("message") ?? "").trim(),
+      turnstileToken: turnstileToken ?? "",
     };
 
     try {
@@ -42,6 +65,8 @@ export function ContactForm() {
 
       router.push("/contact-us/thank-you");
     } catch (submitError) {
+      turnstileRef.current?.reset();
+      setTurnstileToken(null);
       setError(
         submitError instanceof Error
           ? submitError.message
@@ -136,6 +161,13 @@ export function ContactForm() {
           className={`${inputClassName} resize-none`}
         />
       </div>
+      {captchaRequired ? (
+        <TurnstileWidget
+          ref={turnstileRef}
+          siteKey={siteKey}
+          onTokenChange={setTurnstileToken}
+        />
+      ) : null}
       {error ? (
         <p className="text-[15px] font-medium text-red-600" role="alert">
           {error}
@@ -143,7 +175,7 @@ export function ContactForm() {
       ) : null}
       <button
         type="submit"
-        disabled={submitting}
+        disabled={submitting || (captchaRequired && !turnstileToken)}
         className="w-full rounded-full bg-brand-pink px-8 py-4 text-[17px] font-semibold text-white shadow-[0_10px_28px_rgba(237,78,141,0.32)] transition-all hover:-translate-y-0.5 hover:bg-brand-pink-hover disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
       >
         {submitting ? "Sending..." : form.submitLabel}

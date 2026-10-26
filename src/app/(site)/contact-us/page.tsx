@@ -3,6 +3,8 @@ import { ContactPageBody } from "@/components/contact/ContactPageBody";
 import { ContactPageIntro } from "@/components/contact/ContactPageIntro";
 import { pageMetadata } from "@/lib/seo";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = pageMetadata({
   title: "Contact Us",
   description:

@@ -5,6 +5,7 @@ import {
   ContactMethodLine,
 } from "@/components/contact/ContactInfoLink";
 import { ContactForm } from "@/components/contact/ContactForm";
+import { getTurnstileSiteKey } from "@/lib/turnstile";
 import {
   ChevronRightIcon,
   ClockIcon,
@@ -145,7 +146,7 @@ function ContactHoursAndFormSection() {
             {form.description}
           </p>
 
-          <ContactForm />
+          <ContactForm turnstileSiteKey={getTurnstileSiteKey()} />
         </div>
 
         <div>

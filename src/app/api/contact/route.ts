@@ -1,15 +1,25 @@
 import { NextResponse } from "next/server";
 import { SITE } from "@/lib/constants";
+import { getTurnstileSecretKey, verifyTurnstileToken } from "@/lib/turnstile";
 
 type ContactPayload = {
   name?: string;
   email?: string;
   subject?: string;
   message?: string;
+  turnstileToken?: string;
 };
 
 function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function getRemoteIp(request: Request) {
+  return (
+    request.headers.get("cf-connecting-ip") ||
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    null
+  );
 }
 
 export async function POST(request: Request) {
@@ -25,6 +35,7 @@ export async function POST(request: Request) {
   const email = body.email?.trim() ?? "";
   const subject = body.subject?.trim() ?? "";
   const message = body.message?.trim() ?? "";
+  const turnstileToken = body.turnstileToken?.trim() ?? "";
 
   if (!name || !email) {
     return NextResponse.json(
@@ -35,6 +46,13 @@ export async function POST(request: Request) {
 
   if (!isValidEmail(email)) {
     return NextResponse.json({ error: "Enter a valid email address." }, { status: 400 });
+  }
+
+  if (getTurnstileSecretKey()) {
+    const captcha = await verifyTurnstileToken(turnstileToken, getRemoteIp(request));
+    if (!captcha.ok) {
+      return NextResponse.json({ error: captcha.error }, { status: 400 });
+    }
   }
 
   const webhookUrl = process.env.CONTACT_FORM_WEBHOOK_URL?.trim();
