@@ -354,7 +354,6 @@ export const MENU_LATE_NIGHT = {
     {
       name: "Hot Italian Beef",
       price: "$14",
-      description: "Thin sliced roast beef & giardiniera on a toasted hoagie",
     },
     { name: "French Fries", price: "$4" },
   ] satisfies MenuSideItem[],

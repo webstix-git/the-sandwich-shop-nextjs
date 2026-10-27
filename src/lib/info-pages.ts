@@ -217,7 +217,8 @@ export const SERVICE_INDEX_TABLES: readonly ServiceIndexTable[] = [
       { label: "Email", value: SITE.email, href: SITE.emailHref },
       {
         label: "Hours",
-        value: "Tuesday–Saturday 10:00 AM–8:00 PM; closed Sunday–Monday",
+        value:
+          "Tuesday–Saturday 10:00 AM–8:00 PM; late night Friday–Saturday 11:00 PM–3:00 AM; closed Sunday–Monday",
       },
     ],
   },

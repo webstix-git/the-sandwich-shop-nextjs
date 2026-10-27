@@ -205,6 +205,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
 export const HOURS = [
   { day: "Sunday – Monday", time: "Closed" },
   { day: "Tuesday – Saturday", time: "10:00 AM – 8:00 PM" },
+  { day: "Friday & Saturday", time: "11:00 PM – 3:00 AM" },
 ] as const;
 
 export const SITE = {

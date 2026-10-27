@@ -107,6 +107,12 @@ export function restaurantJsonLd() {
         opens: "10:00",
         closes: "20:00",
       },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Friday", "Saturday"],
+        opens: "23:00",
+        closes: "03:00",
+      },
     ],
     sameAs: [SITE.facebookHref, SITE.instagramHref],
   };

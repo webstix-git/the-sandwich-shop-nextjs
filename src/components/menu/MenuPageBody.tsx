@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { Fragment } from "react";
 import { StarIcon } from "@/components/icons";
 import { MenuColdSandwichesSection } from "@/components/menu/MenuColdSandwichesSection";
 import { MenuCateringCta } from "@/components/menu/MenuCateringCta";
@@ -247,32 +248,34 @@ export function MenuPageBody() {
 
         <div className="mt-16 grid gap-14 sm:grid-cols-2 md:mt-20 md:gap-x-12 md:gap-y-16 lg:mt-24 lg:gap-x-16">
           {COMPACT_SECTIONS.map((section) => (
-            <div
-              key={section.id}
-              id={section.id}
-              className="flex min-w-0 flex-col sm:px-1 md:px-3 lg:px-5"
-              style={{ scrollMarginTop: menuSectionScrollMt }}
-            >
-              <MenuColumnHeader
-                title={section.title}
-                scriptSubtitle={section.scriptSubtitle}
-                headingImage={section.headingImage}
-                headingImageAlt={section.headingImageAlt}
-                relaxed
-              />
-              <ul className="flex-1 divide-y divide-[#E5D4C4]">
-                {section.items.map((item) => (
-                  <MenuItemRow key={item.name} item={item} relaxed />
-                ))}
-              </ul>
-            </div>
+            <Fragment key={section.id}>
+              {section.id === "late-night-menu" ? (
+                <p className="col-span-full mx-auto max-w-[760px] rounded-2xl border border-brand-pink/35 bg-brand-pink-light/50 px-6 py-4 text-center text-[17px] font-semibold leading-relaxed text-brand-dark shadow-[0_4px_18px_rgba(237,78,141,0.12)] md:px-8 md:py-5 md:text-[20px]">
+                  {MENU_HASH_BROWNS_NOTE.replace("$1.50", "")}
+                  <span className="font-extrabold text-brand-pink-dark">$1.50</span>
+                </p>
+              ) : null}
+              <div
+                id={section.id}
+                className="flex min-w-0 flex-col sm:px-1 md:px-3 lg:px-5"
+                style={{ scrollMarginTop: menuSectionScrollMt }}
+              >
+                <MenuColumnHeader
+                  title={section.title}
+                  scriptSubtitle={section.scriptSubtitle}
+                  headingImage={section.headingImage}
+                  headingImageAlt={section.headingImageAlt}
+                  relaxed
+                />
+                <ul className="flex-1 divide-y divide-[#E5D4C4]">
+                  {section.items.map((item) => (
+                    <MenuItemRow key={item.name} item={item} relaxed />
+                  ))}
+                </ul>
+              </div>
+            </Fragment>
           ))}
         </div>
-
-        <p className="mx-auto mb-10 max-w-[760px] rounded-2xl border border-brand-pink/35 bg-brand-pink-light/50 px-6 py-4 text-center text-[17px] font-semibold leading-relaxed text-brand-dark shadow-[0_4px_18px_rgba(237,78,141,0.12)] md:mb-12 md:px-8 md:py-5 md:text-[20px]">
-          {MENU_HASH_BROWNS_NOTE.replace("$1.50", "")}
-          <span className="font-extrabold text-brand-pink-dark">$1.50</span>
-        </p>
 
         <MenuGalleryCarousel />
       </section>
